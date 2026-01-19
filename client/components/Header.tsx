@@ -17,17 +17,17 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
+          <Link to="/" className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity">
             <img
               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23E31E24;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23006837;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='95' fill='url(%23grad1)' opacity='0.1'/%3E%3Cpath d='M100 40 L140 120 L100 160 L60 120 Z' fill='%23E31E24'/%3E%3Cpath d='M80 80 L100 120 L120 80 Z' fill='%23006837'/%3E%3Ccircle cx='100' cy='100' r='8' fill='%23FFD700'/%3E%3C/svg%3E"
               alt="Orchida"
               className="w-12 h-12"
             />
-            <span className="text-xl font-bold text-orchida-red">ORCHIDA</span>
+            <span className="text-2xl font-bold bg-gradient-to-r from-orchida-red to-orchida-green bg-clip-text text-transparent">ORCHIDA</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -36,9 +36,10 @@ export function Header() {
               <Link
                 key={item.href}
                 to={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-orchida-red transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-orchida-red transition-colors relative group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orchida-red to-orchida-green group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </nav>
@@ -47,7 +48,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
-              className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-sm font-medium text-gray-800 transition-colors"
+              className="px-4 py-2 rounded-lg bg-gradient-to-r from-orchida-red/10 to-orchida-green/10 hover:from-orchida-red/20 hover:to-orchida-green/20 text-sm font-semibold text-gray-800 transition-all duration-300 border border-orchida-red/20"
             >
               {t('language')}
             </button>
