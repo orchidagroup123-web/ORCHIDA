@@ -81,16 +81,28 @@ export function StatsSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+    <section className="py-24 bg-gradient-to-br from-gray-900 via-orchida-red/5 to-gray-900 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-orchida-red/10 rounded-full blur-3xl -z-0"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orchida-green/10 rounded-full blur-3xl -z-0"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-20">
+          <div className="flex justify-center mb-6">
+            <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full"></div>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
             Our Impact by Numbers
           </h2>
+          <p className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
+            {t('language') === 'ar'
+              ? 'شاهد مدى تأثيرنا العالمي والنمو المستمر'
+              : 'Discover our global impact and continued growth'}
+          </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <AnimatedCounter
               key={index}
