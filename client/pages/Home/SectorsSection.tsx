@@ -8,13 +8,16 @@ export function SectorsSection() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="sectors" className="py-20 bg-gray-50">
+    <section id="sectors" className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-20">
+          <div className="flex justify-center mb-6">
+            <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full"></div>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {t('sectors')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {language === 'ar'
               ? 'استكشف قطاعاتنا الستة الرئيسية واكتشف كيف نقود الابتكار والنمو'
               : 'Explore our six major business sectors and discover how we drive innovation and growth'
@@ -23,7 +26,7 @@ export function SectorsSection() {
         </div>
 
         {/* Sectors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sectorsData.map((sector) => (
             <Link
               key={sector.id}
