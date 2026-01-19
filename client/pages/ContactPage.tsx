@@ -98,19 +98,59 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Info Cards */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-32 bg-white overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-orchida-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-orchida-green rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900">
+              {language === 'ar' ? 'معلومات الاتصال' : 'Contact Information'}
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
-                <div className="text-4xl mb-4">{info.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{info.title}</h3>
-                <div className="space-y-1">
-                  {info.details.map((detail, i) => (
-                    <p key={i} className="text-gray-600 text-sm">
-                      {detail}
-                    </p>
-                  ))}
+              <div
+                key={index}
+                className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              >
+                {/* Card Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orchida-red/10 to-orchida-green/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Border Gradient */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-orchida-red/30 transition-colors duration-500 rounded-2xl"></div>
+
+                {/* Content */}
+                <div className="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+                  {/* Icon */}
+                  <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-500">
+                    {info.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-gray-900 mb-4 group-hover:text-orchida-red transition-colors">
+                    {info.title}
+                  </h3>
+
+                  {/* Details */}
+                  <div className="space-y-2">
+                    {info.details.map((detail, i) => (
+                      <p key={i} className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
+                        {detail}
+                      </p>
+                    ))}
+                  </div>
+
+                  {/* Accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-orchida-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-2xl"></div>
                 </div>
               </div>
             ))}
