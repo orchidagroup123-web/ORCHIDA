@@ -57,6 +57,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "orchida-red": "#E31E24",
+        "orchida-green": "#006837",
+        "orchida-yellow": "#FFD700",
+        "orchida-blue": "#0066CC",
+        "orchida-light-gray": "#F9F9F9",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +85,21 @@ export default {
             height: "0",
           },
         },
+        "count-up": {
+          from: {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "count-up": "count-up 0.6s ease-out",
       },
     },
   },
