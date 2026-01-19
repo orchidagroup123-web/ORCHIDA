@@ -1,0 +1,202 @@
+import { Layout } from '@/components/Layout';
+import { useTranslation } from '@/hooks/useTranslation';
+
+export default function AboutPage() {
+  const { language } = useTranslation();
+
+  const timelineAr = [
+    { year: '2004', title: 'التأسيس', description: 'انطلاق رحلة أوركيد الدولية' },
+    { year: '2008', title: 'التوسع', description: 'دخول قطاع التعدين' },
+    { year: '2012', title: 'الاستثمار', description: 'استثمارات في البنية التحتية' },
+    { year: '2016', title: 'النمو', description: 'توسع العمليات اللوجستية' },
+    { year: '2020', title: 'الابتكار', description: 'استخدام تقنيات ذكية' },
+    { year: '2024', title: 'الريادة', description: 'موقع عالمي متميز' },
+  ];
+
+  const timelineEn = [
+    { year: '2004', title: 'Establishment', description: 'Launch of Orchida International' },
+    { year: '2008', title: 'Expansion', description: 'Entry into mining sector' },
+    { year: '2012', title: 'Investment', description: 'Infrastructure investments' },
+    { year: '2016', title: 'Growth', description: 'Expansion of logistics operations' },
+    { year: '2020', title: 'Innovation', description: 'Implementation of smart technologies' },
+    { year: '2024', title: 'Leadership', description: 'Distinguished global position' },
+  ];
+
+  const timeline = language === 'ar' ? timelineAr : timelineEn;
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-orchida-red to-orchida-green py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-bold text-white mb-4">
+            {language === 'ar' ? 'عن مجموعة أوركيد' : 'About Orchida Group'}
+          </h1>
+          <p className="text-xl text-white/90">
+            {language === 'ar'
+              ? 'رحلة من الابتكار والالتزام بالتميز'
+              : 'A journey of innovation and commitment to excellence'
+            }
+          </p>
+        </div>
+      </div>
+
+      {/* Chairman's Message */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
+            {/* Image Placeholder */}
+            <div className="bg-gradient-to-br from-gray-200 to-gray-300 h-80 rounded-lg flex items-center justify-center">
+              <div className="text-6xl">👔</div>
+            </div>
+
+            {/* Content */}
+            <div>
+              <h2 className="text-4xl font-bold text-orchida-red mb-4">
+                {language === 'ar' ? 'كلمة رئيس مجلس الإدارة' : "Chairman's Message"}
+              </h2>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                {language === 'ar'
+                  ? '"من الأرضِ نبدأ.. وإلى المستقبلِ نمضي"'
+                  : '"From the Earth We Begin... To the Future We Proceed"'
+                }
+              </p>
+            </div>
+          </div>
+
+          {/* Full Message */}
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="space-y-4 text-gray-700 leading-relaxed text-justify">
+              {language === 'ar' ? (
+                <>
+                  <p>
+                    منذ التأسيس، وضعت مجموعة أوركيد نصب عينيها هدفاً واضحاً: أن تكون شريكاً فاعلاً في مسيرة التنمية الاقتصادية الشاملة. نحن لا ننظر إلى نشاطاتنا في الزراعة والتعدين والبنية التحتية والتجارة كمجرد قطاعات استثمارية، بل نراها ركائز أساسية لبناء مستقبل أكثر استدامة وقوة لأوطاننا وللأجيال القادمة.
+                  </p>
+                  <p>
+                    إن عالمنا اليوم يتغير بسرعة، والتحديات التي تواجه الأمن الغذائي والطاقة وسلاسل التوريد تتطلب حلولاً غير تقليدية. ومن هنا، اتخذنا في المجموعة منهجية تعتمد على "الابتكار المسؤول"؛ حيث ندمج بين الخبرات الميدانية العميقة وبين أحدث التقنيات العالمية لضمان أعلى مستويات الكفاءة والاحترافية.
+                  </p>
+                  <p>
+                    إن فخرنا الحقيقي لا يكمن فقط في حجم مشاريعنا أو انتشارنا الجغرافي، بل في الثقة التي يوليها لنا شركاؤنا، وفي الأثر الإيجابي الذي نتركه في البيئة والمجتمعات التي نعمل بها. نحن في أوركيد نؤمن بأن النجاح رحلة مستمرة، وبأن التزامنا بالنزاهة والجودة هو البوصلة التي تقودنا دائماً نحو القمة.
+                  </p>
+                  <p>
+                    نرحب بكم في عالم أوركيد، وندعوكم لتكونوا جزءاً من طموحنا الذي لا يحده سقف.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    Since its establishment, Orchida Group has set a clear objective: to be an active partner in comprehensive economic development. We do not view our activities in agriculture, mining, infrastructure, and trade as mere investment sectors, but as essential pillars for building a more sustainable and stronger future for our nations and future generations.
+                  </p>
+                  <p>
+                    Today's world is changing rapidly, and the challenges facing food security, energy, and supply chains require unconventional solutions. Therefore, we have adopted a methodology based on "responsible innovation," where we combine deep field expertise with the latest global technologies to ensure the highest levels of efficiency and professionalism.
+                  </p>
+                  <p>
+                    Our true pride lies not only in the scale of our projects or our geographic presence, but in the trust our partners place in us and the positive impact we leave on the environment and communities where we operate. At Orchida, we believe success is a continuous journey, and our commitment to integrity and quality is the compass that always guides us toward the top.
+                  </p>
+                  <p>
+                    We welcome you to the world of Orchida and invite you to become part of our boundless ambition.
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision, Mission, Values */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            {language === 'ar' ? 'الرؤية والرسالة والقيم' : 'Vision, Mission & Values'}
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Vision */}
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold text-orchida-red mb-4">
+                {language === 'ar' ? '🎯 الرؤية' : '🎯 Vision'}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {language === 'ar'
+                  ? 'أن نكون مجموعة متعددة القطاعات رائدة عالمياً، نشكل مستقبلاً مستداماً من خلال الابتكار المسؤول والتميز التشغيلي.'
+                  : 'To be a globally leading multi-sector group shaping a sustainable future through responsible innovation and operational excellence.'
+                }
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold text-orchida-green mb-4">
+                {language === 'ar' ? '🎯 الرسالة' : '🎯 Mission'}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {language === 'ar'
+                  ? 'توفير حلول متكاملة وعالية الجودة عبر قطاعاتنا الستة لدعم الأمن الغذائي والطاقي والتنمية الاقتصادية المستدامة.'
+                  : 'Provide integrated, high-quality solutions across our six sectors to support food security, energy sustainability, and economic development.'
+                }
+              </p>
+            </div>
+
+            {/* Values */}
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold text-orchida-red mb-4">
+                {language === 'ar' ? '⭐ القيم' : '⭐ Values'}
+              </h3>
+              <ul className="text-gray-600 space-y-2">
+                {language === 'ar' ? (
+                  <>
+                    <li>• النزاهة والشفافية</li>
+                    <li>• الابتكار المستمر</li>
+                    <li>• الاستدامة البيئية</li>
+                    <li>• التميز والجودة</li>
+                    <li>• المسؤولية الاجتماعية</li>
+                  </>
+                ) : (
+                  <>
+                    <li>• Integrity & Transparency</li>
+                    <li>• Continuous Innovation</li>
+                    <li>• Environmental Sustainability</li>
+                    <li>• Excellence & Quality</li>
+                    <li>• Social Responsibility</li>
+                  </>
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            {language === 'ar' ? 'رحلة النمو' : 'Journey of Growth'}
+          </h2>
+
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orchida-red to-orchida-green"></div>
+
+            {/* Timeline Items */}
+            <div className="space-y-8 md:space-y-12">
+              {timeline.map((item, index) => (
+                <div key={index} className={`flex ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                  <div className="w-full md:w-1/2 px-4">
+                    <div className={`bg-gray-50 p-6 rounded-lg ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <h3 className="text-2xl font-bold text-orchida-red mb-2">{item.year}</h3>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h4>
+                      <p className="text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex w-0 md:w-0 justify-center">
+                    <div className="w-4 h-4 bg-orchida-red rounded-full border-4 border-white absolute"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}
