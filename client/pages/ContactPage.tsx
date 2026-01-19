@@ -55,16 +55,43 @@ export default function ContactPage() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-orchida-red to-orchida-green py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-white mb-4">
+      {/* Hero Section - Professional Cinematic Design */}
+      <div className="relative py-40 overflow-hidden bg-black/20">
+        {/* Background Image with Fixed Position */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'linear-gradient(135deg, rgba(227, 30, 36, 0.2) 0%, rgba(0, 104, 55, 0.2) 100%), url("https://images.unsplash.com/photo-1552664730-d307ca884978?w=1500&h=800&fit=crop")',
+            backgroundAttachment: 'fixed',
+          }}
+        />
+
+        {/* Decorative Gradient Orbs */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-orchida-red rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-orchida-green rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Multi-Layer Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orchida-red/10 to-orchida-green/10"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Decorative Top Line */}
+          <div className="flex justify-center items-center gap-4 mb-8">
+            <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
+            <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">Contact</span>
+            <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
+          </div>
+
+          <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl leading-tight">
             {language === 'ar' ? 'اتصل بنا' : 'Contact Us'}
           </h1>
-          <p className="text-xl text-white/90">
+          <p className="text-2xl text-white/95 drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
             {language === 'ar'
-              ? 'نحن هنا للاستماع إلى استفساراتك والرد عليها بسرعة'
-              : 'We are here to listen and respond to your inquiries quickly'
+              ? 'نحن هنا للاستماع إلى استفساراتك والرد عليها بسرعة واحترافية'
+              : 'We are here to listen and respond to your inquiries with speed and professionalism'
             }
           </p>
         </div>
