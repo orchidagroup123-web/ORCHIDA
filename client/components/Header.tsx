@@ -23,9 +23,9 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F52a7c492e28b4352bcbaf159ea26029f?format=webp&width=800"
+              src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fe6b25b3b6acc427391d5fe4bf3607aef?format=webp&width=800"
               alt="Orchida Group"
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
 
