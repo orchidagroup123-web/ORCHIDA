@@ -255,48 +255,79 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            {language === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions'}
-          </h2>
+      <section className="relative py-32 bg-white overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-72 h-72 bg-orchida-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-72 h-72 bg-orchida-green rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
+              <span className="text-orchida-red font-bold text-sm uppercase tracking-wider">FAQ</span>
+              <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+              {language === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {language === 'ar'
+                ? 'إجابات سريعة على أسئلتك الأكثر شيوعاً'
+                : 'Quick answers to your most common questions'
+              }
+            </p>
+          </div>
 
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-bold text-orchida-red mb-2">
-                {language === 'ar' ? 'كيف يمكنني التقديم للعمل معكم؟' : 'How can I apply to work with you?'}
-              </h3>
-              <p className="text-gray-600">
-                {language === 'ar'
-                  ? 'يرجى ملء نموذج الاتصال أعلاه واختيار "استفسار عام" كنوع الاستفسار. سيقوم فريقنا بالتواصل معك في أقرب وقت.'
-                  : 'Please fill out the contact form above and select "General Inquiry" as the inquiry type. Our team will contact you shortly.'
-                }
-              </p>
-            </div>
+            {[
+              {
+                arQ: 'كيف يمكنني التقديم للعمل معكم؟',
+                enQ: 'How can I apply to work with you?',
+                arA: 'يرجى ملء نموذج الاتصال أعلاه واختيار "استفسار عام" كنوع الاستفسار. سيقوم فريقنا بالتواصل معك في أقرب وقت.',
+                enA: 'Please fill out the contact form above and select "General Inquiry" as the inquiry type. Our team will contact you shortly.',
+                icon: '💼',
+              },
+              {
+                arQ: 'هل تقبلون طلبات العروض (RFQ)؟',
+                enQ: 'Do you accept Request for Quote (RFQ)?',
+                arA: 'نعم، نقبل طلبات العروض لجميع قطاعاتنا. اختر "طلب توريد" في النموذج وأخبرنا بمتطلباتك.',
+                enA: 'Yes, we accept RFQs for all our sectors. Select "Supply Request" in the form and let us know your requirements.',
+                icon: '📋',
+              },
+              {
+                arQ: 'ما هي شروط الشراكة الاستراتيجية؟',
+                enQ: 'What are the conditions for strategic partnerships?',
+                arA: 'نحن مفتوحون للشراكات المتبادلة. اتصل بنا واختر "شراكة استراتيجية" لمناقشة الفرص.',
+                enA: 'We are open to mutual partnerships. Contact us and select "Strategic Partnership" to discuss opportunities.',
+                icon: '🤝',
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-orchida-red/30"
+              >
+                {/* Background accent */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orchida-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-bold text-orchida-red mb-2">
-                {language === 'ar' ? 'هل تقبلون طلبات العروض (RFQ)؟' : 'Do you accept Request for Quote (RFQ)?'}
-              </h3>
-              <p className="text-gray-600">
-                {language === 'ar'
-                  ? 'نعم، نقبل طلبات العروض لجميع قطاعاتنا. اختر "طلب توريد" في النموذج وأخبرنا بمتطلباتك.'
-                  : 'Yes, we accept RFQs for all our sectors. Select "Supply Request" in the form and let us know your requirements.'
-                }
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-bold text-orchida-red mb-2">
-                {language === 'ar' ? 'ما هي شروط الشراكة الاستراتيجية؟' : 'What are the conditions for strategic partnerships?'}
-              </h3>
-              <p className="text-gray-600">
-                {language === 'ar'
-                  ? 'نحن مفتوحون للشراكات المتبادلة. اتصل بنا واختر "شراكة استراتيجية" لمناقشة الفرص.'
-                  : 'We are open to mutual partnerships. Contact us and select "Strategic Partnership" to discuss opportunities.'
-                }
-              </p>
-            </div>
+                {/* Content */}
+                <div className="relative z-10 p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="text-4xl mt-1">{faq.icon}</div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-orchida-red transition-colors">
+                        {language === 'ar' ? faq.arQ : faq.enQ}
+                      </h3>
+                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors leading-relaxed">
+                        {language === 'ar' ? faq.arA : faq.enA}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
