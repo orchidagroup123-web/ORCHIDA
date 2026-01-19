@@ -64,13 +64,13 @@ function AnimatedCounter({ stat }: { stat: StatItem & { label: string } }) {
   return (
     <div
       ref={ref}
-      className="text-center animate-count-up"
+      className="text-center animate-count-up p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:border-orchida-red/50 transition-all duration-300"
     >
-      <div className="text-5xl md:text-6xl font-bold text-orchida-red mb-2">
+      <div className="text-5xl md:text-6xl font-bold text-orchida-red mb-4 font-mono">
         {count}
-        <span className="text-4xl md:text-5xl ml-1">{stat.suffix}</span>
+        <span className="text-4xl md:text-5xl ml-2">{stat.suffix}</span>
       </div>
-      <p className="text-lg md:text-xl text-gray-600">
+      <p className="text-lg md:text-xl text-gray-200 font-semibold">
         {stat.label}
       </p>
     </div>
