@@ -62,33 +62,38 @@ export function HeroSection() {
 
       {/* Who We Are Modal/Overlay */}
       {showWhoWeAre && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-2xl w-full p-8 relative max-h-screen overflow-y-auto">
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl max-w-2xl w-full p-8 relative max-h-screen overflow-y-auto shadow-2xl">
+            {/* Top accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orchida-red to-orchida-green rounded-t-2xl"></div>
+
             <button
               onClick={() => setShowWhoWeAre(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            <h2 className="text-3xl font-bold text-orchida-red mb-4">{t('whoWeAre')}</h2>
-            <div className="space-y-4 text-gray-700">
-              <p>
+            <h2 className="text-4xl font-bold text-orchida-red mb-2 pr-8">{t('whoWeAre')}</h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full mb-6"></div>
+
+            <div className="space-y-5 text-gray-700 leading-relaxed">
+              <p className="text-lg">
                 Orchida International Company is a multi-sector conglomerate specializing in six major industries: Agricultural Health, Mining, International Trade, Livestock, Fisheries & Aquaculture, and Infrastructure Development.
               </p>
-              <p>
+              <p className="text-lg">
                 With over 20 years of experience, more than 500 dedicated employees, and operations spanning 10+ countries, we are committed to shaping a sustainable future through innovation, responsibility, and excellence.
               </p>
-              <p>
+              <p className="text-lg">
                 Our vision is to be a trusted global partner that delivers value across every sector we operate in, while maintaining the highest standards of quality, sustainability, and corporate responsibility.
               </p>
             </div>
 
             <button
               onClick={() => setShowWhoWeAre(false)}
-              className="mt-6 px-6 py-2 bg-orchida-red text-white font-bold rounded-lg hover:bg-red-700 transition-colors"
+              className="mt-8 px-6 py-3 bg-orchida-red hover:bg-red-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Close
             </button>
