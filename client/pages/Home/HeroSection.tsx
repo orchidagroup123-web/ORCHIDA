@@ -1,5 +1,5 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { useState } from 'react';
+import { useTranslation } from "@/hooks/useTranslation";
+import { useState } from "react";
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -13,10 +13,11 @@ export function HeroSection() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=2000&h=1200&fit=crop)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=2000&h=1200&fit=crop)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
           }}
         >
           {/* Strong gradient overlay */}
@@ -29,7 +30,10 @@ export function HeroSection() {
 
         {/* Animated gradient orbs */}
         <div className="absolute top-20 -right-32 w-96 h-96 bg-orchida-red/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 -left-32 w-96 h-96 bg-orchida-green/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div
+          className="absolute bottom-20 -left-32 w-96 h-96 bg-orchida-green/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
       </div>
 
       {/* Content Container */}
@@ -38,20 +42,22 @@ export function HeroSection() {
           {/* Top decorative element */}
           <div className="flex justify-center mb-12 gap-2 items-center">
             <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
-            <span className="text-orchida-red font-semibold text-sm uppercase tracking-wider">ORCHIDA GROUP</span>
+            <span className="text-orchida-red font-semibold text-sm uppercase tracking-wider">
+              ORCHIDA GROUP
+            </span>
             <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
           </div>
 
           {/* Main Title */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-tight tracking-tighter drop-shadow-2xl">
             <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-              {t('heroTitle')}
+              {t("heroTitle")}
             </span>
           </h1>
 
           {/* Subtitle with enhanced styling */}
           <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-16 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg">
-            {t('heroSubtitle')}
+            {t("heroSubtitle")}
           </p>
 
           {/* Feature highlights */}
@@ -76,28 +82,60 @@ export function HeroSection() {
               onClick={() => setShowWhoWeAre(true)}
               className="px-10 py-4 bg-gradient-to-r from-orchida-red to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-red-600/50 flex items-center justify-center gap-2 group"
             >
-              {t('whoWeAre')}
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              {t("whoWeAre")}
+              <svg
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
             </button>
             <a
               href="#sectors"
               className="px-10 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-white/50 flex items-center justify-center gap-2"
             >
-              {t('sectors')}
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              {t("sectors")}
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
               </svg>
             </a>
           </div>
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3">
-            <span className="text-white/70 text-sm font-medium">اكتشف المزيد</span>
+            <span className="text-white/70 text-sm font-medium">
+              اكتشف المزيد
+            </span>
             <div className="animate-bounce">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
               </svg>
             </div>
           </div>
@@ -115,23 +153,44 @@ export function HeroSection() {
               onClick={() => setShowWhoWeAre(false)}
               className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
-            <h2 className="text-4xl font-bold text-orchida-red mb-2 pr-8">{t('whoWeAre')}</h2>
+            <h2 className="text-4xl font-bold text-orchida-red mb-2 pr-8">
+              {t("whoWeAre")}
+            </h2>
             <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full mb-6"></div>
 
             <div className="space-y-5 text-gray-700 leading-relaxed">
               <p className="text-lg">
-                Orchida International Company is a multi-sector conglomerate specializing in six major industries: Agricultural Health, Mining, International Trade, Livestock, Fisheries & Aquaculture, and Infrastructure Development.
+                Orchida International Company is a multi-sector conglomerate
+                specializing in six major industries: Agricultural Health,
+                Mining, International Trade, Livestock, Fisheries & Aquaculture,
+                and Infrastructure Development.
               </p>
               <p className="text-lg">
-                With over 20 years of experience, more than 500 dedicated employees, and operations spanning 10+ countries, we are committed to shaping a sustainable future through innovation, responsibility, and excellence.
+                With over 20 years of experience, more than 500 dedicated
+                employees, and operations spanning 10+ countries, we are
+                committed to shaping a sustainable future through innovation,
+                responsibility, and excellence.
               </p>
               <p className="text-lg">
-                Our vision is to be a trusted global partner that delivers value across every sector we operate in, while maintaining the highest standards of quality, sustainability, and corporate responsibility.
+                Our vision is to be a trusted global partner that delivers value
+                across every sector we operate in, while maintaining the highest
+                standards of quality, sustainability, and corporate
+                responsibility.
               </p>
             </div>
 

@@ -1,5 +1,5 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { Link } from 'react-router-dom';
+import { useTranslation } from "@/hooks/useTranslation";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   const { t } = useTranslation();
@@ -21,48 +21,101 @@ export function Footer() {
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Orchida International Company - Multi-sector conglomerate shaping the future across six major industries.
+              Orchida International Company - Multi-sector conglomerate shaping
+              the future across six major industries.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-bold mb-6 text-white uppercase tracking-wider">Navigation</h3>
+            <h3 className="text-sm font-bold mb-6 text-white uppercase tracking-wider">
+              Navigation
+            </h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/" className="text-gray-400 hover:text-orchida-red transition-colors font-medium">{t('home')}</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-orchida-red transition-colors font-medium">{t('about')}</Link></li>
-              <li><Link to="/sectors" className="text-gray-400 hover:text-orchida-red transition-colors font-medium">{t('sectors')}</Link></li>
+              <li>
+                <Link
+                  to="/"
+                  className="text-gray-400 hover:text-orchida-red transition-colors font-medium"
+                >
+                  {t("home")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="text-gray-400 hover:text-orchida-red transition-colors font-medium"
+                >
+                  {t("about")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sectors"
+                  className="text-gray-400 hover:text-orchida-red transition-colors font-medium"
+                >
+                  {t("sectors")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Resources */}
           <div>
-            <h3 className="text-sm font-bold mb-6 text-white uppercase tracking-wider">Resources</h3>
+            <h3 className="text-sm font-bold mb-6 text-white uppercase tracking-wider">
+              Resources
+            </h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/media" className="text-gray-400 hover:text-orchida-red transition-colors font-medium">{t('media')}</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-orchida-red transition-colors font-medium">{t('contact')}</Link></li>
+              <li>
+                <Link
+                  to="/media"
+                  className="text-gray-400 hover:text-orchida-red transition-colors font-medium"
+                >
+                  {t("media")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-gray-400 hover:text-orchida-red transition-colors font-medium"
+                >
+                  {t("contact")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-sm font-bold mb-6 text-white uppercase tracking-wider">Contact</h3>
+            <h3 className="text-sm font-bold mb-6 text-white uppercase tracking-wider">
+              Contact
+            </h3>
             <ul className="space-y-4 text-sm">
               <li className="text-gray-400">
-                <span className="font-semibold text-gray-300 block mb-1">{t('headOffice')}</span>
-                <span className="text-xs">{t('portSudan')}</span>
+                <span className="font-semibold text-gray-300 block mb-1">
+                  {t("headOffice")}
+                </span>
+                <span className="text-xs">{t("portSudan")}</span>
               </li>
               <li className="text-gray-400">
-                <span className="font-semibold text-gray-300 block mb-1">{t('branch')}</span>
-                <span className="text-xs">{t('atbara')}</span>
+                <span className="font-semibold text-gray-300 block mb-1">
+                  {t("branch")}
+                </span>
+                <span className="text-xs">{t("atbara")}</span>
               </li>
               <li className="text-gray-400">
-                <span className="font-semibold text-gray-300">{t('phone')}:</span>
+                <span className="font-semibold text-gray-300">
+                  {t("phone")}:
+                </span>
                 <span className="block text-xs">+249 123 722 286</span>
               </li>
               <li className="text-gray-400">
-                <span className="font-semibold text-gray-300">{t('email')}:</span>
-                <a href="mailto:info@orchidagroup.com" className="block text-xs hover:text-orchida-red transition-colors">
+                <span className="font-semibold text-gray-300">
+                  {t("email")}:
+                </span>
+                <a
+                  href="mailto:info@orchidagroup.com"
+                  className="block text-xs hover:text-orchida-red transition-colors"
+                >
                   info@orchidagroup.com
                 </a>
               </li>
@@ -75,7 +128,13 @@ export function Footer() {
 
         {/* Bottom Footer */}
         <div className="mt-12 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} <span className="text-white font-semibold">Orchida International Company</span>. {t('allRightsReserved')}</p>
+          <p>
+            &copy; {new Date().getFullYear()}{" "}
+            <span className="text-white font-semibold">
+              Orchida International Company
+            </span>
+            . {t("allRightsReserved")}
+          </p>
         </div>
       </div>
     </footer>

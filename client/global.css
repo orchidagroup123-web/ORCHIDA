@@ -22,16 +22,16 @@
     --popover-foreground: 0 0% 10%;
 
     /* Orchida Brand Colors */
-    --primary: 0 89% 48%;           /* Red #E31E24 */
+    --primary: 0 89% 48%; /* Red #E31E24 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 148 100% 25%;      /* Dark Green #006837 */
+    --secondary: 148 100% 25%; /* Dark Green #006837 */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 97.6%;            /* Light Gray #F9F9F9 */
+    --muted: 0 0% 97.6%; /* Light Gray #F9F9F9 */
     --muted-foreground: 0 0% 40%;
 
-    --accent: 52 100% 50%;          /* Yellow for accents */
+    --accent: 52 100% 50%; /* Yellow for accents */
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
@@ -118,14 +118,19 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Montserrat', sans-serif;
+    font-family: "Inter", "Montserrat", sans-serif;
   }
 
   html[dir="rtl"] body {
-    font-family: 'Cairo', 'Almarai', sans-serif;
+    font-family: "Cairo", "Almarai", sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: 700;
     line-height: 1.2;
   }
@@ -136,7 +141,7 @@
   html[dir="ltr"] h4,
   html[dir="ltr"] h5,
   html[dir="ltr"] h6 {
-    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-family: "Montserrat", "Inter", sans-serif;
   }
 
   html[dir="rtl"] h1,
@@ -145,7 +150,7 @@
   html[dir="rtl"] h4,
   html[dir="rtl"] h5,
   html[dir="rtl"] h6 {
-    font-family: 'Cairo', 'Almarai', sans-serif;
+    font-family: "Cairo", "Almarai", sans-serif;
   }
 
   :where(p, span, li, a, button, label, td, th) {

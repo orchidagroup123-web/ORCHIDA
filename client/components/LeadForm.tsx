@@ -1,40 +1,44 @@
-import { useState } from 'react';
-import { useTranslation } from '@/hooks/useTranslation';
-import { sectorsData } from '@/data/sectors';
+import { useState } from "react";
+import { useTranslation } from "@/hooks/useTranslation";
+import { sectorsData } from "@/data/sectors";
 
 export function LeadForm() {
   const { language } = useTranslation();
   const [formData, setFormData] = useState({
-    fullName: '',
-    company: '',
-    email: '',
-    countryCode: '+249',
-    phone: '',
-    sector: '',
-    inquiryType: '',
-    message: '',
+    fullName: "",
+    company: "",
+    email: "",
+    countryCode: "+249",
+    phone: "",
+    sector: "",
+    inquiryType: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const inquiryTypesAr = [
-    { value: 'partnership', label: 'شراكة استراتيجية' },
-    { value: 'supply', label: 'طلب توريد' },
-    { value: 'general', label: 'استفسار عام' },
+    { value: "partnership", label: "شراكة استراتيجية" },
+    { value: "supply", label: "طلب توريد" },
+    { value: "general", label: "استفسار عام" },
   ];
 
   const inquiryTypesEn = [
-    { value: 'partnership', label: 'Strategic Partnership' },
-    { value: 'supply', label: 'Supply Request' },
-    { value: 'general', label: 'General Inquiry' },
+    { value: "partnership", label: "Strategic Partnership" },
+    { value: "supply", label: "Supply Request" },
+    { value: "general", label: "General Inquiry" },
   ];
 
-  const inquiryTypes = language === 'ar' ? inquiryTypesAr : inquiryTypesEn;
+  const inquiryTypes = language === "ar" ? inquiryTypesAr : inquiryTypesEn;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -43,21 +47,21 @@ export function LeadForm() {
 
     // Simulate form submission
     setTimeout(() => {
-      console.log('Form submitted:', formData);
+      console.log("Form submitted:", formData);
       setSubmitted(true);
       setLoading(false);
-      
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setFormData({
-          fullName: '',
-          company: '',
-          email: '',
-          countryCode: '+249',
-          phone: '',
-          sector: '',
-          inquiryType: '',
-          message: '',
+          fullName: "",
+          company: "",
+          email: "",
+          countryCode: "+249",
+          phone: "",
+          sector: "",
+          inquiryType: "",
+          message: "",
         });
         setSubmitted(false);
       }, 3000);
@@ -71,13 +75,14 @@ export function LeadForm() {
           <div className="text-6xl">✅</div>
         </div>
         <h3 className="text-2xl font-bold text-orchida-green mb-2">
-          {language === 'ar' ? 'تم استقبال رسالتك بنجاح!' : 'Message sent successfully!'}
+          {language === "ar"
+            ? "تم استقبال رسالتك بنجاح!"
+            : "Message sent successfully!"}
         </h3>
         <p className="text-gray-600">
-          {language === 'ar'
-            ? 'سنقوم بالرد عليك في أقرب وقت'
-            : 'We will get back to you soon'
-          }
+          {language === "ar"
+            ? "سنقوم بالرد عليك في أقرب وقت"
+            : "We will get back to you soon"}
         </p>
       </div>
     );
@@ -89,7 +94,7 @@ export function LeadForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            {language === 'ar' ? 'الاسم الكامل' : 'Full Name'}
+            {language === "ar" ? "الاسم الكامل" : "Full Name"}
           </label>
           <input
             type="text"
@@ -98,12 +103,14 @@ export function LeadForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orchida-red focus:border-transparent"
-            placeholder={language === 'ar' ? 'أدخل اسمك الكامل' : 'Enter your full name'}
+            placeholder={
+              language === "ar" ? "أدخل اسمك الكامل" : "Enter your full name"
+            }
           />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            {language === 'ar' ? 'اسم الشركة' : 'Company Name'}
+            {language === "ar" ? "اسم الشركة" : "Company Name"}
           </label>
           <input
             type="text"
@@ -111,7 +118,7 @@ export function LeadForm() {
             value={formData.company}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orchida-red focus:border-transparent"
-            placeholder={language === 'ar' ? 'اسم شركتك' : 'Your company name'}
+            placeholder={language === "ar" ? "اسم شركتك" : "Your company name"}
           />
         </div>
       </div>
@@ -120,7 +127,7 @@ export function LeadForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            {language === 'ar' ? 'البريد الإلكتروني' : 'Email Address'}
+            {language === "ar" ? "البريد الإلكتروني" : "Email Address"}
           </label>
           <input
             type="email"
@@ -129,12 +136,14 @@ export function LeadForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orchida-red focus:border-transparent"
-            placeholder={language === 'ar' ? 'بريدك الإلكتروني' : 'your@email.com'}
+            placeholder={
+              language === "ar" ? "بريدك الإلكتروني" : "your@email.com"
+            }
           />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            {language === 'ar' ? 'رقم الهاتف' : 'Phone Number'}
+            {language === "ar" ? "رقم الهاتف" : "Phone Number"}
           </label>
           <div className="flex gap-2">
             <select
@@ -156,7 +165,7 @@ export function LeadForm() {
               onChange={handleChange}
               required
               className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orchida-red focus:border-transparent"
-              placeholder={language === 'ar' ? 'رقمك' : 'Phone number'}
+              placeholder={language === "ar" ? "رقمك" : "Phone number"}
             />
           </div>
         </div>
@@ -166,7 +175,7 @@ export function LeadForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            {language === 'ar' ? 'القطاع المهتم به' : 'Interested Sector'}
+            {language === "ar" ? "القطاع المهتم به" : "Interested Sector"}
           </label>
           <select
             name="sector"
@@ -176,18 +185,18 @@ export function LeadForm() {
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orchida-red focus:border-transparent"
           >
             <option value="">
-              {language === 'ar' ? 'اختر القطاع' : 'Select a sector'}
+              {language === "ar" ? "اختر القطاع" : "Select a sector"}
             </option>
-            {sectorsData.map(sector => (
+            {sectorsData.map((sector) => (
               <option key={sector.id} value={sector.id}>
-                {language === 'ar' ? sector.nameAr : sector.nameEn}
+                {language === "ar" ? sector.nameAr : sector.nameEn}
               </option>
             ))}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            {language === 'ar' ? 'نوع الاستفسار' : 'Inquiry Type'}
+            {language === "ar" ? "نوع الاستفسار" : "Inquiry Type"}
           </label>
           <select
             name="inquiryType"
@@ -197,9 +206,9 @@ export function LeadForm() {
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orchida-red focus:border-transparent"
           >
             <option value="">
-              {language === 'ar' ? 'اختر نوع الاستفسار' : 'Select inquiry type'}
+              {language === "ar" ? "اختر نوع الاستفسار" : "Select inquiry type"}
             </option>
-            {inquiryTypes.map(type => (
+            {inquiryTypes.map((type) => (
               <option key={type.value} value={type.value}>
                 {type.label}
               </option>
@@ -211,7 +220,7 @@ export function LeadForm() {
       {/* Message */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
-          {language === 'ar' ? 'رسالتك' : 'Message'}
+          {language === "ar" ? "رسالتك" : "Message"}
         </label>
         <textarea
           name="message"
@@ -220,7 +229,11 @@ export function LeadForm() {
           required
           rows={5}
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orchida-red focus:border-transparent resize-none"
-          placeholder={language === 'ar' ? 'اكتب رسالتك هنا...' : 'Type your message here...'}
+          placeholder={
+            language === "ar"
+              ? "اكتب رسالتك هنا..."
+              : "Type your message here..."
+          }
         />
       </div>
 
@@ -232,23 +245,39 @@ export function LeadForm() {
       >
         {loading ? (
           <span className="flex items-center justify-center gap-2">
-            <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            <svg
+              className="animate-spin h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
             </svg>
-            {language === 'ar' ? 'جاري الإرسال...' : 'Sending...'}
+            {language === "ar" ? "جاري الإرسال..." : "Sending..."}
           </span>
+        ) : language === "ar" ? (
+          "إرسال الرسالة"
         ) : (
-          language === 'ar' ? 'إرسال الرسالة' : 'Send Message'
+          "Send Message"
         )}
       </button>
 
       {/* Privacy Notice */}
       <p className="text-sm text-gray-500 text-center">
-        {language === 'ar'
-          ? 'نحن نحترم خصوصيتك. سيتم استخدام بيانات الاتصال الخاصة بك فقط للرد على استفسارك.'
-          : 'We respect your privacy. Your contact information will only be used to respond to your inquiry.'
-        }
+        {language === "ar"
+          ? "نحن نحترم خصوصيتك. سيتم استخدام بيانات الاتصال الخاصة بك فقط للرد على استفسارك."
+          : "We respect your privacy. Your contact information will only be used to respond to your inquiry."}
       </p>
     </form>
   );

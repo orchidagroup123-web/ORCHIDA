@@ -1,5 +1,5 @@
-import { Layout } from '@/components/Layout';
-import { useTranslation } from '@/hooks/useTranslation';
+import { Layout } from "@/components/Layout";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface PlaceholderProps {
   title: string;
@@ -17,18 +17,26 @@ export function Placeholder({ title, description }: PlaceholderProps) {
             {title}
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            {description || t('pageInDevelopment')}
+            {description || t("pageInDevelopment")}
           </p>
           <div className="inline-block">
             <div className="w-16 h-16 bg-orchida-red/20 rounded-full flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-orchida-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <svg
+                className="w-8 h-8 text-orchida-red"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
               </svg>
             </div>
           </div>
-          <p className="text-gray-500">
-            Tell us what you'd like to see here!
-          </p>
+          <p className="text-gray-500">Tell us what you'd like to see here!</p>
         </div>
       </div>
     </Layout>

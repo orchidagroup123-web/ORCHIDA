@@ -1,13 +1,13 @@
-import { Layout } from '@/components/Layout';
-import { useParams, Link } from 'react-router-dom';
-import { useTranslation } from '@/hooks/useTranslation';
-import { sectorsData } from '@/data/sectors';
+import { Layout } from "@/components/Layout";
+import { useParams, Link } from "react-router-dom";
+import { useTranslation } from "@/hooks/useTranslation";
+import { sectorsData } from "@/data/sectors";
 
 export default function SectorDetail() {
   const { id } = useParams<{ id: string }>();
   const { language } = useTranslation();
 
-  const sector = sectorsData.find(s => s.id === id);
+  const sector = sectorsData.find((s) => s.id === id);
 
   if (!sector) {
     return (
@@ -15,13 +15,13 @@ export default function SectorDetail() {
         <div className="min-h-[calc(100vh-theme(height.20)-theme(height.64))] flex items-center justify-center bg-gray-50">
           <div className="max-w-2xl mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              {language === 'ar' ? 'القطاع غير موجود' : 'Sector not found'}
+              {language === "ar" ? "القطاع غير موجود" : "Sector not found"}
             </h1>
             <Link
               to="/"
               className="inline-block px-8 py-3 bg-orchida-red hover:bg-red-700 text-white font-bold rounded-lg transition-colors"
             >
-              {language === 'ar' ? 'العودة للرئيسية' : 'Back to Home'}
+              {language === "ar" ? "العودة للرئيسية" : "Back to Home"}
             </Link>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function SectorDetail() {
           <div className="text-center">
             <div className="text-6xl mb-4">{sector.iconEmoji}</div>
             <h1 className="text-5xl font-bold text-white">
-              {language === 'ar' ? sector.nameAr : sector.nameEn}
+              {language === "ar" ? sector.nameAr : sector.nameEn}
             </h1>
           </div>
         </div>
@@ -53,13 +53,13 @@ export default function SectorDetail() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Title */}
         <h2 className="text-4xl font-bold text-orchida-red mb-8 text-center">
-          {language === 'ar' ? sector.titleAr : sector.titleEn}
+          {language === "ar" ? sector.titleAr : sector.titleEn}
         </h2>
 
         {/* Description */}
         <div className="prose prose-lg max-w-none mb-12">
           <p className="text-lg text-gray-700 leading-relaxed text-justify">
-            {language === 'ar' ? sector.fullContentAr : sector.fullContentEn}
+            {language === "ar" ? sector.fullContentAr : sector.fullContentEn}
           </p>
         </div>
 
@@ -68,37 +68,34 @@ export default function SectorDetail() {
           <div className="text-center p-6 bg-gray-50 rounded-lg">
             <div className="text-4xl mb-4">{sector.iconEmoji}</div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              {language === 'ar' ? 'التميز' : 'Excellence'}
+              {language === "ar" ? "التميز" : "Excellence"}
             </h3>
             <p className="text-gray-600">
-              {language === 'ar'
-                ? 'نطبق أعلى معايير الجودة والابتكار'
-                : 'We apply the highest standards of quality and innovation'
-              }
+              {language === "ar"
+                ? "نطبق أعلى معايير الجودة والابتكار"
+                : "We apply the highest standards of quality and innovation"}
             </p>
           </div>
           <div className="text-center p-6 bg-gray-50 rounded-lg">
             <div className="text-4xl mb-4">♻️</div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              {language === 'ar' ? 'الاستدامة' : 'Sustainability'}
+              {language === "ar" ? "الاستدامة" : "Sustainability"}
             </h3>
             <p className="text-gray-600">
-              {language === 'ar'
-                ? 'التزام بحماية البيئة والموارد الطبيعية'
-                : 'Commitment to protecting the environment and natural resources'
-              }
+              {language === "ar"
+                ? "التزام بحماية البيئة والموارد الطبيعية"
+                : "Commitment to protecting the environment and natural resources"}
             </p>
           </div>
           <div className="text-center p-6 bg-gray-50 rounded-lg">
             <div className="text-4xl mb-4">🤝</div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              {language === 'ar' ? 'الشراكة' : 'Partnership'}
+              {language === "ar" ? "الشراكة" : "Partnership"}
             </h3>
             <p className="text-gray-600">
-              {language === 'ar'
-                ? 'نبني علاقات طويلة الأمد مع عملائنا'
-                : 'We build long-term relationships with our clients'
-              }
+              {language === "ar"
+                ? "نبني علاقات طويلة الأمد مع عملائنا"
+                : "We build long-term relationships with our clients"}
             </p>
           </div>
         </div>
@@ -106,13 +103,15 @@ export default function SectorDetail() {
         {/* CTA */}
         <div className="text-center mt-16 pt-8 border-t border-gray-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            {language === 'ar' ? 'هل تريد معرفة المزيد؟' : 'Want to learn more?'}
+            {language === "ar"
+              ? "هل تريد معرفة المزيد؟"
+              : "Want to learn more?"}
           </h3>
           <Link
             to="/contact"
             className="inline-block px-8 py-4 bg-orchida-red hover:bg-red-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105"
           >
-            {language === 'ar' ? 'اتصل بنا' : 'Contact Us'}
+            {language === "ar" ? "اتصل بنا" : "Contact Us"}
           </Link>
         </div>
 
@@ -122,7 +121,7 @@ export default function SectorDetail() {
             to="/"
             className="inline-block text-orchida-red hover:text-red-700 font-bold transition-colors"
           >
-            {language === 'ar' ? '← العودة للرئيسية' : '← Back to Home'}
+            {language === "ar" ? "← العودة للرئيسية" : "← Back to Home"}
           </Link>
         </div>
       </div>

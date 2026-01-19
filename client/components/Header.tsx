@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useState } from "react";
 
 export function Header() {
   const { t } = useTranslation();
@@ -9,11 +9,11 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: t('home'), href: '/' },
-    { label: t('about'), href: '/about' },
-    { label: t('sectors'), href: '/sectors' },
-    { label: t('media'), href: '/media' },
-    { label: t('contact'), href: '/contact' },
+    { label: t("home"), href: "/" },
+    { label: t("about"), href: "/about" },
+    { label: t("sectors"), href: "/sectors" },
+    { label: t("media"), href: "/media" },
+    { label: t("contact"), href: "/contact" },
   ];
 
   return (
@@ -21,7 +21,10 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity">
+          <Link
+            to="/"
+            className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity"
+          >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fe6b25b3b6acc427391d5fe4bf3607aef?format=webp&width=800"
               alt="Orchida Group"
@@ -46,10 +49,10 @@ export function Header() {
           {/* Language Switcher & Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <button
-              onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+              onClick={() => setLanguage(language === "en" ? "ar" : "en")}
               className="px-4 py-2 rounded-lg bg-gradient-to-r from-orchida-red/10 to-orchida-green/10 hover:from-orchida-red/20 hover:to-orchida-green/20 text-sm font-semibold text-gray-800 transition-all duration-300 border border-orchida-red/20"
             >
-              {t('language')}
+              {t("language")}
             </button>
 
             {/* Mobile Menu Button */}

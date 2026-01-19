@@ -1,7 +1,7 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { sectorsData } from '@/data/sectors';
+import { useTranslation } from "@/hooks/useTranslation";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { sectorsData } from "@/data/sectors";
 
 export function SectorsSection() {
   const { t, language } = useTranslation();
@@ -20,17 +20,18 @@ export function SectorsSection() {
         <div className="text-center mb-24">
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
-            <span className="text-orchida-red font-bold text-sm uppercase tracking-wider">قطاعاتنا</span>
+            <span className="text-orchida-red font-bold text-sm uppercase tracking-wider">
+              قطاعاتنا
+            </span>
             <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
           </div>
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
-            {t('sectors')}
+            {t("sectors")}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
-            {language === 'ar'
-              ? 'نستثمر في ستة قطاعات رئيسية لتحقيق النمو المستدام والابتكار المستمر'
-              : 'We invest in six key sectors to achieve sustainable growth and continuous innovation'
-            }
+            {language === "ar"
+              ? "نستثمر في ستة قطاعات رئيسية لتحقيق النمو المستدام والابتكار المستمر"
+              : "We invest in six key sectors to achieve sustainable growth and continuous innovation"}
           </p>
         </div>
 
@@ -69,18 +70,28 @@ export function SectorsSection() {
 
                   {/* Title with better visibility */}
                   <h3 className="text-2xl md:text-3xl font-bold text-white text-center px-4 leading-tight drop-shadow-lg transition-all duration-500 group-hover:text-orchida-red">
-                    {language === 'ar' ? sector.nameAr : sector.nameEn}
+                    {language === "ar" ? sector.nameAr : sector.nameEn}
                   </h3>
 
                   {/* Hover Indicator */}
                   <div
                     className={`absolute bottom-6 text-white text-sm font-semibold transition-all duration-500 flex items-center gap-2 ${
-                      hoveredId === sector.id ? 'opacity-100' : 'opacity-0'
+                      hoveredId === sector.id ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     <span>اكتشف المزيد</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -88,7 +99,7 @@ export function SectorsSection() {
                 {/* Hover Overlay - Description */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br from-orchida-red via-red-600 to-orchida-green p-8 flex flex-col items-center justify-center transition-all duration-700 ${
-                    hoveredId === sector.id ? 'opacity-100' : 'opacity-0'
+                    hoveredId === sector.id ? "opacity-100" : "opacity-0"
                   }`}
                 >
                   {/* Decorative top border */}
@@ -96,13 +107,23 @@ export function SectorsSection() {
 
                   <div className="text-center space-y-6">
                     <p className="text-white text-center font-light text-lg leading-relaxed line-clamp-4">
-                      {language === 'ar' ? sector.titleAr : sector.titleEn}
+                      {language === "ar" ? sector.titleAr : sector.titleEn}
                     </p>
 
                     <button className="px-8 py-3 bg-white text-orchida-red font-bold rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl shadow-lg flex items-center gap-2 mx-auto group/btn">
-                      <span>{t('readMore')}</span>
-                      <svg className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      <span>{t("readMore")}</span>
+                      <svg
+                        className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
                       </svg>
                     </button>
                   </div>

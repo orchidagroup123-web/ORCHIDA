@@ -1,5 +1,5 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from "@/hooks/useTranslation";
+import { useEffect, useRef, useState } from "react";
 
 interface StatItem {
   value: number;
@@ -10,18 +10,18 @@ interface StatItem {
 const stats: StatItem[] = [
   {
     value: 20,
-    suffix: '+',
-    labelKey: 'yearsOfExperience',
+    suffix: "+",
+    labelKey: "yearsOfExperience",
   },
   {
     value: 500,
-    suffix: '+',
-    labelKey: 'employees',
+    suffix: "+",
+    labelKey: "employees",
   },
   {
     value: 10,
-    suffix: '+',
-    labelKey: 'countries',
+    suffix: "+",
+    labelKey: "countries",
   },
 ];
 
@@ -38,7 +38,7 @@ function AnimatedCounter({ stat }: { stat: StatItem & { label: string } }) {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {
@@ -95,9 +95,9 @@ export function StatsSection() {
             Our Impact by Numbers
           </h2>
           <p className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
-            {t('language') === 'ar'
-              ? 'شاهد مدى تأثيرنا العالمي والنمو المستمر'
-              : 'Discover our global impact and continued growth'}
+            {t("language") === "ar"
+              ? "شاهد مدى تأثيرنا العالمي والنمو المستمر"
+              : "Discover our global impact and continued growth"}
           </p>
         </div>
 
@@ -114,7 +114,11 @@ export function StatsSection() {
         {/* Description */}
         <div className="mt-16 text-center max-w-3xl mx-auto">
           <p className="text-lg text-gray-700">
-            Orchida International Company has established itself as a leading multi-sector conglomerate with a proven track record of excellence, innovation, and sustainable growth across agriculture, mining, international trade, livestock, fisheries, and infrastructure development.
+            Orchida International Company has established itself as a leading
+            multi-sector conglomerate with a proven track record of excellence,
+            innovation, and sustainable growth across agriculture, mining,
+            international trade, livestock, fisheries, and infrastructure
+            development.
           </p>
         </div>
       </div>

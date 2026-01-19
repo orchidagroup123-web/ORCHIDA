@@ -1,28 +1,60 @@
-import { Layout } from '@/components/Layout';
-import { useTranslation } from '@/hooks/useTranslation';
+import { Layout } from "@/components/Layout";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function AboutPage() {
   const { language } = useTranslation();
 
   const timelineAr = [
-    { year: '2004', title: 'التأسيس', description: 'انطلاق رحلة أوركيد الدولية' },
-    { year: '2008', title: 'التوسع', description: 'دخول قطاع التعدين' },
-    { year: '2012', title: 'الاستثمار', description: 'استثمارات في البنية التحتية' },
-    { year: '2016', title: 'النمو', description: 'توسع العمليات اللوجستية' },
-    { year: '2020', title: 'الابتكار', description: 'استخدام تقنيات ذكية' },
-    { year: '2024', title: 'الريادة', description: 'موقع عالمي متميز' },
+    {
+      year: "2004",
+      title: "التأسيس",
+      description: "انطلاق رحلة أوركيد الدولية",
+    },
+    { year: "2008", title: "التوسع", description: "دخول قطاع التعدين" },
+    {
+      year: "2012",
+      title: "الاستثمار",
+      description: "استثمارات في البنية التحتية",
+    },
+    { year: "2016", title: "النمو", description: "توسع العمليات اللوجستية" },
+    { year: "2020", title: "الابتكار", description: "استخدام تقنيات ذكية" },
+    { year: "2024", title: "الريادة", description: "موقع عالمي متميز" },
   ];
 
   const timelineEn = [
-    { year: '2004', title: 'Establishment', description: 'Launch of Orchida International' },
-    { year: '2008', title: 'Expansion', description: 'Entry into mining sector' },
-    { year: '2012', title: 'Investment', description: 'Infrastructure investments' },
-    { year: '2016', title: 'Growth', description: 'Expansion of logistics operations' },
-    { year: '2020', title: 'Innovation', description: 'Implementation of smart technologies' },
-    { year: '2024', title: 'Leadership', description: 'Distinguished global position' },
+    {
+      year: "2004",
+      title: "Establishment",
+      description: "Launch of Orchida International",
+    },
+    {
+      year: "2008",
+      title: "Expansion",
+      description: "Entry into mining sector",
+    },
+    {
+      year: "2012",
+      title: "Investment",
+      description: "Infrastructure investments",
+    },
+    {
+      year: "2016",
+      title: "Growth",
+      description: "Expansion of logistics operations",
+    },
+    {
+      year: "2020",
+      title: "Innovation",
+      description: "Implementation of smart technologies",
+    },
+    {
+      year: "2024",
+      title: "Leadership",
+      description: "Distinguished global position",
+    },
   ];
 
-  const timeline = language === 'ar' ? timelineAr : timelineEn;
+  const timeline = language === "ar" ? timelineAr : timelineEn;
 
   return (
     <Layout>
@@ -32,8 +64,9 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-attachment-fixed"
           style={{
-            backgroundImage: 'linear-gradient(135deg, rgba(227, 30, 36, 0.15) 0%, rgba(0, 104, 55, 0.15) 100%), url("https://images.unsplash.com/photo-1552664730-d307ca884978?w=1500&h=800&fit=crop")',
-            backgroundAttachment: 'fixed',
+            backgroundImage:
+              'linear-gradient(135deg, rgba(227, 30, 36, 0.15) 0%, rgba(0, 104, 55, 0.15) 100%), url("https://images.unsplash.com/photo-1552664730-d307ca884978?w=1500&h=800&fit=crop")',
+            backgroundAttachment: "fixed",
           }}
         />
 
@@ -52,33 +85,40 @@ export default function AboutPage() {
           {/* Decorative Top Line */}
           <div className="flex justify-center items-center gap-4 mb-8">
             <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
-            <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">Orchida Group</span>
+            <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">
+              Orchida Group
+            </span>
             <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
           </div>
 
           <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl leading-tight">
-            {language === 'ar' ? 'عن مجموعة أوركيد' : 'About Orchida Group'}
+            {language === "ar" ? "عن مجموعة أوركيد" : "About Orchida Group"}
           </h1>
           <p className="text-2xl text-white/95 drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
-            {language === 'ar'
-              ? 'رحلة من الابتكار والالتزام بالتميز والاستدامة'
-              : 'A journey of innovation, commitment to excellence and sustainability'
-            }
+            {language === "ar"
+              ? "رحلة من الابتكار والالتزام بالتميز والاستدامة"
+              : "A journey of innovation, commitment to excellence and sustainability"}
           </p>
 
           {/* Stats Pills */}
           <div className="mt-12 flex flex-wrap justify-center gap-4 md:gap-6">
             <div className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-orchida-red/50 transition-all">
               <span className="text-2xl font-bold text-orchida-red">20+</span>
-              <p className="text-white/80 text-sm">{language === 'ar' ? 'سنة خبرة' : 'Years of Experience'}</p>
+              <p className="text-white/80 text-sm">
+                {language === "ar" ? "سنة خبرة" : "Years of Experience"}
+              </p>
             </div>
             <div className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-orchida-green/50 transition-all">
               <span className="text-2xl font-bold text-orchida-green">6</span>
-              <p className="text-white/80 text-sm">{language === 'ar' ? 'قطاعات عمل' : 'Business Sectors'}</p>
+              <p className="text-white/80 text-sm">
+                {language === "ar" ? "قطاعات عمل" : "Business Sectors"}
+              </p>
             </div>
             <div className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-orchida-red/50 transition-all">
               <span className="text-2xl font-bold text-orchida-red">500+</span>
-              <p className="text-white/80 text-sm">{language === 'ar' ? 'موظف' : 'Team Members'}</p>
+              <p className="text-white/80 text-sm">
+                {language === "ar" ? "موظف" : "Team Members"}
+              </p>
             </div>
           </div>
         </div>
@@ -107,16 +147,19 @@ export default function AboutPage() {
             <div>
               <div className="inline-flex items-center gap-2 mb-4">
                 <div className="h-1 w-8 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
-                <span className="text-orchida-red font-bold text-xs uppercase tracking-wider">Message</span>
+                <span className="text-orchida-red font-bold text-xs uppercase tracking-wider">
+                  Message
+                </span>
               </div>
               <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
-                {language === 'ar' ? 'كلمة رئيس مجلس الإدارة' : "Chairman's Message"}
+                {language === "ar"
+                  ? "كلمة رئيس مجلس الإدارة"
+                  : "Chairman's Message"}
               </h2>
               <p className="text-2xl italic text-orchida-red font-light mb-4 leading-relaxed">
-                {language === 'ar'
+                {language === "ar"
                   ? '"من الأرضِ نبدأ.. وإلى المستقبلِ نمضي"'
-                  : '"From the Earth We Begin... To the Future We Proceed"'
-                }
+                  : '"From the Earth We Begin... To the Future We Proceed"'}
               </p>
               <div className="w-16 h-1 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full mb-6"></div>
             </div>
@@ -125,34 +168,66 @@ export default function AboutPage() {
           {/* Full Message */}
           <div className="bg-gradient-to-br from-gray-50 to-white p-12 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-500">
             <div className="space-y-6 text-gray-700 leading-relaxed text-justify">
-              {language === 'ar' ? (
+              {language === "ar" ? (
                 <>
                   <p>
-                    منذ التأسيس، وضعت مجموعة أوركيد نصب عينيها هدفاً واضحاً: أن تكون شريكاً فاعلاً في مسيرة التنمية الاقتصادية الشاملة. نحن لا ننظر إلى نشاطاتنا في الزراعة والتعدين والبنية التحتية والتجارة كمجرد قطاعات استثمارية، بل نراها ركائز أساسية لبناء مستقبل أكثر استدامة وقوة لأوطاننا وللأجيال القادمة.
+                    منذ التأسيس، وضعت مجموعة أوركيد نصب عينيها هدفاً واضحاً: أن
+                    تكون شريكاً فاعلاً في مسيرة التنمية الاقتصادية الشاملة. نحن
+                    لا ننظر إلى نشاطاتنا في الزراعة والتعدين والبنية التحتية
+                    والتجارة كمجرد قطاعات استثمارية، بل نراها ركائز أساسية لبناء
+                    مستقبل أكثر استدامة وقوة لأوطاننا وللأجيال القادمة.
                   </p>
                   <p>
-                    إن عالمنا اليوم يتغير بسرعة، والتحديات التي تواجه الأمن الغذائي والطاقة وسلاسل التوريد تتطلب حلولاً غير تقليدية. ومن هنا، اتخذنا في المجموعة منهجية تعتمد على "الابتكار المسؤول"؛ حيث ندمج بين الخبرات الميدانية العميقة وبين أحدث التقنيات العالمية لضمان أعلى مستويات الكفاءة والاحترافية.
+                    إن عالمنا اليوم يتغير بسرعة، والتحديات التي تواجه الأمن
+                    الغذائي والطاقة وسلاسل التوريد تتطلب حلولاً غير تقليدية. ومن
+                    هنا، اتخذنا في المجموعة منهجية تعتمد على "الابتكار المسؤول"؛
+                    حيث ندمج بين الخبرات الميدانية العميقة وبين أحدث التقنيات
+                    العالمية لضمان أعلى مستويات الكفاءة والاحترافية.
                   </p>
                   <p>
-                    إن فخرنا الحقيقي لا يكمن فقط في حجم مشاريعنا أو انتشارنا الجغرافي، بل في الثقة التي يوليها لنا شركاؤنا، وفي الأثر الإيجابي الذي نتركه في البيئة والمجتمعات التي نعمل بها. نحن في أوركيد نؤمن بأن النجاح رحلة مستمرة، وبأن التزامنا بالنزاهة والجودة هو البوصلة التي تقودنا دائماً نحو القمة.
+                    إن فخرنا الحقيقي لا يكمن فقط في حجم مشاريعنا أو انتشارنا
+                    الجغرافي، بل في الثقة التي يوليها لنا شركاؤنا، وفي الأثر
+                    الإيجابي الذي نتركه في البيئة والمجتمعات التي نعمل بها. نحن
+                    في أوركيد نؤمن بأن النجاح رحلة مستمرة، وبأن التزامنا
+                    بالنزاهة والجودة هو البوصلة التي تقودنا دائماً نحو القمة.
                   </p>
                   <p>
-                    نرحب بكم في عالم أوركيد، وندعوكم لتكونوا جزءاً من طموحنا الذي لا يحده سقف.
+                    نرحب بكم في عالم أوركيد، وندعوكم لتكونوا جزءاً من طموحنا
+                    الذي لا يحده سقف.
                   </p>
                 </>
               ) : (
                 <>
                   <p>
-                    Since its establishment, Orchida Group has set a clear objective: to be an active partner in comprehensive economic development. We do not view our activities in agriculture, mining, infrastructure, and trade as mere investment sectors, but as essential pillars for building a more sustainable and stronger future for our nations and future generations.
+                    Since its establishment, Orchida Group has set a clear
+                    objective: to be an active partner in comprehensive economic
+                    development. We do not view our activities in agriculture,
+                    mining, infrastructure, and trade as mere investment
+                    sectors, but as essential pillars for building a more
+                    sustainable and stronger future for our nations and future
+                    generations.
                   </p>
                   <p>
-                    Today's world is changing rapidly, and the challenges facing food security, energy, and supply chains require unconventional solutions. Therefore, we have adopted a methodology based on "responsible innovation," where we combine deep field expertise with the latest global technologies to ensure the highest levels of efficiency and professionalism.
+                    Today's world is changing rapidly, and the challenges facing
+                    food security, energy, and supply chains require
+                    unconventional solutions. Therefore, we have adopted a
+                    methodology based on "responsible innovation," where we
+                    combine deep field expertise with the latest global
+                    technologies to ensure the highest levels of efficiency and
+                    professionalism.
                   </p>
                   <p>
-                    Our true pride lies not only in the scale of our projects or our geographic presence, but in the trust our partners place in us and the positive impact we leave on the environment and communities where we operate. At Orchida, we believe success is a continuous journey, and our commitment to integrity and quality is the compass that always guides us toward the top.
+                    Our true pride lies not only in the scale of our projects or
+                    our geographic presence, but in the trust our partners place
+                    in us and the positive impact we leave on the environment
+                    and communities where we operate. At Orchida, we believe
+                    success is a continuous journey, and our commitment to
+                    integrity and quality is the compass that always guides us
+                    toward the top.
                   </p>
                   <p>
-                    We welcome you to the world of Orchida and invite you to become part of our boundless ambition.
+                    We welcome you to the world of Orchida and invite you to
+                    become part of our boundless ambition.
                   </p>
                 </>
               )}
@@ -174,17 +249,20 @@ export default function AboutPage() {
           <div className="text-center mb-24">
             <div className="inline-flex items-center gap-3 mb-8">
               <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
-              <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">Foundation</span>
+              <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">
+                Foundation
+              </span>
               <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              {language === 'ar' ? 'الرؤية والرسالة والقيم' : 'Vision, Mission & Values'}
+              {language === "ar"
+                ? "الرؤية والرسالة والقيم"
+                : "Vision, Mission & Values"}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {language === 'ar'
-                ? 'الأساس الذي يرشد كل قراراتنا واستراتيجياتنا'
-                : 'The foundation that guides every decision and strategy'
-              }
+              {language === "ar"
+                ? "الأساس الذي يرشد كل قراراتنا واستراتيجياتنا"
+                : "The foundation that guides every decision and strategy"}
             </p>
           </div>
 
@@ -198,13 +276,12 @@ export default function AboutPage() {
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="text-5xl mb-4">🎯</div>
                   <h3 className="text-2xl font-bold text-orchida-red mb-4 group-hover:text-orchida-red transition-colors">
-                    {language === 'ar' ? 'الرؤية' : 'Vision'}
+                    {language === "ar" ? "الرؤية" : "Vision"}
                   </h3>
                   <p className="text-gray-600 leading-relaxed flex-grow group-hover:text-gray-700 transition-colors">
-                    {language === 'ar'
-                      ? 'أن نكون مجموعة متعددة القطاعات رائدة عالمياً، نشكل مستقبلاً مستداماً من خلال الابتكار المسؤول والتميز التشغيلي.'
-                      : 'To be a globally leading multi-sector group shaping a sustainable future through responsible innovation and operational excellence.'
-                    }
+                    {language === "ar"
+                      ? "أن نكون مجموعة متعددة القطاعات رائدة عالمياً، نشكل مستقبلاً مستداماً من خلال الابتكار المسؤول والتميز التشغيلي."
+                      : "To be a globally leading multi-sector group shaping a sustainable future through responsible innovation and operational excellence."}
                   </p>
                 </div>
               </div>
@@ -219,13 +296,12 @@ export default function AboutPage() {
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="text-5xl mb-4">🚀</div>
                   <h3 className="text-2xl font-bold text-orchida-green mb-4 group-hover:text-orchida-red transition-colors">
-                    {language === 'ar' ? 'الرسالة' : 'Mission'}
+                    {language === "ar" ? "الرسالة" : "Mission"}
                   </h3>
                   <p className="text-gray-600 leading-relaxed flex-grow group-hover:text-gray-700 transition-colors">
-                    {language === 'ar'
-                      ? 'توفير حلول متكاملة وعالية الجودة عبر قطاعاتنا الستة لدعم الأمن الغذائي والطاقي والتنمية الاقتصادية المستدامة.'
-                      : 'Provide integrated, high-quality solutions across our six sectors to support food security, energy sustainability, and economic development.'
-                    }
+                    {language === "ar"
+                      ? "توفير حلول متكاملة وعالية الجودة عبر قطاعاتنا الستة لدعم الأمن الغذائي والطاقي والتنمية الاقتصادية المستدامة."
+                      : "Provide integrated, high-quality solutions across our six sectors to support food security, energy sustainability, and economic development."}
                   </p>
                 </div>
               </div>
@@ -240,22 +316,54 @@ export default function AboutPage() {
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="text-5xl mb-4">⭐</div>
                   <h3 className="text-2xl font-bold text-orchida-red mb-4 group-hover:text-orchida-red transition-colors">
-                    {language === 'ar' ? 'القيم' : 'Values'}
+                    {language === "ar" ? "القيم" : "Values"}
                   </h3>
                   <ul className="text-gray-600 space-y-2 text-sm flex-grow group-hover:text-gray-700 transition-colors">
-                    {language === 'ar' ? (
+                    {language === "ar" ? (
                       <>
-                        <li className="flex items-center gap-2"><span className="text-orchida-red font-bold">✓</span> النزاهة والشفافية</li>
-                        <li className="flex items-center gap-2"><span className="text-orchida-green font-bold">✓</span> الابتكار المستمر</li>
-                        <li className="flex items-center gap-2"><span className="text-orchida-red font-bold">✓</span> الاستدامة البيئية</li>
-                        <li className="flex items-center gap-2"><span className="text-orchida-green font-bold">✓</span> التميز والجودة</li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-orchida-red font-bold">✓</span>{" "}
+                          النزاهة والشفافية
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-orchida-green font-bold">
+                            ✓
+                          </span>{" "}
+                          الابتكار المستمر
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-orchida-red font-bold">✓</span>{" "}
+                          الاستدامة البيئية
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-orchida-green font-bold">
+                            ✓
+                          </span>{" "}
+                          التميز والجودة
+                        </li>
                       </>
                     ) : (
                       <>
-                        <li className="flex items-center gap-2"><span className="text-orchida-red font-bold">✓</span> Integrity & Transparency</li>
-                        <li className="flex items-center gap-2"><span className="text-orchida-green font-bold">✓</span> Continuous Innovation</li>
-                        <li className="flex items-center gap-2"><span className="text-orchida-red font-bold">✓</span> Environmental Sustainability</li>
-                        <li className="flex items-center gap-2"><span className="text-orchida-green font-bold">✓</span> Excellence & Quality</li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-orchida-red font-bold">✓</span>{" "}
+                          Integrity & Transparency
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-orchida-green font-bold">
+                            ✓
+                          </span>{" "}
+                          Continuous Innovation
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-orchida-red font-bold">✓</span>{" "}
+                          Environmental Sustainability
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-orchida-green font-bold">
+                            ✓
+                          </span>{" "}
+                          Excellence & Quality
+                        </li>
                       </>
                     )}
                   </ul>
@@ -279,17 +387,20 @@ export default function AboutPage() {
           <div className="text-center mb-24">
             <div className="inline-flex items-center gap-3 mb-8">
               <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
-              <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">History</span>
+              <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">
+                History
+              </span>
               <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              {language === 'ar' ? 'رحلة النمو والتطور' : 'Journey of Growth & Evolution'}
+              {language === "ar"
+                ? "رحلة النمو والتطور"
+                : "Journey of Growth & Evolution"}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {language === 'ar'
-                ? 'عشرون سنة من الابتكار والتطور المستمر'
-                : 'Twenty years of continuous innovation and development'
-              }
+              {language === "ar"
+                ? "عشرون سنة من الابتكار والتطور المستمر"
+                : "Twenty years of continuous innovation and development"}
             </p>
           </div>
 
@@ -300,15 +411,20 @@ export default function AboutPage() {
             {/* Timeline Items */}
             <div className="space-y-12">
               {timeline.map((item, index) => (
-                <div key={index} className={`flex ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
+                <div
+                  key={index}
+                  className={`flex ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}
+                >
                   <div className="w-full lg:w-1/2 px-4">
                     <div
                       className={`group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orchida-red/30 ${
-                        index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'
+                        index % 2 === 0 ? "lg:text-right" : "lg:text-left"
                       }`}
                     >
                       {/* Background accent */}
-                      <div className={`absolute top-0 ${index % 2 === 0 ? 'left-0' : 'right-0'} w-32 h-32 bg-gradient-to-br from-orchida-red/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
+                      <div
+                        className={`absolute top-0 ${index % 2 === 0 ? "left-0" : "right-0"} w-32 h-32 bg-gradient-to-br from-orchida-red/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}
+                      ></div>
 
                       <div className="relative">
                         <div className="flex items-center gap-4 mb-3">
