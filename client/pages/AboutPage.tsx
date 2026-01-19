@@ -252,33 +252,81 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
-            {language === 'ar' ? 'رحلة النمو' : 'Journey of Growth'}
-          </h2>
+      <section className="relative py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-orchida-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-orchida-green rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
+              <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">History</span>
+              <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+              {language === 'ar' ? 'رحلة النمو والتطور' : 'Journey of Growth & Evolution'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {language === 'ar'
+                ? 'عشرون سنة من الابتكار والتطور المستمر'
+                : 'Twenty years of continuous innovation and development'
+              }
+            </p>
+          </div>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orchida-red to-orchida-green"></div>
+            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orchida-red via-orchida-green to-orchida-red"></div>
 
             {/* Timeline Items */}
-            <div className="space-y-8 md:space-y-12">
+            <div className="space-y-12">
               {timeline.map((item, index) => (
-                <div key={index} className={`flex ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="w-full md:w-1/2 px-4">
-                    <div className={`bg-gray-50 p-6 rounded-lg ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                      <h3 className="text-2xl font-bold text-orchida-red mb-2">{item.year}</h3>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h4>
-                      <p className="text-gray-600">{item.description}</p>
+                <div key={index} className={`flex ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className="w-full lg:w-1/2 px-4">
+                    <div
+                      className={`group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orchida-red/30 ${
+                        index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'
+                      }`}
+                    >
+                      {/* Background accent */}
+                      <div className={`absolute top-0 ${index % 2 === 0 ? 'left-0' : 'right-0'} w-32 h-32 bg-gradient-to-br from-orchida-red/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
+
+                      <div className="relative">
+                        <div className="flex items-center gap-4 mb-3">
+                          <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orchida-red to-orchida-green">
+                            {item.year}
+                          </div>
+                          <div className="hidden sm:block flex-1 h-1 bg-gradient-to-r from-orchida-red to-orchida-green opacity-30"></div>
+                        </div>
+                        <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orchida-red transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-600 group-hover:text-gray-700 transition-colors leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="hidden md:flex w-0 md:w-0 justify-center">
-                    <div className="w-4 h-4 bg-orchida-red rounded-full border-4 border-white absolute"></div>
+
+                  {/* Timeline Dot */}
+                  <div className="hidden lg:flex justify-center">
+                    <div className="relative flex items-center justify-center">
+                      <div className="w-6 h-6 bg-white border-4 border-orchida-red rounded-full absolute z-20 shadow-lg"></div>
+                      <div className="absolute w-12 h-12 bg-orchida-red/20 rounded-full animate-pulse"></div>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Bottom Accent */}
+          <div className="mt-20 flex justify-center">
+            <div className="h-1 w-24 bg-gradient-to-r from-orchida-red via-gray-900 to-orchida-green rounded-full"></div>
           </div>
         </div>
       </section>
