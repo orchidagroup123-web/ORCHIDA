@@ -25,7 +25,7 @@ const stats: StatItem[] = [
   },
 ];
 
-function AnimatedCounter({ stat }: { stat: StatItem }) {
+function AnimatedCounter({ stat }: { stat: StatItem & { label: string } }) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -71,7 +71,7 @@ function AnimatedCounter({ stat }: { stat: StatItem }) {
         <span className="text-4xl md:text-5xl ml-1">{stat.suffix}</span>
       </div>
       <p className="text-lg md:text-xl text-gray-600">
-        {stat.labelKey}
+        {stat.label}
       </p>
     </div>
   );
