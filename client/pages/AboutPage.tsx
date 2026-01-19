@@ -85,30 +85,45 @@ export default function AboutPage() {
       </div>
 
       {/* Chairman's Message */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
-            {/* Image Placeholder */}
-            <div className="bg-gradient-to-br from-gray-200 to-gray-300 h-80 rounded-lg flex items-center justify-center">
-              <div className="text-6xl">👔</div>
+      <section className="relative py-32 bg-white overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-72 h-72 bg-orchida-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-72 h-72 bg-orchida-green rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+            {/* Image with Professional Styling */}
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl group">
+              <div className="absolute inset-0 bg-gradient-to-br from-orchida-red/20 to-orchida-green/20 group-hover:from-orchida-red/30 group-hover:to-orchida-green/30 transition-all duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                <div className="text-9xl">👔</div>
+              </div>
+              <div className="absolute inset-0 border-4 border-white/20 group-hover:border-orchida-red/50 transition-all duration-500 rounded-2xl"></div>
             </div>
 
             {/* Content */}
             <div>
-              <h2 className="text-4xl font-bold text-orchida-red mb-4">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="h-1 w-8 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
+                <span className="text-orchida-red font-bold text-xs uppercase tracking-wider">Message</span>
+              </div>
+              <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
                 {language === 'ar' ? 'كلمة رئيس مجلس الإدارة' : "Chairman's Message"}
               </h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-2xl italic text-orchida-red font-light mb-4 leading-relaxed">
                 {language === 'ar'
                   ? '"من الأرضِ نبدأ.. وإلى المستقبلِ نمضي"'
                   : '"From the Earth We Begin... To the Future We Proceed"'
                 }
               </p>
+              <div className="w-16 h-1 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full mb-6"></div>
             </div>
           </div>
 
           {/* Full Message */}
-          <div className="bg-gray-50 p-8 rounded-lg">
+          <div className="bg-gradient-to-br from-gray-50 to-white p-12 rounded-2xl border border-gray-100 shadow-lg">
             <div className="space-y-4 text-gray-700 leading-relaxed text-justify">
               {language === 'ar' ? (
                 <>
