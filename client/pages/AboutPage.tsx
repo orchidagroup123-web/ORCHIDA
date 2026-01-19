@@ -123,8 +123,8 @@ export default function AboutPage() {
           </div>
 
           {/* Full Message */}
-          <div className="bg-gradient-to-br from-gray-50 to-white p-12 rounded-2xl border border-gray-100 shadow-lg">
-            <div className="space-y-4 text-gray-700 leading-relaxed text-justify">
+          <div className="bg-gradient-to-br from-gray-50 to-white p-12 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-500">
+            <div className="space-y-6 text-gray-700 leading-relaxed text-justify">
               {language === 'ar' ? (
                 <>
                   <p>
