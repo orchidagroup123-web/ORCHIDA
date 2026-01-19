@@ -159,25 +159,41 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Map Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+      <section className="relative py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-orchida-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-orchida-green rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Form Section */}
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="h-1 w-8 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
+                <span className="text-orchida-red font-bold text-xs uppercase tracking-wider">Get In Touch</span>
+              </div>
+              <h2 className="text-5xl font-black text-gray-900 mb-8">
                 {language === 'ar' ? 'نموذج الاتصال الذكي' : 'Smart Contact Form'}
               </h2>
-              <LeadForm />
+              <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 p-8 border border-gray-100">
+                <LeadForm />
+              </div>
             </div>
 
-            {/* Map & Info */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            {/* Map & Info Section */}
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="h-1 w-8 bg-gradient-to-r from-orchida-green to-transparent rounded-full"></div>
+                <span className="text-orchida-green font-bold text-xs uppercase tracking-wider">Location</span>
+              </div>
+              <h2 className="text-5xl font-black text-gray-900 mb-8">
                 {language === 'ar' ? 'موقعنا' : 'Our Location'}
               </h2>
 
               {/* Map */}
-              <div className="mb-8 rounded-lg overflow-hidden shadow-md h-96">
+              <div className="mb-8 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 h-96 border border-gray-100">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.3294834326426!2d37.64053!3d19.61922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16e748c5c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sPort%20Sudan%2C%20Sudan!5e0!3m2!1sen!2ssd!4v1234567890"
                   width="100%"
@@ -190,34 +206,45 @@ export default function ContactPage() {
               </div>
 
               {/* Additional Info */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-500">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                  <span className="text-2xl">⏰</span>
                   {language === 'ar' ? 'ساعات العمل' : 'Business Hours'}
                 </h3>
-                <div className="space-y-2 text-gray-600">
+                <div className="space-y-3 text-gray-600">
                   {language === 'ar' ? (
                     <>
-                      <p>
-                        <strong>السبت - الخميس:</strong> 9:00 ص - 6:00 م
+                      <p className="flex items-center gap-3">
+                        <span className="text-orchida-red font-bold text-lg">→</span>
+                        <span><strong>السبت - الخميس:</strong> 9:00 ص - 6:00 م</span>
                       </p>
-                      <p>
-                        <strong>الجمعة:</strong> مغلق
+                      <p className="flex items-center gap-3">
+                        <span className="text-orchida-red font-bold text-lg">→</span>
+                        <span><strong>الجمعة:</strong> مغلق</span>
                       </p>
-                      <p className="text-sm text-gray-500 mt-4">
-                        نحن نرد على الاستفسارات في غضون 24 ساعة عمل
-                      </p>
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <p className="text-sm text-gray-500 flex items-start gap-3">
+                          <span className="text-orchida-green font-bold text-lg">✓</span>
+                          <span>نحن نرد على الاستفسارات في غضون 24 ساعة عمل</span>
+                        </p>
+                      </div>
                     </>
                   ) : (
                     <>
-                      <p>
-                        <strong>Saturday - Thursday:</strong> 9:00 AM - 6:00 PM
+                      <p className="flex items-center gap-3">
+                        <span className="text-orchida-red font-bold text-lg">→</span>
+                        <span><strong>Saturday - Thursday:</strong> 9:00 AM - 6:00 PM</span>
                       </p>
-                      <p>
-                        <strong>Friday:</strong> Closed
+                      <p className="flex items-center gap-3">
+                        <span className="text-orchida-red font-bold text-lg">→</span>
+                        <span><strong>Friday:</strong> Closed</span>
                       </p>
-                      <p className="text-sm text-gray-500 mt-4">
-                        We respond to inquiries within 24 business hours
-                      </p>
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <p className="text-sm text-gray-500 flex items-start gap-3">
+                          <span className="text-orchida-green font-bold text-lg">✓</span>
+                          <span>We respond to inquiries within 24 business hours</span>
+                        </p>
+                      </div>
                     </>
                   )}
                 </div>
