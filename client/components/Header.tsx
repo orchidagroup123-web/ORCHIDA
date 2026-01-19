@@ -23,11 +23,10 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23E31E24;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23006837;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='95' fill='url(%23grad1)' opacity='0.1'/%3E%3Cpath d='M100 40 L140 120 L100 160 L60 120 Z' fill='%23E31E24'/%3E%3Cpath d='M80 80 L100 120 L120 80 Z' fill='%23006837'/%3E%3Ccircle cx='100' cy='100' r='8' fill='%23FFD700'/%3E%3C/svg%3E"
-              alt="Orchida"
-              className="w-12 h-12"
+              src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F52a7c492e28b4352bcbaf159ea26029f?format=webp&width=800"
+              alt="Orchida Group"
+              className="h-16 w-auto"
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-orchida-red to-orchida-green bg-clip-text text-transparent">ORCHIDA</span>
           </Link>
 
           {/* Desktop Navigation */}
