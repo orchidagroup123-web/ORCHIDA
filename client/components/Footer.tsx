@@ -15,9 +15,9 @@ export function Footer() {
           <div>
             <div className="mb-6">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F52a7c492e28b4352bcbaf159ea26029f?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fe6b25b3b6acc427391d5fe4bf3607aef?format=webp&width=800"
                 alt="Orchida Group"
-                className="h-12 w-auto"
+                className="h-14 w-auto"
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
