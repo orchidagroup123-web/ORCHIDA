@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { sectorsData } from '@/data/sectors';
 
 export function SectorsSection() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
@@ -15,13 +15,16 @@ export function SectorsSection() {
             {t('sectors')}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our six major business sectors and discover how we drive innovation and growth
+            {language === 'ar'
+              ? 'استكشف قطاعاتنا الستة الرئيسية واكتشف كيف نقود الابتكار والنمو'
+              : 'Explore our six major business sectors and discover how we drive innovation and growth'
+            }
           </p>
         </div>
 
         {/* Sectors Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {sectors.map((sector) => (
+          {sectorsData.map((sector) => (
             <Link
               key={sector.id}
               to={`/sector/${sector.id}`}
@@ -46,9 +49,9 @@ export function SectorsSection() {
                     hoveredId === sector.id ? 'opacity-0' : 'opacity-100'
                   }`}
                 >
-                  <div className="text-6xl mb-4">{sector.icon}</div>
+                  <div className="text-6xl mb-4">{sector.iconEmoji}</div>
                   <h3 className="text-2xl font-bold text-white text-center px-4">
-                    {t(sector.titleKey as any)}
+                    {language === 'ar' ? sector.nameAr : sector.nameEn}
                   </h3>
                 </div>
 
@@ -58,10 +61,10 @@ export function SectorsSection() {
                     hoveredId === sector.id ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
-                  <p className="text-white text-center font-semibold mb-4">
-                    {t(sector.descKey as any)}
+                  <p className="text-white text-center font-semibold mb-4 text-sm md:text-base">
+                    {language === 'ar' ? sector.titleAr : sector.titleEn}
                   </p>
-                  <span className="inline-block px-4 py-2 bg-white text-orchida-red font-bold rounded-lg">
+                  <span className="inline-block px-4 py-2 bg-white text-orchida-red font-bold rounded-lg text-sm">
                     {t('readMore')}
                   </span>
                 </div>
