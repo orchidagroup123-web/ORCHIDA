@@ -94,7 +94,7 @@ export function StatsSection() {
           {stats.map((stat, index) => (
             <AnimatedCounter
               key={index}
-              stat={{ ...stat, labelKey: t(stat.labelKey as any) }}
+              stat={{ ...stat, label: t(stat.labelKey as any) }}
             />
           ))}
         </div>
