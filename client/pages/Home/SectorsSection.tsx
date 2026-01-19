@@ -1,66 +1,7 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-
-interface Sector {
-  id: string;
-  titleKey: string;
-  descKey: string;
-  icon: string;
-  color: string;
-  image: string;
-}
-
-const sectors: Sector[] = [
-  {
-    id: 'agricultural-health',
-    titleKey: 'agriculturalHealth',
-    descKey: 'agriculturalHealthDesc',
-    icon: '🌾',
-    color: 'bg-green-500',
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=400&fit=crop',
-  },
-  {
-    id: 'mining',
-    titleKey: 'mining',
-    descKey: 'miningDesc',
-    icon: '⛏️',
-    color: 'bg-yellow-600',
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop',
-  },
-  {
-    id: 'international-trade',
-    titleKey: 'internationalTrade',
-    descKey: 'tradingDesc',
-    icon: '🌐',
-    color: 'bg-blue-600',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop',
-  },
-  {
-    id: 'livestock',
-    titleKey: 'livestock',
-    descKey: 'livestockDesc',
-    icon: '🐂',
-    color: 'bg-orange-600',
-    image: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=400&fit=crop',
-  },
-  {
-    id: 'fisheries',
-    titleKey: 'fisheries',
-    descKey: 'fisheriesDesc',
-    icon: '🐟',
-    color: 'bg-cyan-600',
-    image: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=400&h=400&fit=crop',
-  },
-  {
-    id: 'infrastructure',
-    titleKey: 'infrastructure',
-    descKey: 'infrastructureDesc',
-    icon: '🏗️',
-    color: 'bg-gray-700',
-    image: 'https://images.unsplash.com/photo-1581092162562-40038f56543a?w=400&h=400&fit=crop',
-  },
-];
+import { sectorsData } from '@/data/sectors';
 
 export function SectorsSection() {
   const { t } = useTranslation();
