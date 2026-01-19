@@ -147,63 +147,105 @@ export default function AboutPage() {
       </section>
 
       {/* Vision, Mission, Values */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
-            {language === 'ar' ? 'الرؤية والرسالة والقيم' : 'Vision, Mission & Values'}
-          </h2>
+      <section className="relative py-32 bg-white overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-orchida-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-orchida-green rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
+              <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">Foundation</span>
+              <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+              {language === 'ar' ? 'الرؤية والرسالة والقيم' : 'Vision, Mission & Values'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {language === 'ar'
+                ? 'الأساس الذي يرشد كل قراراتنا واستراتيجياتنا'
+                : 'The foundation that guides every decision and strategy'
+              }
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Vision */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold text-orchida-red mb-4">
-                {language === 'ar' ? '🎯 الرؤية' : '🎯 Vision'}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {language === 'ar'
-                  ? 'أن نكون مجموعة متعددة القطاعات رائدة عالمياً، نشكل مستقبلاً مستداماً من خلال الابتكار المسؤول والتميز التشغيلي.'
-                  : 'To be a globally leading multi-sector group shaping a sustainable future through responsible innovation and operational excellence.'
-                }
-              </p>
+            <div className="group relative h-96 cursor-pointer">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-orchida-red/30 p-8 flex flex-col">
+                {/* Background accent */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orchida-red/20 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="text-5xl mb-4">🎯</div>
+                  <h3 className="text-2xl font-bold text-orchida-red mb-4 group-hover:text-orchida-red transition-colors">
+                    {language === 'ar' ? 'الرؤية' : 'Vision'}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed flex-grow group-hover:text-gray-700 transition-colors">
+                    {language === 'ar'
+                      ? 'أن نكون مجموعة متعددة القطاعات رائدة عالمياً، نشكل مستقبلاً مستداماً من خلال الابتكار المسؤول والتميز التشغيلي.'
+                      : 'To be a globally leading multi-sector group shaping a sustainable future through responsible innovation and operational excellence.'
+                    }
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Mission */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold text-orchida-green mb-4">
-                {language === 'ar' ? '🎯 الرسالة' : '🎯 Mission'}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {language === 'ar'
-                  ? 'توفير حلول متكاملة وعالية الجودة عبر قطاعاتنا الستة لدعم الأمن الغذائي والطاقي والتنمية الاقتصادية المستدامة.'
-                  : 'Provide integrated, high-quality solutions across our six sectors to support food security, energy sustainability, and economic development.'
-                }
-              </p>
+            <div className="group relative h-96 cursor-pointer">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-orchida-green/30 p-8 flex flex-col">
+                {/* Background accent */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orchida-green/20 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="text-5xl mb-4">🚀</div>
+                  <h3 className="text-2xl font-bold text-orchida-green mb-4 group-hover:text-orchida-red transition-colors">
+                    {language === 'ar' ? 'الرسالة' : 'Mission'}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed flex-grow group-hover:text-gray-700 transition-colors">
+                    {language === 'ar'
+                      ? 'توفير حلول متكاملة وعالية الجودة عبر قطاعاتنا الستة لدعم الأمن الغذائي والطاقي والتنمية الاقتصادية المستدامة.'
+                      : 'Provide integrated, high-quality solutions across our six sectors to support food security, energy sustainability, and economic development.'
+                    }
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Values */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold text-orchida-red mb-4">
-                {language === 'ar' ? '⭐ القيم' : '⭐ Values'}
-              </h3>
-              <ul className="text-gray-600 space-y-2">
-                {language === 'ar' ? (
-                  <>
-                    <li>• النزاهة والشفافية</li>
-                    <li>• الابتكار المستمر</li>
-                    <li>• الاستدامة البيئية</li>
-                    <li>• التميز والجودة</li>
-                    <li>• المسؤولية الاجتماعية</li>
-                  </>
-                ) : (
-                  <>
-                    <li>• Integrity & Transparency</li>
-                    <li>• Continuous Innovation</li>
-                    <li>• Environmental Sustainability</li>
-                    <li>• Excellence & Quality</li>
-                    <li>• Social Responsibility</li>
-                  </>
-                )}
-              </ul>
+            <div className="group relative h-96 cursor-pointer">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-orchida-red/30 p-8 flex flex-col">
+                {/* Background accent */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orchida-red/20 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="text-5xl mb-4">⭐</div>
+                  <h3 className="text-2xl font-bold text-orchida-red mb-4 group-hover:text-orchida-red transition-colors">
+                    {language === 'ar' ? 'القيم' : 'Values'}
+                  </h3>
+                  <ul className="text-gray-600 space-y-2 text-sm flex-grow group-hover:text-gray-700 transition-colors">
+                    {language === 'ar' ? (
+                      <>
+                        <li className="flex items-center gap-2"><span className="text-orchida-red font-bold">✓</span> النزاهة والشفافية</li>
+                        <li className="flex items-center gap-2"><span className="text-orchida-green font-bold">✓</span> الابتكار المستمر</li>
+                        <li className="flex items-center gap-2"><span className="text-orchida-red font-bold">✓</span> الاستدامة البيئية</li>
+                        <li className="flex items-center gap-2"><span className="text-orchida-green font-bold">✓</span> التميز والجودة</li>
+                      </>
+                    ) : (
+                      <>
+                        <li className="flex items-center gap-2"><span className="text-orchida-red font-bold">✓</span> Integrity & Transparency</li>
+                        <li className="flex items-center gap-2"><span className="text-orchida-green font-bold">✓</span> Continuous Innovation</li>
+                        <li className="flex items-center gap-2"><span className="text-orchida-red font-bold">✓</span> Environmental Sustainability</li>
+                        <li className="flex items-center gap-2"><span className="text-orchida-green font-bold">✓</span> Excellence & Quality</li>
+                      </>
+                    )}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
