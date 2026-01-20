@@ -41,6 +41,7 @@ export function HierarchicalSectorsSection() {
                   language={language}
                   isActive={expandedSector === miningSector.id}
                   colorClass="border-orange-200 hover:bg-orange-50"
+                  onSelect={() => setExpandedSector(miningSector.id)}
                 />
               )}
               {agricultureSector && (
@@ -49,6 +50,7 @@ export function HierarchicalSectorsSection() {
                   language={language}
                   isActive={expandedSector === agricultureSector.id}
                   colorClass="border-green-200 hover:bg-green-50"
+                  onSelect={() => setExpandedSector(agricultureSector.id)}
                 />
               )}
               {infrastructureSector && (
@@ -57,6 +59,7 @@ export function HierarchicalSectorsSection() {
                   language={language}
                   isActive={expandedSector === infrastructureSector.id}
                   colorClass="border-blue-200 hover:bg-blue-50"
+                  onSelect={() => setExpandedSector(infrastructureSector.id)}
                 />
               )}
             </div>
