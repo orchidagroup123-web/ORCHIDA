@@ -77,7 +77,7 @@ export function HierarchicalSectorsSection() {
                   sector={miningSector}
                   language={language}
                   isActive={expandedSector === miningSector.id}
-                  onSelect={() => setExpandedSector(miningSector.id)}
+                  onSelect={() => handleSectorOpen(miningSector.id)}
                 />
               )}
               {agricultureSector && (
@@ -85,7 +85,7 @@ export function HierarchicalSectorsSection() {
                   sector={agricultureSector}
                   language={language}
                   isActive={expandedSector === agricultureSector.id}
-                  onSelect={() => setExpandedSector(agricultureSector.id)}
+                  onSelect={() => handleSectorOpen(agricultureSector.id)}
                 />
               )}
               {infrastructureSector && (
@@ -93,7 +93,7 @@ export function HierarchicalSectorsSection() {
                   sector={infrastructureSector}
                   language={language}
                   isActive={expandedSector === infrastructureSector.id}
-                  onSelect={() => setExpandedSector(infrastructureSector.id)}
+                  onSelect={() => handleSectorOpen(infrastructureSector.id)}
                 />
               )}
             </div>
