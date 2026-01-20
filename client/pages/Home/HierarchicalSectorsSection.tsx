@@ -153,15 +153,19 @@ function ProfessionalPyramid({
   language,
   activeSectorId,
 }: PyramidProps) {
+  const miningActive = activeSectorId === 'mining';
+  const agricultureActive = activeSectorId === 'agriculture';
+  const infrastructureActive = activeSectorId === 'infrastructure';
+
   return (
     <div className="relative w-full max-w-md h-auto">
       {/* Main Pyramid Container */}
       <div className="relative" style={{ perspective: '1000px' }}>
-        
+
         {/* Apex - Mining */}
         <div className="relative mx-auto mb-0" style={{ width: '280px', height: '180px' }}>
           <div
-            className="absolute inset-0 rounded-t-3xl overflow-hidden shadow-2xl"
+            className={`absolute inset-0 rounded-t-3xl overflow-hidden shadow-2xl transition-all duration-500 ${miningActive ? 'scale-105' : 'opacity-80'}`}
             style={{
               background: 'linear-gradient(135deg, #FCD34D 0%, #EA580C 100%)',
               clipPath: 'polygon(50% 0%, 100% 100%, 0% 100%)',
@@ -199,7 +203,7 @@ function ProfessionalPyramid({
           {/* Infrastructure - Left */}
           <div className="flex-1" style={{ height: '220px' }}>
             <div
-              className="absolute inset-0 overflow-hidden"
+              className={`absolute inset-0 overflow-hidden transition-all duration-500 ${infrastructureActive ? 'opacity-100 scale-[1.02]' : 'opacity-80'}`}
               style={{
                 background: 'linear-gradient(135deg, #93C5FD 0%, #3B82F6 100%)',
                 clipPath: 'polygon(0% 0%, 100% 0%, 85% 100%, 0% 100%)',
@@ -235,7 +239,7 @@ function ProfessionalPyramid({
           {/* Agriculture - Right */}
           <div className="flex-1" style={{ height: '220px' }}>
             <div
-              className="absolute inset-0 overflow-hidden"
+              className={`absolute inset-0 overflow-hidden transition-all duration-500 ${agricultureActive ? 'opacity-100 scale-[1.02]' : 'opacity-80'}`}
               style={{
                 background: 'linear-gradient(135deg, #86EFAC 0%, #10B981 100%)',
                 clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)',
@@ -273,9 +277,11 @@ function ProfessionalPyramid({
         <div className="relative h-12 bg-gradient-to-b from-gray-900/20 to-transparent rounded-b-2xl"></div>
       </div>
 
-      {/* Decorative 3D effect - Bottom right shadow */}
+      <div className="mx-auto mt-6 w-[320px] h-10 rounded-[999px] bg-gradient-to-r from-slate-300 via-white to-slate-300 shadow-inner"></div>
+
+      {/* Decorative shadow */}
       <div
-        className="absolute -bottom-4 -right-6 w-48 h-32 bg-black/10 rounded-full blur-3xl"
+        className="absolute -bottom-6 -right-6 w-48 h-32 bg-black/10 rounded-full blur-3xl"
         style={{ zIndex: -1 }}
       ></div>
     </div>
