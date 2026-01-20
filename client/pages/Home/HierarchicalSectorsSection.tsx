@@ -3,40 +3,25 @@ import { useState } from 'react';
 import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
 
 export function HierarchicalSectorsSection() {
-  const { t, language } = useTranslation();
+  const { language } = useTranslation();
   const [expandedSector, setExpandedSector] = useState<string | null>(null);
 
   const primarySectors = hierarchicalSectors.filter((s) => s.level === 'primary');
 
   return (
-    <section id="sectors" className="relative py-32 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-orchida-red rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-orchida-green rounded-full blur-3xl"></div>
-      </div>
-
+    <section id="sectors" className="relative py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
         <div className="text-center mb-24">
-          <div className="inline-flex items-center gap-3 mb-8">
-            <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
-            <span className="text-orchida-red font-bold text-sm uppercase tracking-wider">
-              {language === 'ar' ? 'قطاعاتنا الرئيسية' : 'Our Main Sectors'}
-            </span>
-            <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
             {language === 'ar' ? 'الهيكل الهرمي للقطاعات' : 'Hierarchical Sector Structure'}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'ar'
-              ? 'ثلاثة قطاعات رئيسية مع عشرات التخصصات والمجالات'
-              : 'Three main sectors with dozens of specializations and fields'}
+              ? 'ثلاثة قطاعات رئيسية'
+              : 'Three main sectors'}
           </p>
         </div>
 
-        {/* Pyramid Structure */}
         <div className="space-y-20">
           {/* Mining - Top (Center) */}
           {primarySectors.length > 0 && (
@@ -81,11 +66,6 @@ export function HierarchicalSectorsSection() {
             </div>
           )}
         </div>
-
-        {/* Bottom Accent */}
-        <div className="mt-20 flex justify-center">
-          <div className="h-1 w-24 bg-gradient-to-r from-orchida-red via-gray-300 to-orchida-green rounded-full"></div>
-        </div>
       </div>
     </section>
   );
@@ -110,18 +90,12 @@ function SectorCard({ sector, isExpanded, onToggle, language }: SectorCardProps)
         style={{ backgroundImage: `url(${sector.image})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70"></div>
-        <div
-          className={`absolute inset-0 bg-gradient-to-r ${sector.color} opacity-20`}
-        ></div>
       </div>
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center p-8 z-10">
         {/* Icon */}
         <div className="relative mb-6">
-          <div
-            className={`absolute inset-0 bg-gradient-to-br ${sector.color} rounded-full blur-xl animate-pulse opacity-50`}
-          ></div>
           <div className="relative text-8xl drop-shadow-2xl transition-transform duration-500 group-hover:scale-125">
             {sector.iconEmoji}
           </div>
@@ -139,30 +113,12 @@ function SectorCard({ sector, isExpanded, onToggle, language }: SectorCardProps)
         </div>
 
         {/* Expand Indicator */}
-        <div
-          className={`absolute bottom-6 text-white text-sm font-semibold transition-all duration-500 flex items-center gap-2 ${
-            !isExpanded ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <span>{language === 'ar' ? 'اكتشف التخصصات' : 'Explore Fields'}</span>
-          <svg
-            className="w-4 h-4 animate-bounce"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
+        {!isExpanded && (
+          <div className="absolute bottom-6 text-white text-sm font-semibold flex items-center gap-2">
+            <span>{language === 'ar' ? 'اكتشف التخصصات' : 'Explore Fields'}</span>
+          </div>
+        )}
       </div>
-
-      {/* Corner Accent */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-3xl"></div>
     </div>
   );
 }
@@ -192,7 +148,7 @@ function SubSectorsGrid({ sector, language }: SubSectorsGridProps) {
         {sector.subsectors.map((subsector, index) => (
           <div
             key={subsector.id}
-            className="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 animate-slideUp"
+            className="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
             style={{ animationDelay: `${index * 100}ms` }}
           >
             {/* Background Image */}
@@ -201,9 +157,6 @@ function SubSectorsGrid({ sector, language }: SubSectorsGridProps) {
               style={{ backgroundImage: `url(${subsector.image})` }}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70"></div>
-              <div
-                className={`absolute inset-0 bg-gradient-to-r ${sector.color} opacity-20`}
-              ></div>
             </div>
 
             {/* Content */}
@@ -220,9 +173,6 @@ function SubSectorsGrid({ sector, language }: SubSectorsGridProps) {
                   : subsector.descriptionEn}
               </p>
             </div>
-
-            {/* Corner Accent */}
-            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-2xl"></div>
           </div>
         ))}
       </div>
