@@ -1,6 +1,6 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { useState } from 'react';
-import { hierarchicalSectorsV2, MainSector } from '@/data/hierarchical-sectors-v2';
+import { hierarchicalSectorsV2 } from '@/data/hierarchical-sectors-v2';
 
 export function SectorsPyramid() {
   const { language } = useTranslation();
