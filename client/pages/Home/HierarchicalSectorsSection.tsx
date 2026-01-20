@@ -56,10 +56,6 @@ export function HierarchicalSectorsSection() {
           </div>
 
           <div className="order-2 space-y-7">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white shadow-sm border border-slate-200 text-sm font-semibold tracking-[0.3em] uppercase text-slate-500">
-              {language === 'ar' ? 'ركائز الاقتصاد' : 'Economic pillars'}
-            </div>
-
             <div className="space-y-5">
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
                 {language === 'ar' ? 'الهيكل الهرمي للقطاعات' : 'Hierarchical sector pyramid'}
