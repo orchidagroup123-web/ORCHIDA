@@ -52,7 +52,7 @@ export function HierarchicalSectorsSection() {
               infrastructureSector={infrastructureSector}
               language={language}
               activeSectorId={expandedSector}
-              onSelect={setExpandedSector}
+              onSelect={handleSectorOpen}
             />
           </div>
 
