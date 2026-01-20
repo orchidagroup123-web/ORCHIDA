@@ -1,204 +1,263 @@
 import { useTranslation } from "@/hooks/useTranslation";
 import { useState } from "react";
 
+const heroHighlights = [
+  {
+    value: "20+",
+    labelAr: "سنة من الخبرة",
+    labelEn: "Years of experience",
+    accent: "from-[#facc15] to-[#f97316]",
+  },
+  {
+    value: "180+",
+    labelAr: "خبراء متخصصون",
+    labelEn: "Specialist experts",
+    accent: "from-[#4ade80] to-[#16a34a]",
+  },
+  {
+    value: "2",
+    labelAr: "دول تشغيل",
+    labelEn: "Operating countries",
+    accent: "from-[#38bdf8] to-[#0284c7]",
+  },
+];
+
+const bulletPoints = [
+  {
+    ar: "حلول متكاملة من الاستكشاف إلى التسليم النهائي",
+    en: "End-to-end solutions from exploration to final delivery",
+  },
+  {
+    ar: "مقر رئيسي في السودان وتوسّع خليجي عبر فرع السعودية",
+    en: "Sudan headquarters with GCC expansion via the Saudi branch",
+  },
+  {
+    ar: "خبرات عميقة في التعدين والزراعة والبنية التحتية",
+    en: "Deep expertise across mining, agriculture, and infrastructure",
+  },
+];
+
+const sectorCards = [
+  {
+    id: "mining",
+    icon: "⛏️",
+    titleAr: "قطاع التعدين",
+    titleEn: "Mining",
+    descAr: "استكشاف ومعالجة الخامات",
+    descEn: "Exploration and ore processing",
+    accent: "from-[#facc15] to-[#f97316]",
+  },
+  {
+    id: "agriculture",
+    icon: "🌾",
+    titleAr: "قطاع الزراعة والثروة",
+    titleEn: "Agriculture & Resources",
+    descAr: "إدارة الثروات الزراعية والحيوانية",
+    descEn: "Agricultural and livestock excellence",
+    accent: "from-[#4ade80] to-[#16a34a]",
+  },
+  {
+    id: "infrastructure",
+    icon: "🏗️",
+    titleAr: "قطاع البنية التحتية",
+    titleEn: "Infrastructure",
+    descAr: "مشاريع استراتيجية للطرق والطاقة",
+    descEn: "Strategic infrastructure programs",
+    accent: "from-[#93c5fd] to-[#3b82f6]",
+  },
+];
+
 export function HeroSection() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [showWhoWeAre, setShowWhoWeAre] = useState(false);
 
   return (
-    <section className="relative w-full py-40 flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-black">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Main background image with strong overlay - Mining operation */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1581092162562-40038f56543a?w=2000&h=1200&fit=crop)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        >
-          {/* Strong gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
-
-          {/* Accent color overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-orchida-red/20 via-transparent to-orchida-green/20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40"></div>
-        </div>
-
-        {/* Animated gradient orbs */}
-        <div className="absolute top-20 -right-32 w-96 h-96 bg-orchida-red/20 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute bottom-20 -left-32 w-96 h-96 bg-orchida-green/20 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#050816] via-[#0b1a2b] to-[#050816] text-white">
+      {/* Atmospheric background */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0" style={{
+          backgroundImage:
+            "linear-gradient(140deg, rgba(15,23,42,0.8) 0%, rgba(12,74,110,0.4) 45%, rgba(220,38,38,0.35) 100%), url(https://images.unsplash.com/photo-1581092981824-1e7b6b8e4253?w=2000&h=1200&fit=crop)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}></div>
+        <div className="absolute -top-20 -right-10 w-96 h-96 bg-red-500/30 rounded-full blur-[140px]"></div>
+        <div className="absolute -bottom-24 -left-10 w-[28rem] h-[28rem] bg-emerald-500/25 rounded-full blur-[150px]"></div>
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center">
-        <div className="text-center max-w-5xl">
-          {/* Top decorative element */}
-          <div className="flex justify-center mb-12 gap-2 items-center">
-            <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
-            <span className="text-orchida-red font-semibold text-sm uppercase tracking-wider">
-              ORCHIDA GROUP
-            </span>
-            <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          {/* Text column */}
+          <div className="space-y-10">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur">
+              <span className="w-2 h-2 rounded-full bg-orchida-red"></span>
+              <span className="text-sm font-semibold tracking-[0.2em] uppercase">
+                ORCHIDA GROUP
+              </span>
+            </div>
+
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white">
+                <span className="bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+                  {t("heroTitle")}
+                </span>
+              </h1>
+              <p className="mt-6 text-lg sm:text-xl text-slate-200 leading-relaxed">
+                {t("heroSubtitle")}
+              </p>
+            </div>
+
+            <ul className="space-y-4">
+              {bulletPoints.map((point) => (
+                <li key={point.ar} className="flex items-start gap-3 text-base text-slate-200">
+                  <div className="mt-1 w-3 h-3 rounded-full bg-gradient-to-br from-orchida-red to-orchida-green"></div>
+                  <span>{language === "ar" ? point.ar : point.en}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={() => setShowWhoWeAre(true)}
+                className="px-8 py-4 rounded-xl bg-gradient-to-r from-orchida-red to-red-600 shadow-lg shadow-red-600/30 hover:shadow-red-600/50 transition-all duration-300 font-semibold flex items-center justify-center gap-2"
+              >
+                {t("whoWeAre")}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+              <a
+                href="#sectors-pyramid"
+                className="px-8 py-4 rounded-xl border border-white/30 hover:border-white/70 transition-all duration-300 font-semibold flex items-center justify-center gap-2"
+              >
+                {t("sectors")}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {heroHighlights.map((item) => (
+                <div
+                  key={item.value}
+                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 text-center"
+                >
+                  <div className={`mx-auto mb-3 h-1 w-16 rounded-full bg-gradient-to-r ${item.accent}`}></div>
+                  <p className="text-3xl font-bold">{item.value}</p>
+                  <p className="text-sm text-slate-200">
+                    {language === "ar" ? item.labelAr : item.labelEn}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Main Title */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-tight tracking-tighter drop-shadow-2xl">
-            <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-              {t("heroTitle")}
-            </span>
-          </h1>
+          {/* Visual column */}
+          <div className="w-full">
+            <div className="relative rounded-[32px] border border-white/15 bg-white/5 backdrop-blur p-8 shadow-2xl overflow-hidden">
+              <div
+                className="absolute inset-0 opacity-60"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(15,23,42,0.6) 0%, rgba(15,23,42,0.95) 100%), url(https://images.unsplash.com/photo-1503389152951-9f343605f61e?w=1200&h=1200&fit=crop)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
 
-          {/* Subtitle with enhanced styling */}
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-16 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg">
-            {t("heroSubtitle")}
-          </p>
+              <div className="relative z-10 space-y-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-white/70 mb-1">
+                      {language === "ar" ? "مركز القيادة" : "Command Center"}
+                    </p>
+                    <h3 className="text-2xl font-bold">Orchida Ops Hub</h3>
+                  </div>
+                  <span className="px-4 py-2 rounded-full bg-white/10 text-sm font-semibold">
+                    {language === "ar" ? "الفرع السعودي قيد الإنشاء" : "Saudi branch – under construction"}
+                  </span>
+                </div>
 
-          {/* Feature highlights */}
-          <div className="grid grid-cols-3 gap-4 mb-16 max-w-2xl mx-auto">
-            <div className="px-4 py-3 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-orchida-red/50 transition-all">
-              <div className="text-2xl font-bold text-orchida-red">20+</div>
-              <div className="text-xs text-gray-300">سنة خبرة</div>
-            </div>
-            <div className="px-4 py-3 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-orchida-green/50 transition-all">
-              <div className="text-2xl font-bold text-orchida-green">180+</div>
-              <div className="text-xs text-gray-300">موظف</div>
-            </div>
-            <div className="px-4 py-3 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-gray-300 transition-all">
-              <div className="text-2xl font-bold text-white">2</div>
-              <div className="text-xs text-gray-300">دول</div>
-            </div>
-          </div>
+                <div className="grid grid-cols-1 gap-4">
+                  {sectorCards.map((sector) => (
+                    <div
+                      key={sector.id}
+                      className="rounded-2xl border border-white/10 bg-white/5 p-4 flex items-center gap-4"
+                    >
+                      <div className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${sector.accent} flex items-center justify-center text-2xl`}>
+                        {sector.icon}
+                      </div>
+                      <div>
+                        <p className="text-base font-bold">
+                          {language === "ar" ? sector.titleAr : sector.titleEn}
+                        </p>
+                        <p className="text-sm text-white/70">
+                          {language === "ar" ? sector.descAr : sector.descEn}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
-            <button
-              onClick={() => setShowWhoWeAre(true)}
-              className="px-10 py-4 bg-gradient-to-r from-orchida-red to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-red-600/50 flex items-center justify-center gap-2 group"
-            >
-              {t("whoWeAre")}
-              <svg
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </button>
-            <a
-              href="#sectors"
-              className="px-10 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-white/50 flex items-center justify-center gap-2"
-            >
-              {t("sectors")}
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </a>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3">
-            <span className="text-white/70 text-sm font-medium">
-              اكتشف المزيد
-            </span>
-            <div className="animate-bounce">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
+                <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/0 p-4 text-sm text-white/80">
+                  {language === "ar"
+                    ? "نحن نبني منظومة متكاملة تجمع بين التعدين الذكي والزراعة المستدامة والبنية التحتية المتينة لخدمة الاقتصادات الصاعدة."
+                    : "We orchestrate an integrated ecosystem that blends smart mining, sustainable agriculture, and resilient infrastructure for emerging economies."}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Who We Are Modal/Overlay */}
+      {/* Who We Are Modal */}
       {showWhoWeAre && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-8 relative max-h-screen overflow-y-auto shadow-2xl">
-            {/* Top accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orchida-red to-orchida-green rounded-t-2xl"></div>
-
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl max-w-2xl w-full p-10 relative shadow-2xl overflow-y-auto max-h-[90vh]">
             <button
               onClick={() => setShowWhoWeAre(false)}
-              className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute top-6 right-6 text-gray-400 hover:text-gray-700 transition-colors"
+              aria-label="Close"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            <h2 className="text-4xl font-bold text-orchida-red mb-2 pr-8">
-              {t("whoWeAre")}
-            </h2>
-            <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full mb-6"></div>
+            <div className="mb-6">
+              <p className="text-sm font-semibold text-orchida-red uppercase tracking-[0.3em] mb-3">
+                ORCHIDA GROUP
+              </p>
+              <h2 className="text-4xl font-black text-gray-900 mb-4">
+                {t("whoWeAre")}
+              </h2>
+              <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full"></div>
+            </div>
 
             <div className="space-y-5 text-gray-700 leading-relaxed">
-              <p className="text-lg">
-                Orchida International Company is a multi-sector conglomerate
-                specializing in six major industries: Agricultural Health,
-                Mining, International Trade, Livestock, Fisheries & Aquaculture,
-                and Infrastructure Development.
+              <p>
+                {language === "ar"
+                  ? "مجموعة أوركيدا الدولية كيان سوداني يقود ثلاث ركائز اقتصادية: التعدين، الزراعة، والبنية التحتية، مع توسّع جديد في المملكة العربية السعودية."
+                  : "Orchida International Company is a Sudanese-led powerhouse across three economic pillars—mining, agriculture, and infrastructure—with an upcoming expansion in Saudi Arabia."}
               </p>
-              <p className="text-lg">
-                With over 20 years of experience, more than 500 dedicated
-                employees, and operations spanning 10+ countries, we are
-                committed to shaping a sustainable future through innovation,
-                responsibility, and excellence.
+              <p>
+                {language === "ar"
+                  ? "نمتلك أكثر من 20 سنة خبرة و180 متخصصاً يعملون من المقرّ الرئيسي في الخرطوم وفرع السعودية قيد الإنشاء لدعم الاستثمارات الإقليمية."
+                  : "With over 20 years of experience and 180 specialists, we operate from our Khartoum HQ while building the Saudi branch to power regional investments."}
               </p>
-              <p className="text-lg">
-                Our vision is to be a trusted global partner that delivers value
-                across every sector we operate in, while maintaining the highest
-                standards of quality, sustainability, and corporate
-                responsibility.
+              <p>
+                {language === "ar"
+                  ? "ترتكز رؤيتنا على تقديم حلول مسؤولة ومستدامة تبني اقتصادات resilient وتربط الموارد الطبيعية بالأسواق العالمية."
+                  : "Our vision is to deliver responsible, sustainable solutions that build resilient economies and connect natural resources to global markets."}
               </p>
             </div>
 
             <button
               onClick={() => setShowWhoWeAre(false)}
-              className="mt-8 px-6 py-3 bg-orchida-red hover:bg-red-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="mt-8 px-8 py-3 bg-gradient-to-r from-orchida-red to-red-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              Close
+              {language === "ar" ? "إغلاق" : "Close"}
             </button>
           </div>
         </div>
