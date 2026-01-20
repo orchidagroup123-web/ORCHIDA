@@ -107,7 +107,7 @@ export function SectorsPyramid() {
 }
 
 interface CardProps {
-  sector: MainSector;
+  sector: any;
   isExpanded: boolean;
   onToggle: () => void;
   language: string;
