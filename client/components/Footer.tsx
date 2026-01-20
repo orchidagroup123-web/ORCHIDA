@@ -59,14 +59,6 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  to="/media"
-                  className="text-gray-400 hover:text-orchida-red transition-colors font-medium"
-                >
-                  {t("media")}
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/contact"
                   className="text-gray-400 hover:text-orchida-red transition-colors font-medium"
                 >
