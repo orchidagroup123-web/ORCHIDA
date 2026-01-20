@@ -6,7 +6,7 @@ export function HeroSection() {
   const [showWhoWeAre, setShowWhoWeAre] = useState(false);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+    <section className="relative w-full py-40 flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-black">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Main background image with strong overlay - Mining operation */}
