@@ -48,14 +48,6 @@ export function Footer() {
                   {t("about")}
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/sectors"
-                  className="text-gray-400 hover:text-orchida-red transition-colors font-medium"
-                >
-                  {t("sectors")}
-                </Link>
-              </li>
             </ul>
           </div>
 
