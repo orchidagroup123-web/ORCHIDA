@@ -90,7 +90,7 @@ export function HierarchicalSectorsSection() {
 }
 
 interface SectorCardProps {
-  sector: ReturnType<typeof hierarchicalSectors[0]>;
+  sector: MainSector;
   expanded: boolean;
   onToggle: () => void;
   language: string;
