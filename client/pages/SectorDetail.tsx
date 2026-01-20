@@ -79,15 +79,24 @@ export default function SectorDetail() {
               {sector.specializations.map((spec, index) => (
                 <div
                   key={`${spec.enName}-${index}`}
-                  className="p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white"
+                  className="rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition overflow-hidden bg-white"
                 >
-                  <div className="text-4xl mb-3">{spec.emoji}</div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                    {language === "ar" ? spec.arName : spec.enName}
-                  </h4>
-                  <p className="text-gray-600 leading-relaxed">
-                    {language === "ar" ? spec.arDesc : spec.enDesc}
-                  </p>
+                  <div className="h-44 w-full overflow-hidden">
+                    <img
+                      src={spec.image}
+                      alt={language === "ar" ? spec.arName : spec.enName}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h4 className="text-xl font-semibold text-gray-900">
+                      {language === "ar" ? spec.arName : spec.enName}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      {language === "ar" ? spec.arDesc : spec.enDesc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
