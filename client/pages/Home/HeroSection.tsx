@@ -37,7 +37,7 @@ export function HeroSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center min-h-screen">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center">
         <div className="text-center max-w-5xl">
           {/* Top decorative element */}
           <div className="flex justify-center mb-12 gap-2 items-center">
