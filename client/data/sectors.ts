@@ -1,3 +1,11 @@
+export interface SubSpecialization {
+  arName: string;
+  enName: string;
+  arDesc: string;
+  enDesc: string;
+  emoji: string;
+}
+
 export interface Sector {
   id: string;
   nameAr: string;
@@ -11,6 +19,7 @@ export interface Sector {
   color: string;
   fullContentAr: string;
   fullContentEn: string;
+  specializations?: SubSpecialization[];
 }
 
 export const sectorsData: Sector[] = [
