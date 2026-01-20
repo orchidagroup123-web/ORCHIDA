@@ -4,6 +4,9 @@ import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
 
 export function HierarchicalSectorsSection() {
   const { language } = useTranslation();
+  const [expandedSector, setExpandedSector] = useState<string | null>(null);
+
+  const primarySectors = hierarchicalSectors.filter((s) => s.level === 'primary');
 
   return (
     <section id="sectors" className="py-32 bg-yellow-200">
