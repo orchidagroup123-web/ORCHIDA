@@ -1,36 +1,39 @@
-import { useTranslation } from '@/hooks/useTranslation';
+import { useTranslation } from "@/hooks/useTranslation";
 
 export function WhyChooseUs() {
   const { language } = useTranslation();
 
   const features = [
     {
-      icon: '🌍',
-      arTitle: 'خبرة محلية ودولية',
-      enTitle: 'Local & Global Expertise',
-      arDesc: 'نعمل في السودان ونتوسع في السعودية مع خبرة تمتد لأكثر من 20 سنة',
-      enDesc: 'Operating in Sudan and expanding to Saudi Arabia with 20+ years of experience',
+      icon: "🌍",
+      arTitle: "خبرة محلية ودولية",
+      enTitle: "Local & Global Expertise",
+      arDesc: "نعمل في السودان ونتوسع في السعودية مع خبرة تمتد لأكثر من 20 سنة",
+      enDesc:
+        "Operating in Sudan and expanding to Saudi Arabia with 20+ years of experience",
     },
     {
-      icon: '👥',
-      arTitle: 'فريق متخصص',
-      enTitle: 'Expert Team',
-      arDesc: 'فريق يضم أكثر من 180 خبير ومهندس متخصص في مجالاتهم',
-      enDesc: 'Team of 180+ specialized experts and engineers in their fields',
+      icon: "👥",
+      arTitle: "فريق متخصص",
+      enTitle: "Expert Team",
+      arDesc: "فريق يضم أكثر من 180 خبير ومهندس متخصص في مجالاتهم",
+      enDesc: "Team of 180+ specialized experts and engineers in their fields",
     },
     {
-      icon: '⚙️',
-      arTitle: 'حلول متكاملة',
-      enTitle: 'Integrated Solutions',
-      arDesc: 'من الاستكشاف إلى الإنتاج والتوريد، نقدم حلولاً شاملة',
-      enDesc: 'From exploration to production and supply, we offer comprehensive solutions',
+      icon: "⚙️",
+      arTitle: "حلول متكاملة",
+      enTitle: "Integrated Solutions",
+      arDesc: "من الاستكشاف إلى الإنتاج والتوريد، نقدم حلولاً شاملة",
+      enDesc:
+        "From exploration to production and supply, we offer comprehensive solutions",
     },
     {
-      icon: '🌱',
-      arTitle: 'التزام بالاستدامة',
-      enTitle: 'Sustainability Commitment',
-      arDesc: 'نوازن بين النمو الاقتصادي والمسؤولية البيئية والاجتماعية',
-      enDesc: 'Balancing economic growth with environmental and social responsibility',
+      icon: "🌱",
+      arTitle: "التزام بالاستدامة",
+      enTitle: "Sustainability Commitment",
+      arDesc: "نوازن بين النمو الاقتصادي والمسؤولية البيئية والاجتماعية",
+      enDesc:
+        "Balancing economic growth with environmental and social responsibility",
     },
   ];
 
@@ -48,29 +51,24 @@ export function WhyChooseUs() {
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="h-1 w-12 bg-gradient-to-r from-green-500 to-transparent rounded-full"></div>
             <span className="text-green-600 font-bold text-sm uppercase tracking-wider">
-              {language === 'ar' ? 'لماذا تختارنا' : 'Why Choose Us'}
+              {language === "ar" ? "لماذا تختارنا" : "Why Choose Us"}
             </span>
             <div className="h-1 w-12 bg-gradient-to-l from-amber-500 to-transparent rounded-full"></div>
           </div>
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-            {language === 'ar'
-              ? 'شركاؤك في النجاح'
-              : 'Your Partner in Success'}
+            {language === "ar" ? "شركاؤك في النجاح" : "Your Partner in Success"}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {language === 'ar'
-              ? 'نقدم القيمة الحقيقية من خلال الخبرة والابتكار والالتزام'
-              : 'We deliver true value through expertise, innovation, and commitment'}
+            {language === "ar"
+              ? "نقدم القيمة الحقيقية من خلال الخبرة والابتكار والالتزام"
+              : "We deliver true value through expertise, innovation, and commitment"}
           </p>
         </div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative h-full"
-            >
+            <div key={index} className="group relative h-full">
               {/* Card Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200 group-hover:border-green-300 shadow-lg group-hover:shadow-xl transition-all duration-500"></div>
 
@@ -86,12 +84,12 @@ export function WhyChooseUs() {
 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-300">
-                  {language === 'ar' ? feature.arTitle : feature.enTitle}
+                  {language === "ar" ? feature.arTitle : feature.enTitle}
                 </h3>
 
                 {/* Description */}
                 <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">
-                  {language === 'ar' ? feature.arDesc : feature.enDesc}
+                  {language === "ar" ? feature.arDesc : feature.enDesc}
                 </p>
 
                 {/* Accent Line */}
@@ -107,16 +105,16 @@ export function WhyChooseUs() {
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
           <p className="text-gray-600 mb-8 text-lg max-w-2xl mx-auto">
-            {language === 'ar'
-              ? 'اكتشف كيف يمكننا مساعدتك في تحقيق أهدافك وطموحاتك'
-              : 'Discover how we can help you achieve your goals and ambitions'}
+            {language === "ar"
+              ? "اكتشف كيف يمكننا مساعدتك في تحقيق أهدافك وطموحاتك"
+              : "Discover how we can help you achieve your goals and ambitions"}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
-              {language === 'ar' ? '📞 اتصل بنا الآن' : 'Contact Us Now'}
+              {language === "ar" ? "📞 اتصل بنا الآن" : "Contact Us Now"}
             </button>
             <button className="px-8 py-4 border-2 border-green-600 text-green-600 font-bold rounded-xl hover:bg-green-50 transition-colors duration-300">
-              {language === 'ar' ? '📚 اعرف المزيد' : 'Learn More'}
+              {language === "ar" ? "📚 اعرف المزيد" : "Learn More"}
             </button>
           </div>
         </div>

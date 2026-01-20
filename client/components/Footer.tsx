@@ -91,7 +91,9 @@ export function Footer() {
                 <span className="font-semibold text-gray-300">
                   {t("phone")}:
                 </span>
-                <span className="block text-xs" dir="ltr" lang="en">+249 123 722 286</span>
+                <span className="block text-xs" dir="ltr" lang="en">
+                  +249 123 722 286
+                </span>
               </li>
               <li className="text-gray-400">
                 <span className="font-semibold text-gray-300">

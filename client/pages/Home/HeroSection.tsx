@@ -75,12 +75,15 @@ export function HeroSection() {
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#050816] via-[#0b1a2b] to-[#050816] text-white">
       {/* Atmospheric background */}
       <div className="absolute inset-0 opacity-40">
-        <div className="absolute inset-0" style={{
-          backgroundImage:
-            "linear-gradient(140deg, rgba(15,23,42,0.8) 0%, rgba(12,74,110,0.4) 45%, rgba(220,38,38,0.35) 100%), url(https://images.unsplash.com/photo-1581092981824-1e7b6b8e4253?w=2000&h=1200&fit=crop)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(140deg, rgba(15,23,42,0.8) 0%, rgba(12,74,110,0.4) 45%, rgba(220,38,38,0.35) 100%), url(https://images.unsplash.com/photo-1581092981824-1e7b6b8e4253?w=2000&h=1200&fit=crop)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
         <div className="absolute -top-20 -right-10 w-96 h-96 bg-red-500/30 rounded-full blur-[140px]"></div>
         <div className="absolute -bottom-24 -left-10 w-[28rem] h-[28rem] bg-emerald-500/25 rounded-full blur-[150px]"></div>
       </div>
@@ -109,7 +112,10 @@ export function HeroSection() {
 
             <ul className="space-y-4">
               {bulletPoints.map((point) => (
-                <li key={point.ar} className="flex items-start gap-3 text-base text-slate-200">
+                <li
+                  key={point.ar}
+                  className="flex items-start gap-3 text-base text-slate-200"
+                >
                   <div className="mt-1 w-3 h-3 rounded-full bg-gradient-to-br from-orchida-red to-orchida-green"></div>
                   <span>{language === "ar" ? point.ar : point.en}</span>
                 </li>
@@ -122,8 +128,18 @@ export function HeroSection() {
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-orchida-red to-red-600 shadow-lg shadow-red-600/30 hover:shadow-red-600/50 transition-all duration-300 font-semibold flex items-center justify-center gap-2"
               >
                 {t("whoWeAre")}
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
                 </svg>
               </button>
               <a
@@ -131,8 +147,18 @@ export function HeroSection() {
                 className="px-8 py-4 rounded-xl border border-white/30 hover:border-white/70 transition-all duration-300 font-semibold flex items-center justify-center gap-2"
               >
                 {t("sectors")}
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
                 </svg>
               </a>
             </div>
@@ -143,7 +169,9 @@ export function HeroSection() {
                   key={item.value}
                   className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 text-center"
                 >
-                  <div className={`mx-auto mb-3 h-1 w-16 rounded-full bg-gradient-to-r ${item.accent}`}></div>
+                  <div
+                    className={`mx-auto mb-3 h-1 w-16 rounded-full bg-gradient-to-r ${item.accent}`}
+                  ></div>
                   <p className="text-3xl font-bold">{item.value}</p>
                   <p className="text-sm text-slate-200">
                     {language === "ar" ? item.labelAr : item.labelEn}
@@ -175,7 +203,9 @@ export function HeroSection() {
                     <h3 className="text-2xl font-bold">Orchida Ops Hub</h3>
                   </div>
                   <span className="px-4 py-2 rounded-full bg-white/10 text-sm font-semibold">
-                    {language === "ar" ? "الفرع السعودي قيد الإنشاء" : "Saudi branch – under construction"}
+                    {language === "ar"
+                      ? "الفرع السعودي قيد الإنشاء"
+                      : "Saudi branch – under construction"}
                   </span>
                 </div>
 
@@ -185,7 +215,9 @@ export function HeroSection() {
                       key={sector.id}
                       className="rounded-2xl border border-white/10 bg-white/5 p-4 flex items-center gap-4"
                     >
-                      <div className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${sector.accent} flex items-center justify-center text-2xl`}>
+                      <div
+                        className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${sector.accent} flex items-center justify-center text-2xl`}
+                      >
                         {sector.icon}
                       </div>
                       <div>
@@ -220,8 +252,18 @@ export function HeroSection() {
               className="absolute top-6 right-6 text-gray-400 hover:text-gray-700 transition-colors"
               aria-label="Close"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 

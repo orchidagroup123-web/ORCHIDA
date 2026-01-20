@@ -31,7 +31,8 @@ export const sectorsData: Sector[] = [
     titleAr: "نساهم في تحقيق الأمن الغذائي وتنمية الموارد الطبيعية",
     titleEn: "Contributing to Food Security and Natural Resource Development",
     descriptionAr: "حلول مستدامة في الزراعة والثروة الحيوانية والسمكية",
-    descriptionEn: "Sustainable solutions in agriculture, livestock, and fisheries",
+    descriptionEn:
+      "Sustainable solutions in agriculture, livestock, and fisheries",
     iconEmoji: "🌾",
     image:
       "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=400&fit=crop",
@@ -45,7 +46,8 @@ export const sectorsData: Sector[] = [
         arDesc: "تطوير وإدارة مشاريع الإنتاج الحيواني مع تحسين السلالات",
         enDesc: "Development and management of livestock production projects",
         emoji: "🐂",
-        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop",
       },
       {
         arName: "الثروة السمكية",
@@ -53,7 +55,8 @@ export const sectorsData: Sector[] = [
         arDesc: "الاستزراع السمكي المستدام في المياه العذبة والمالحة",
         enDesc: "Sustainable fish farming in fresh and salt waters",
         emoji: "🐟",
-        image: "https://images.unsplash.com/photo-1506617420156-8e4536971650?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1506617420156-8e4536971650?w=800&h=600&fit=crop",
       },
       {
         arName: "الثروة الغابية والمحاصيل",
@@ -61,7 +64,8 @@ export const sectorsData: Sector[] = [
         arDesc: "إدارة الموارد الغابية وتطوير المحاصيل الاستراتيجية",
         enDesc: "Forest resource management and strategic crop development",
         emoji: "🌲",
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
       },
     ],
   },
@@ -71,8 +75,10 @@ export const sectorsData: Sector[] = [
     nameEn: "Mining Sector",
     titleAr: "استكشاف واستخراج ثروات الأرض بمسؤولية",
     titleEn: "Responsible Exploration and Extraction of Mineral Wealth",
-    descriptionAr: "ريادة قطاع التعدين من خلال خبرات متكاملة في الاستكشاف وفتح المناجم ومعالجة الخامات",
-    descriptionEn: "Leading mining sector through integrated expertise in exploration, mine development, and ore processing",
+    descriptionAr:
+      "ريادة قطاع التعدين من خلال خبرات متكاملة في الاستكشاف وفتح المناجم ومعالجة الخامات",
+    descriptionEn:
+      "Leading mining sector through integrated expertise in exploration, mine development, and ore processing",
     iconEmoji: "⛏️",
     image:
       "https://images.unsplash.com/photo-1581092162562-40038f56543a?w=600&h=400&fit=crop",
@@ -83,10 +89,13 @@ export const sectorsData: Sector[] = [
       {
         arName: "فتح المناجم (السطحي والجوفي)",
         enName: "Surface & Underground Mining",
-        arDesc: "متخصصون في تخطيط وتنفيذ عمليات التعدين السطحي والجوفي لمختلف أنواع المعادن",
-        enDesc: "Specialists in surface and underground mining operations for various mineral types",
+        arDesc:
+          "متخصصون في تخطيط وتنفيذ عمليات التعدين السطحي والجوفي لمختلف أنواع المعادن",
+        enDesc:
+          "Specialists in surface and underground mining operations for various mineral types",
         emoji: "⛏️",
-        image: "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&h=600&fit=crop",
       },
       {
         arName: "معالجة الخامات",
@@ -94,15 +103,18 @@ export const sectorsData: Sector[] = [
         arDesc: "حلول متقدمة لمعالجة وتنقية الخامات المعدنية",
         enDesc: "Advanced solutions for processing and refining mineral ores",
         emoji: "⚙️",
-        image: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&h=600&fit=crop",
       },
       {
         arName: "الاستشعار عن بعد و GIS",
         enName: "Remote Sensing & GIS",
         arDesc: "تحديد مواقع المعادن وتقييم الجدوى الاقتصادية",
-        enDesc: "Identifying mineral locations and assessing economic viability",
+        enDesc:
+          "Identifying mineral locations and assessing economic viability",
         emoji: "🛰️",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
       },
       {
         arName: "إدارة مشاريع التعدين",
@@ -110,7 +122,8 @@ export const sectorsData: Sector[] = [
         arDesc: "الإشراف الكامل على مشاريع التعدين من البداية للإغلاق",
         enDesc: "Full oversight of mining projects from start to closure",
         emoji: "📊",
-        image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&h=600&fit=crop",
       },
     ],
   },
@@ -164,9 +177,12 @@ export const sectorsData: Sector[] = [
     nameAr: "قطاع البنية التحتية",
     nameEn: "Infrastructure Development",
     titleAr: "بناء شرايين التنمية عبر مشاريع البنية التحتية الحيوية",
-    titleEn: "Building Development Arteries Through Vital Infrastructure Projects",
-    descriptionAr: "تصميم وتنفيذ مشاريع البنية التحتية التي تدعم النمو الاقتصادي والاجتماعي",
-    descriptionEn: "Designing and executing infrastructure projects that support economic and social growth",
+    titleEn:
+      "Building Development Arteries Through Vital Infrastructure Projects",
+    descriptionAr:
+      "تصميم وتنفيذ مشاريع البنية التحتية التي تدعم النمو الاقتصادي والاجتماعي",
+    descriptionEn:
+      "Designing and executing infrastructure projects that support economic and social growth",
     iconEmoji: "🏗️",
     image:
       "https://images.unsplash.com/photo-1581092162562-40038f56543a?w=600&h=400&fit=crop",
@@ -178,17 +194,21 @@ export const sectorsData: Sector[] = [
         arName: "الطرق والجسور",
         enName: "Roads & Bridges",
         arDesc: "إنشاء وتطوير شبكات الطرق والجسور التي تربط المدن",
-        enDesc: "Creating and developing road and bridge networks connecting cities",
+        enDesc:
+          "Creating and developing road and bridge networks connecting cities",
         emoji: "🛣️",
-        image: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=800&h=600&fit=crop",
       },
       {
         arName: "المباني والمجمعات",
         enName: "Buildings & Compounds",
         arDesc: "تنفيذ مشاريع إنشائية متكاملة للمباني الإدارية والسكنية",
-        enDesc: "Executing integrated construction projects for buildings and residential compounds",
+        enDesc:
+          "Executing integrated construction projects for buildings and residential compounds",
         emoji: "🏢",
-        image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
       },
       {
         arName: "الطاقة الكهرومائية والمحاجر",
@@ -196,15 +216,18 @@ export const sectorsData: Sector[] = [
         arDesc: "توليد الطاقة الكهرومائية وإدارة المحاجر",
         enDesc: "Hydroelectric power generation and quarry management",
         emoji: "⚡",
-        image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&h=600&fit=crop",
       },
       {
         arName: "التجارة الدولية والخدمات اللوجستية",
         enName: "International Trade & Logistics",
         arDesc: "توريد المواد الأساسية وتقديم حلول لوجستية متكاملة",
-        enDesc: "Supplying essential materials and offering integrated logistics solutions",
+        enDesc:
+          "Supplying essential materials and offering integrated logistics solutions",
         emoji: "🌐",
-        image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
       },
     ],
   },

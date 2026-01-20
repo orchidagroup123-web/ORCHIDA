@@ -1,28 +1,32 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from '@/hooks/useTranslation';
-import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "@/hooks/useTranslation";
+import { hierarchicalSectors, MainSector } from "@/data/hierarchical-sectors";
 
 const accentMap: Record<string, string> = {
-  mining: 'from-[#fcb045] to-[#f97316]',
-  agriculture: 'from-[#4ade80] to-[#16a34a]',
-  infrastructure: 'from-[#93c5fd] to-[#3b82f6]',
+  mining: "from-[#fcb045] to-[#f97316]",
+  agriculture: "from-[#4ade80] to-[#16a34a]",
+  infrastructure: "from-[#93c5fd] to-[#3b82f6]",
 };
 
 const sectorRouteMap: Record<string, string> = {
-  mining: 'mining',
-  agriculture: 'agricultural-health',
-  infrastructure: 'infrastructure',
+  mining: "mining",
+  agriculture: "agricultural-health",
+  infrastructure: "infrastructure",
 };
 
 export function HierarchicalSectorsSection() {
   const { language } = useTranslation();
   const navigate = useNavigate();
-  const [expandedSector, setExpandedSector] = useState<string>('mining');
+  const [expandedSector, setExpandedSector] = useState<string>("mining");
 
-  const miningSector = hierarchicalSectors.find((s) => s.id === 'mining');
-  const agricultureSector = hierarchicalSectors.find((s) => s.id === 'agriculture');
-  const infrastructureSector = hierarchicalSectors.find((s) => s.id === 'infrastructure');
+  const miningSector = hierarchicalSectors.find((s) => s.id === "mining");
+  const agricultureSector = hierarchicalSectors.find(
+    (s) => s.id === "agriculture",
+  );
+  const infrastructureSector = hierarchicalSectors.find(
+    (s) => s.id === "infrastructure",
+  );
 
   const handleSectorOpen = (id: string) => {
     setExpandedSector(id);
@@ -58,12 +62,14 @@ export function HierarchicalSectorsSection() {
           <div className="order-2 space-y-7">
             <div className="space-y-5">
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-                {language === 'ar' ? 'الهيكل الهرمي للقطاعات' : 'Hierarchical sector pyramid'}
+                {language === "ar"
+                  ? "الهيكل الهرمي للقطاعات"
+                  : "Hierarchical sector pyramid"}
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
-                {language === 'ar'
-                  ? 'نربط بين التعدين والزراعة والبنية التحتية بمنهجية واحدة تعزز التنمية في السودان وتؤسس لحضور خليجي متين.'
-                  : 'We connect mining, agriculture, and infrastructure under one methodology that accelerates Sudan’s development and cements our GCC presence.'}
+                {language === "ar"
+                  ? "نربط بين التعدين والزراعة والبنية التحتية بمنهجية واحدة تعزز التنمية في السودان وتؤسس لحضور خليجي متين."
+                  : "We connect mining, agriculture, and infrastructure under one methodology that accelerates Sudan’s development and cements our GCC presence."}
               </p>
             </div>
 
@@ -95,7 +101,6 @@ export function HierarchicalSectorsSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -108,8 +113,13 @@ interface SectorDetailCardProps {
   onSelect: () => void;
 }
 
-function SectorDetailCard({ sector, language, isActive, onSelect }: SectorDetailCardProps) {
-  const accent = accentMap[sector.id] ?? 'from-slate-200 to-slate-400';
+function SectorDetailCard({
+  sector,
+  language,
+  isActive,
+  onSelect,
+}: SectorDetailCardProps) {
+  const accent = accentMap[sector.id] ?? "from-slate-200 to-slate-400";
 
   return (
     <button
@@ -117,26 +127,33 @@ function SectorDetailCard({ sector, language, isActive, onSelect }: SectorDetail
       onClick={onSelect}
       aria-pressed={isActive}
       className={`w-full flex items-center gap-4 rounded-2xl border transition-all duration-300 p-4 text-left shadow-sm bg-white/80 ${
-        isActive ? 'border-transparent shadow-lg' : 'border-slate-200 hover:border-slate-400'
+        isActive
+          ? "border-transparent shadow-lg"
+          : "border-slate-200 hover:border-slate-400"
       }`}
     >
-      <div className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${accent} flex items-center justify-center text-2xl shadow`}>        
+      <div
+        className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${accent} flex items-center justify-center text-2xl shadow`}
+      >
         {sector.iconEmoji}
       </div>
       <div className="flex-1">
         <div className="flex items-center justify-between">
           <h3 className="text-xl font-semibold text-slate-900">
-            {language === 'ar' ? sector.nameAr : sector.nameEn}
+            {language === "ar" ? sector.nameAr : sector.nameEn}
           </h3>
           <span className="text-xs font-semibold text-slate-500">
-            {sector.subsectors.length} {language === 'ar' ? 'تخصص' : 'specialties'}
+            {sector.subsectors.length}{" "}
+            {language === "ar" ? "تخصص" : "specialties"}
           </span>
         </div>
         <p className="text-sm text-slate-600">
-          {language === 'ar' ? sector.descriptionAr : sector.descriptionEn}
+          {language === "ar" ? sector.descriptionAr : sector.descriptionEn}
         </p>
       </div>
-      <span className={`text-slate-400 transition-transform ${isActive ? 'rotate-180 text-slate-600' : ''}`}>
+      <span
+        className={`text-slate-400 transition-transform ${isActive ? "rotate-180 text-slate-600" : ""}`}
+      >
         ▼
       </span>
     </button>
@@ -167,11 +184,11 @@ function ProfessionalPyramid({
         <LayerButton
           sector={miningSector}
           language={language}
-          isActive={activeSectorId === 'mining'}
+          isActive={activeSectorId === "mining"}
           clipPath="polygon(50% 0%, 100% 100%, 0% 100%)"
           height={170}
           width={260}
-          accent={accentMap['mining']}
+          accent={accentMap["mining"]}
           onClick={() => miningSector && onSelect(miningSector.id)}
           align="center"
         />
@@ -180,22 +197,24 @@ function ProfessionalPyramid({
           <LayerButton
             sector={infrastructureSector}
             language={language}
-            isActive={activeSectorId === 'infrastructure'}
+            isActive={activeSectorId === "infrastructure"}
             clipPath="polygon(0% 0%, 100% 0%, 85% 100%, 0% 100%)"
             height={200}
             width={230}
-            accent={accentMap['infrastructure']}
-            onClick={() => infrastructureSector && onSelect(infrastructureSector.id)}
+            accent={accentMap["infrastructure"]}
+            onClick={() =>
+              infrastructureSector && onSelect(infrastructureSector.id)
+            }
             align="left"
           />
           <LayerButton
             sector={agricultureSector}
             language={language}
-            isActive={activeSectorId === 'agriculture'}
+            isActive={activeSectorId === "agriculture"}
             clipPath="polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)"
             height={200}
             width={230}
-            accent={accentMap['agriculture']}
+            accent={accentMap["agriculture"]}
             onClick={() => agricultureSector && onSelect(agricultureSector.id)}
             align="right"
           />
@@ -216,7 +235,7 @@ interface LayerButtonProps {
   width: number;
   accent: string;
   onClick: () => void;
-  align: 'left' | 'right' | 'center';
+  align: "left" | "right" | "center";
 }
 
 function LayerButton({
@@ -231,11 +250,11 @@ function LayerButton({
   align,
 }: LayerButtonProps) {
   const alignment =
-    align === 'center'
-      ? 'mx-auto'
-      : align === 'left'
-      ? 'ml-0 mr-auto'
-      : 'mr-0 ml-auto';
+    align === "center"
+      ? "mx-auto"
+      : align === "left"
+        ? "ml-0 mr-auto"
+        : "mr-0 ml-auto";
 
   return (
     <button
@@ -243,7 +262,9 @@ function LayerButton({
       onClick={onClick}
       aria-pressed={isActive}
       className={`relative ${alignment} block transition-transform duration-500 ${
-        isActive ? 'scale-105 drop-shadow-2xl' : 'scale-100 drop-shadow-lg opacity-80'
+        isActive
+          ? "scale-105 drop-shadow-2xl"
+          : "scale-100 drop-shadow-lg opacity-80"
       }`}
       style={{ width: `${width}px`, height: `${height}px` }}
     >
@@ -251,16 +272,20 @@ function LayerButton({
         className="absolute inset-0 rounded-3xl overflow-hidden"
         style={{
           clipPath,
-          backgroundImage: `linear-gradient(135deg, var(--tw-gradient-stops)), url(${sector?.image ?? ''})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: `linear-gradient(135deg, var(--tw-gradient-stops)), url(${sector?.image ?? ""})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <div className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-90`}></div>
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-90`}
+        ></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6">
-          <div className="text-5xl mb-2 drop-shadow-lg">{sector?.iconEmoji}</div>
+          <div className="text-5xl mb-2 drop-shadow-lg">
+            {sector?.iconEmoji}
+          </div>
           <h3 className="text-xl font-bold drop-shadow">
-            {language === 'ar' ? sector?.nameAr : sector?.nameEn}
+            {language === "ar" ? sector?.nameAr : sector?.nameEn}
           </h3>
         </div>
         <div className="absolute inset-0 bg-gradient-to-tr from-white/15 to-transparent"></div>

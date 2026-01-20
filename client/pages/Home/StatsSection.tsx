@@ -45,7 +45,13 @@ const stats: StatItem[] = [
   },
 ];
 
-function AnimatedCounter({ stat, language }: { stat: StatItem; language: string }) {
+function AnimatedCounter({
+  stat,
+  language,
+}: {
+  stat: StatItem;
+  language: string;
+}) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -58,7 +64,7 @@ function AnimatedCounter({ stat, language }: { stat: StatItem; language: string 
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (ref.current) {
@@ -96,7 +102,9 @@ function AnimatedCounter({ stat, language }: { stat: StatItem; language: string 
           <span className="text-3xl ml-1">{stat.suffix}</span>
         </span>
       </div>
-      <div className={`mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r ${stat.accent}`}></div>
+      <div
+        className={`mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r ${stat.accent}`}
+      ></div>
       <p className="text-lg font-semibold text-white">
         {language === "ar" ? stat.labelAr : stat.labelEn}
       </p>
@@ -134,7 +142,11 @@ export function StatsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((stat) => (
-            <AnimatedCounter key={stat.labelEn} stat={stat} language={language} />
+            <AnimatedCounter
+              key={stat.labelEn}
+              stat={stat}
+              language={language}
+            />
           ))}
         </div>
 

@@ -115,7 +115,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-orchida-green/50 transition-all">
-              <span className="text-2xl font-bold text-orchida-green">180+</span>
+              <span className="text-2xl font-bold text-orchida-green">
+                180+
+              </span>
               <p className="text-white/80 text-sm">
                 {language === "ar" ? "موظف" : "Team Members"}
               </p>
@@ -277,7 +279,8 @@ export default function AboutPage() {
               <div
                 className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
                 style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1495576032313-52581002a659?w=600&h=400&fit=crop')",
+                  backgroundImage:
+                    "url('https://images.unsplash.com/photo-1495576032313-52581002a659?w=600&h=400&fit=crop')",
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60"></div>
@@ -312,8 +315,14 @@ export default function AboutPage() {
                     </span>
                   </p>
                   <p className="text-white/80 text-sm flex items-start gap-2">
-                    <span className="text-orchida-green font-bold mt-1">👥</span>
-                    <span>{language === "ar" ? "حوالي 180 موظف" : "Approximately 180 employees"}</span>
+                    <span className="text-orchida-green font-bold mt-1">
+                      👥
+                    </span>
+                    <span>
+                      {language === "ar"
+                        ? "حوالي 180 موظف"
+                        : "Approximately 180 employees"}
+                    </span>
                   </p>
                   <p className="text-white/80 text-sm flex items-start gap-2">
                     <span className="text-orchida-red font-bold mt-1">📞</span>
@@ -329,7 +338,8 @@ export default function AboutPage() {
               <div
                 className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
                 style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=600&h=400&fit=crop')",
+                  backgroundImage:
+                    "url('https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=600&h=400&fit=crop')",
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70"></div>
@@ -345,7 +355,9 @@ export default function AboutPage() {
                     </span>
                   </div>
                   <h3 className="text-4xl font-black text-white mb-3 drop-shadow-lg">
-                    {language === "ar" ? "المملكة العربية السعودية" : "Saudi Arabia"}
+                    {language === "ar"
+                      ? "المملكة العربية السعودية"
+                      : "Saudi Arabia"}
                   </h3>
                   <p className="text-white/90 text-sm mb-6">
                     {language === "ar"
