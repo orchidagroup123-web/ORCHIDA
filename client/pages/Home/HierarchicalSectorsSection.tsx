@@ -4,16 +4,13 @@ import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
 
 export function HierarchicalSectorsSection() {
   const { language } = useTranslation();
-  const [expandedSector, setExpandedSector] = useState<string | null>(null);
-
-  const primarySectors = hierarchicalSectors.filter((s) => s.level === 'primary');
 
   return (
-    <section id="sectors" className="relative py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="sectors" className="py-32 bg-yellow-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-            {language === 'ar' ? 'الهيكل الهرمي للقطاعات' : 'Hierarchical Sector Structure'}
+          <h2 className="text-4xl font-bold text-red-900 mb-6">
+            TEST: Hierarchical Sector Structure
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'ar'
