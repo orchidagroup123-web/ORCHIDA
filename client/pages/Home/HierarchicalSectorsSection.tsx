@@ -8,12 +8,6 @@ export function HierarchicalSectorsSection() {
 
   const primarySectors = hierarchicalSectors.filter((s) => s.level === 'primary');
 
-  console.log('HierarchicalSectorsSection - primarySectors:', primarySectors);
-
-  if (!primarySectors || primarySectors.length === 0) {
-    return <div className="py-32 bg-red-50 text-center">No sectors data found. Count: {hierarchicalSectors.length}</div>;
-  }
-
   return (
     <section id="sectors" className="relative py-32 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
       {/* Decorative Background Elements */}
