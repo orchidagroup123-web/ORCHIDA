@@ -100,19 +100,6 @@ export function HierarchicalSectorsSection() {
           </div>
         </div>
 
-        {expandedSector && (
-          <div className="pt-16 border-t border-slate-200">
-            {expandedSector === 'mining' && miningSector && (
-              <SubSectorsGrid sector={miningSector} language={language} />
-            )}
-            {expandedSector === 'agriculture' && agricultureSector && (
-              <SubSectorsGrid sector={agricultureSector} language={language} />
-            )}
-            {expandedSector === 'infrastructure' && infrastructureSector && (
-              <SubSectorsGrid sector={infrastructureSector} language={language} />
-            )}
-          </div>
-        )}
       </div>
     </section>
   );
