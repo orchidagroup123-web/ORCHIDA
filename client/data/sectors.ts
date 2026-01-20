@@ -45,6 +45,7 @@ export const sectorsData: Sector[] = [
         arDesc: "تطوير وإدارة مشاريع الإنتاج الحيواني مع تحسين السلالات",
         enDesc: "Development and management of livestock production projects",
         emoji: "🐂",
+        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop",
       },
       {
         arName: "الثروة السمكية",
@@ -52,6 +53,7 @@ export const sectorsData: Sector[] = [
         arDesc: "الاستزراع السمكي المستدام في المياه العذبة والمالحة",
         enDesc: "Sustainable fish farming in fresh and salt waters",
         emoji: "🐟",
+        image: "https://images.unsplash.com/photo-1506617420156-8e4536971650?w=800&h=600&fit=crop",
       },
       {
         arName: "الثروة الغابية والمحاصيل",
@@ -59,6 +61,7 @@ export const sectorsData: Sector[] = [
         arDesc: "إدارة الموارد الغابية وتطوير المحاصيل الاستراتيجية",
         enDesc: "Forest resource management and strategic crop development",
         emoji: "🌲",
+        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
       },
     ],
   },
