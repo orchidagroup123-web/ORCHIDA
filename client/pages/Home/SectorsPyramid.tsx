@@ -184,7 +184,7 @@ function PyramidCard({
 }
 
 interface SubsectorsProps {
-  sector: MainSector;
+  sector: any;
   language: string;
 }
 
