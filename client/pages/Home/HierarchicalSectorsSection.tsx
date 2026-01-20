@@ -1,6 +1,7 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
 import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
 
 const accentMap: Record<string, string> = {
