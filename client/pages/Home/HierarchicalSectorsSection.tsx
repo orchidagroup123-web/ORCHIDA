@@ -28,7 +28,7 @@ export function HierarchicalSectorsSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div className="order-2 lg:order-1 flex justify-center">
+          <div className="order-1 flex justify-center">
             <ProfessionalPyramid
               miningSector={miningSector}
               agricultureSector={agricultureSector}
@@ -39,7 +39,7 @@ export function HierarchicalSectorsSection() {
             />
           </div>
 
-          <div className="order-1 lg:order-2 space-y-7">
+          <div className="order-2 space-y-7">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white shadow-sm border border-slate-200 text-sm font-semibold tracking-[0.3em] uppercase text-slate-500">
               {language === 'ar' ? 'ركائز الاقتصاد' : 'Economic pillars'}
             </div>
@@ -50,8 +50,8 @@ export function HierarchicalSectorsSection() {
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
                 {language === 'ar'
-                  ? 'ننسج علاقة متوازنة بين التعدين والزراعة والبنية التحتية لتحريك عجلة النمو في السودان وفرعه الخليجي.'
-                  : 'We orchestrate mining, agriculture, and infrastructure in harmony to power growth in Sudan and our GCC branch.'}
+                  ? 'نربط بين التعدين والزراعة والبنية التحتية بمنهجية واحدة تعزز التنمية في السودان وتؤسس لحضور خليجي متين.'
+                  : 'We connect mining, agriculture, and infrastructure under one methodology that accelerates Sudan’s development and cements our GCC presence.'}
               </p>
             </div>
 
