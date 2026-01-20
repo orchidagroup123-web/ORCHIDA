@@ -180,6 +180,7 @@ export const sectorsData: Sector[] = [
         arDesc: "إنشاء وتطوير شبكات الطرق والجسور التي تربط المدن",
         enDesc: "Creating and developing road and bridge networks connecting cities",
         emoji: "🛣️",
+        image: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=800&h=600&fit=crop",
       },
       {
         arName: "المباني والمجمعات",
@@ -187,6 +188,7 @@ export const sectorsData: Sector[] = [
         arDesc: "تنفيذ مشاريع إنشائية متكاملة للمباني الإدارية والسكنية",
         enDesc: "Executing integrated construction projects for buildings and residential compounds",
         emoji: "🏢",
+        image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
       },
       {
         arName: "الطاقة الكهرومائية والمحاجر",
@@ -194,6 +196,7 @@ export const sectorsData: Sector[] = [
         arDesc: "توليد الطاقة الكهرومائية وإدارة المحاجر",
         enDesc: "Hydroelectric power generation and quarry management",
         emoji: "⚡",
+        image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&h=600&fit=crop",
       },
       {
         arName: "التجارة الدولية والخدمات اللوجستية",
@@ -201,6 +204,7 @@ export const sectorsData: Sector[] = [
         arDesc: "توريد المواد الأساسية وتقديم حلول لوجستية متكاملة",
         enDesc: "Supplying essential materials and offering integrated logistics solutions",
         emoji: "🌐",
+        image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
       },
     ],
   },
