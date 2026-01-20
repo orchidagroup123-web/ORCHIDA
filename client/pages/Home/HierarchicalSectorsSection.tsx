@@ -1,4 +1,5 @@
 import { useTranslation } from '@/hooks/useTranslation';
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState } from 'react';
 import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
 
