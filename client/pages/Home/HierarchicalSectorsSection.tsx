@@ -24,6 +24,14 @@ export function HierarchicalSectorsSection() {
   const agricultureSector = hierarchicalSectors.find((s) => s.id === 'agriculture');
   const infrastructureSector = hierarchicalSectors.find((s) => s.id === 'infrastructure');
 
+  const handleSectorOpen = (id: string) => {
+    setExpandedSector(id);
+    const routeId = sectorRouteMap[id];
+    if (routeId) {
+      navigate(`/sector/${routeId}`);
+    }
+  };
+
   return (
     <section
       id="sectors-pyramid"
