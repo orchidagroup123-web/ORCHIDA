@@ -9,17 +9,17 @@ export default function ContactPage() {
     {
       icon: "📍",
       title: "المقر الرئيسي",
-      details: ["ولاية البحر الأحمر – بورتسودان", "السودان"],
+      details: ["ولاية البحر الأحمر – بورتسودان", "السودان ✓"],
     },
     {
       icon: "🏢",
-      title: "الفرع",
-      details: ["ولاية نهر النيل – عطبرة", "السودان"],
+      title: "فرع تحت الإنشاء",
+      details: ["الرياض", "المملكة العربية السعودية (قيد الإنشاء)"],
     },
     {
       icon: "📞",
       title: "الهاتف",
-      details: ["+249 123 722 286", "متاح 9 ص - 6 م"],
+      details: ["+249 911 123 456", "متاح 9 ص - 6 م"],
     },
     {
       icon: "✉️",
@@ -32,17 +32,17 @@ export default function ContactPage() {
     {
       icon: "📍",
       title: "Head Office",
-      details: ["Red Sea State – Port Sudan", "Sudan"],
+      details: ["Red Sea State – Port Sudan", "Sudan ✓"],
     },
     {
       icon: "🏢",
-      title: "Branch",
-      details: ["Nile River State – Atbara", "Sudan"],
+      title: "Branch Under Construction",
+      details: ["Riyadh", "Saudi Arabia (Under Development)"],
     },
     {
       icon: "📞",
       title: "Phone",
-      details: ["+249 123 722 286", "Available 9 AM - 6 PM"],
+      details: ["+249 911 123 456", "Available 9 AM - 6 PM"],
     },
     {
       icon: "✉️",
