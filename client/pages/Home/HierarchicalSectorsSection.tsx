@@ -1,5 +1,6 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
 
 const accentMap: Record<string, string> = {
@@ -8,8 +9,15 @@ const accentMap: Record<string, string> = {
   infrastructure: 'from-[#93c5fd] to-[#3b82f6]',
 };
 
+const sectorRouteMap: Record<string, string> = {
+  mining: 'mining',
+  agriculture: 'agricultural-health',
+  infrastructure: 'infrastructure',
+};
+
 export function HierarchicalSectorsSection() {
   const { language } = useTranslation();
+  const navigate = useNavigate();
   const [expandedSector, setExpandedSector] = useState<string>('mining');
 
   const miningSector = hierarchicalSectors.find((s) => s.id === 'mining');
