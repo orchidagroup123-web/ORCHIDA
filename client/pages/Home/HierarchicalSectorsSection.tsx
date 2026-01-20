@@ -72,6 +72,7 @@ export function HierarchicalSectorsSection() {
               agricultureSector={agricultureSector}
               infrastructureSector={infrastructureSector}
               language={language}
+              activeSectorId={expandedSector}
             />
           </div>
         </div>
@@ -142,6 +143,7 @@ interface PyramidProps {
   agricultureSector?: MainSector;
   infrastructureSector?: MainSector;
   language: string;
+  activeSectorId: string | null;
 }
 
 function ProfessionalPyramid({
@@ -149,6 +151,7 @@ function ProfessionalPyramid({
   agricultureSector,
   infrastructureSector,
   language,
+  activeSectorId,
 }: PyramidProps) {
   return (
     <div className="relative w-full max-w-md h-auto">
