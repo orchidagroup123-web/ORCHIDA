@@ -1,13 +1,13 @@
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "./Home/HeroSection";
-import { HierarchicalSectorsSection } from "./Home/HierarchicalSectorsSection";
+import { SectorsPyramid } from "./Home/SectorsPyramid";
 import { StatsSection } from "./Home/StatsSection";
 
 export default function Index() {
   return (
     <Layout>
       <HeroSection />
-      <HierarchicalSectorsSection />
+      <SectorsPyramid />
       <StatsSection />
     </Layout>
   );
