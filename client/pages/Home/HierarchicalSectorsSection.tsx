@@ -100,25 +100,40 @@ interface SectorDetailCardProps {
   language: string;
   isActive: boolean;
   colorClass: string;
+  onSelect: () => void;
 }
 
-function SectorDetailCard({ sector, language, isActive, colorClass }: SectorDetailCardProps) {
+function SectorDetailCard({ sector, language, isActive, colorClass, onSelect }: SectorDetailCardProps) {
   return (
-    <div
-      className={`p-4 rounded-lg border-2 transition-all duration-300 ${colorClass}`}
+    <button
+      type="button"
+      onClick={onSelect}
+      aria-pressed={isActive}
+      className={`w-full text-left p-5 rounded-2xl border-2 transition-all duration-300 flex items-center gap-4 ${colorClass} ${isActive ? 'bg-white shadow-xl' : 'bg-white/80 hover:shadow-md'} `}
     >
-      <div className="flex items-center gap-3">
-        <span className="text-4xl flex-shrink-0">{sector.iconEmoji}</span>
-        <div>
-          <h3 className="text-lg font-bold text-gray-900">
+      <span className="text-4xl flex-shrink-0">{sector.iconEmoji}</span>
+      <div className="flex-1">
+        <div className="flex items-center justify-between mb-1">
+          <h3 className="text-xl font-bold text-gray-900">
             {language === 'ar' ? sector.nameAr : sector.nameEn}
           </h3>
-          <p className="text-sm text-gray-600">
-            {language === 'ar' ? sector.descriptionAr : sector.descriptionEn}
-          </p>
+          <span className="text-xs font-semibold text-gray-500">
+            {sector.subsectors.length} {language === 'ar' ? 'تخصص' : 'specializations'}
+          </span>
         </div>
+        <p className="text-sm text-gray-600">
+          {language === 'ar' ? sector.descriptionAr : sector.descriptionEn}
+        </p>
       </div>
-    </div>
+      <svg
+        className={`w-5 h-5 text-gray-500 transition-transform ${isActive ? 'rotate-180' : ''}`}
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 9l6 6 6-6" />
+      </svg>
+    </button>
   );
 }
 
