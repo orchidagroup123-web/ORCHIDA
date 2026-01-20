@@ -114,10 +114,16 @@ export default function AboutPage() {
                 {language === "ar" ? "قطاعات عمل" : "Business Sectors"}
               </p>
             </div>
-            <div className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-orchida-red/50 transition-all">
-              <span className="text-2xl font-bold text-orchida-red">500+</span>
+            <div className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-orchida-green/50 transition-all">
+              <span className="text-2xl font-bold text-orchida-green">180+</span>
               <p className="text-white/80 text-sm">
                 {language === "ar" ? "موظف" : "Team Members"}
+              </p>
+            </div>
+            <div className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-orchida-red/50 transition-all">
+              <span className="text-2xl font-bold text-orchida-red">2</span>
+              <p className="text-white/80 text-sm">
+                {language === "ar" ? "مكاتب دول" : "Office Countries"}
               </p>
             </div>
           </div>
