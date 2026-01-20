@@ -155,7 +155,7 @@ function SectorCard({ sector, expanded, onToggle, language }: SectorCardProps) {
 }
 
 interface SubSectorsGridProps {
-  sector: ReturnType<typeof hierarchicalSectors[0]>;
+  sector: MainSector;
   language: string;
 }
 
