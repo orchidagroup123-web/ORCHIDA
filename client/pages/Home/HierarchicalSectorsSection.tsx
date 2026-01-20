@@ -10,7 +10,7 @@ export function HierarchicalSectorsSection() {
   const primarySectors = hierarchicalSectors.filter((s) => s.level === 'primary');
 
   return (
-    <section id="sectors" className="relative py-32 bg-white overflow-hidden">
+    <section id="sectors" className="relative py-32 bg-gray-50 overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-10 w-72 h-72 bg-orchida-red rounded-full blur-3xl"></div>
