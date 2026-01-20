@@ -1,7 +1,7 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { hierarchicalSectors } from '@/data/hierarchical-sectors';
+import { hierarchicalSectors, MainSector, SubSector } from '@/data/hierarchical-sectors';
 
 export function HierarchicalSectorsSection() {
   const { t, language } = useTranslation();
