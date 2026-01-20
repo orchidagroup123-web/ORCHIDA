@@ -7,155 +7,286 @@ export function HierarchicalSectorsSection() {
   const [expandedSector, setExpandedSector] = useState<string | null>(null);
   const primarySectors = hierarchicalSectors.filter((s) => s.level === 'primary');
 
+  // Get sectors in order: Mining (apex), Infrastructure (left), Agriculture (right)
+  const miningSector = primarySectors.find(s => s.id === 'mining');
+  const agricultureSector = primarySectors.find(s => s.id === 'agriculture');
+  const infrastructureSector = primarySectors.find(s => s.id === 'infrastructure');
+
   return (
-    <section id="sectors-pyramid" className="relative py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute inset-0 opacity-3 pointer-events-none">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-amber-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-green-500 rounded-full blur-3xl"></div>
-      </div>
-
+    <section id="sectors-pyramid" className="relative py-20 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-1 w-12 bg-gradient-to-r from-orange-500 to-transparent rounded-full"></div>
-            <span className="text-orange-600 font-bold text-sm uppercase tracking-wider">
-              {language === 'ar' ? 'قطاعاتنا الرئيسية' : 'Our Main Sectors'}
-            </span>
-            <div className="h-1 w-12 bg-gradient-to-l from-green-600 to-transparent rounded-full"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Text Content */}
+          <div className="flex flex-col justify-center">
+            <div className="mb-8">
+              <span className="text-blue-600 font-bold text-sm uppercase tracking-wider">
+                {language === 'ar' ? 'قطاعاتنا الرئيسية' : 'Our Main Sectors'}
+              </span>
+            </div>
+            
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+              {language === 'ar' ? 'الهيكل الهرمي للقطاعات' : 'Hierarchical Sector Structure'}
+            </h2>
+            
+            <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+              {language === 'ar'
+                ? 'ثلاثة قطاعات رئيسية متكاملة تشكل أساس عملياتنا'
+                : 'Three integrated main sectors forming the foundation of our operations'}
+            </p>
+
+            {/* Sector Details */}
+            <div className="space-y-6">
+              {miningSector && (
+                <SectorDetail
+                  sector={miningSector}
+                  language={language}
+                  isExpanded={expandedSector === miningSector.id}
+                  onToggle={() =>
+                    setExpandedSector(expandedSector === miningSector.id ? null : miningSector.id)
+                  }
+                />
+              )}
+              {agricultureSector && (
+                <SectorDetail
+                  sector={agricultureSector}
+                  language={language}
+                  isExpanded={expandedSector === agricultureSector.id}
+                  onToggle={() =>
+                    setExpandedSector(expandedSector === agricultureSector.id ? null : agricultureSector.id)
+                  }
+                />
+              )}
+              {infrastructureSector && (
+                <SectorDetail
+                  sector={infrastructureSector}
+                  language={language}
+                  isExpanded={expandedSector === infrastructureSector.id}
+                  onToggle={() =>
+                    setExpandedSector(expandedSector === infrastructureSector.id ? null : infrastructureSector.id)
+                  }
+                />
+              )}
+            </div>
           </div>
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-            {language === 'ar' ? 'الهيكل الهرمي للقطاعات' : 'Hierarchical Sector Structure'}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {language === 'ar'
-              ? 'ثلاثة قطاعات رئيسية مع عشرات التخصصات والمجالات'
-              : 'Three main sectors with dozens of specializations and fields'}
-          </p>
+
+          {/* Right Side - 3D Pyramid Visualization */}
+          <div className="flex justify-center items-center">
+            <PyramidVisualization
+              miningSector={miningSector}
+              agricultureSector={agricultureSector}
+              infrastructureSector={infrastructureSector}
+              language={language}
+              expandedSector={expandedSector}
+            />
+          </div>
         </div>
 
-        {/* Pyramid Structure */}
-        <div className="space-y-16">
-          {/* Mining - Apex (Top Center) */}
-          {primarySectors.length > 0 && (
-            <div className="flex justify-center mb-8">
-              <SectorCard
-                sector={primarySectors[0]}
-                isExpanded={expandedSector === primarySectors[0].id}
-                onToggle={() =>
-                  setExpandedSector(
-                    expandedSector === primarySectors[0].id ? null : primarySectors[0].id
-                  )
-                }
-                language={language}
-                size="large"
-              />
-            </div>
-          )}
-
-          {/* Agriculture & Infrastructure - Second Row */}
-          {primarySectors.length > 2 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-              {/* Infrastructure (Left) */}
-              <SectorCard
-                sector={primarySectors[2]}
-                isExpanded={expandedSector === primarySectors[2].id}
-                onToggle={() =>
-                  setExpandedSector(expandedSector === primarySectors[2].id ? null : primarySectors[2].id)
-                }
-                language={language}
-                size="medium"
-              />
-              {/* Agriculture (Right) */}
-              <SectorCard
-                sector={primarySectors[1]}
-                isExpanded={expandedSector === primarySectors[1].id}
-                onToggle={() =>
-                  setExpandedSector(expandedSector === primarySectors[1].id ? null : primarySectors[1].id)
-                }
-                language={language}
-                size="medium"
-              />
-            </div>
-          )}
-
-          {/* Expanded Subsectors */}
-          {expandedSector && (
-            <div className="mt-20 pt-20 border-t-2 border-gray-200 animate-fadeIn">
-              <SubSectorsGrid
-                sector={primarySectors.find((s) => s.id === expandedSector)!}
-                language={language}
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Bottom Accent */}
-        <div className="mt-20 flex justify-center">
-          <div className="h-1 w-24 bg-gradient-to-r from-orange-500 via-gray-400 to-green-600 rounded-full"></div>
-        </div>
+        {/* Expanded Subsectors Below */}
+        {expandedSector && (
+          <div className="mt-20 pt-20 border-t-2 border-gray-200 animate-fadeIn">
+            {miningSector && expandedSector === miningSector.id && (
+              <SubSectorsGrid sector={miningSector} language={language} />
+            )}
+            {agricultureSector && expandedSector === agricultureSector.id && (
+              <SubSectorsGrid sector={agricultureSector} language={language} />
+            )}
+            {infrastructureSector && expandedSector === infrastructureSector.id && (
+              <SubSectorsGrid sector={infrastructureSector} language={language} />
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
 }
 
-interface SectorCardProps {
+interface SectorDetailProps {
   sector: MainSector;
+  language: string;
   isExpanded: boolean;
   onToggle: () => void;
-  language: string;
-  size: 'large' | 'medium';
 }
 
-function SectorCard({ sector, isExpanded, onToggle, language, size }: SectorCardProps) {
-  const sizeClass = size === 'large' ? 'w-full md:w-96 h-96' : 'w-full h-80';
-  const iconSize = size === 'large' ? 'text-8xl' : 'text-6xl';
-  const titleSize = size === 'large' ? 'text-3xl md:text-4xl' : 'text-2xl md:text-3xl';
-
+function SectorDetail({ sector, language, isExpanded, onToggle }: SectorDetailProps) {
   return (
     <div
       onClick={onToggle}
-      className={`${sizeClass} group relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 cursor-pointer`}
+      className="group p-6 rounded-xl border-2 border-gray-200 hover:border-blue-500 cursor-pointer transition-all duration-300 bg-white hover:bg-blue-50"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-        style={{ backgroundImage: `url(${sector.image})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70"></div>
-      </div>
-
-      {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-6 z-10">
-        {/* Icon */}
-        <div className="relative mb-4">
-          <div className={`${iconSize} drop-shadow-2xl transition-transform duration-500 group-hover:scale-125`}>
-            {sector.iconEmoji}
+      <div className="flex items-start gap-4">
+        <div className="text-5xl flex-shrink-0">{sector.iconEmoji}</div>
+        <div className="flex-grow">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            {language === 'ar' ? sector.nameAr : sector.nameEn}
+          </h3>
+          <p className="text-gray-600 mb-3">
+            {language === 'ar' ? sector.titleAr : sector.titleEn}
+          </p>
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-blue-600 font-semibold">
+              {sector.subsectors.length} {language === 'ar' ? 'تخصص' : 'specializations'}
+            </span>
+            <span className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+              ▼
+            </span>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
 
-        {/* Title */}
-        <h3 className={`${titleSize} font-bold text-white text-center px-4 drop-shadow-lg leading-tight`}>
-          {language === 'ar' ? sector.nameAr : sector.nameEn}
-        </h3>
+interface PyramidVisualizationProps {
+  miningSector?: MainSector;
+  agricultureSector?: MainSector;
+  infrastructureSector?: MainSector;
+  language: string;
+  expandedSector: string | null;
+}
 
-        {/* Subsector Count */}
-        <p className="mt-3 text-white/90 text-sm font-semibold drop-shadow-lg">
-          {sector.subsectors.length}{' '}
-          {language === 'ar' ? 'تخصص' : 'specialization' + (sector.subsectors.length > 1 ? 's' : '')}
-        </p>
+function PyramidVisualization({
+  miningSector,
+  agricultureSector,
+  infrastructureSector,
+  language,
+  expandedSector,
+}: PyramidVisualizationProps) {
+  return (
+    <div className="relative w-full max-w-md h-96 flex items-center justify-center">
+      {/* SVG Pyramid Container */}
+      <svg
+        viewBox="0 0 400 500"
+        className="w-full h-full drop-shadow-2xl"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        {/* Define gradients */}
+        <defs>
+          <linearGradient id="miningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#FCD34D', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#EA580C', stopOpacity: 1 }} />
+          </linearGradient>
+          <linearGradient id="agricultureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#86EFAC', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#10B981', stopOpacity: 1 }} />
+          </linearGradient>
+          <linearGradient id="infrastructureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#93C5FD', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#3B82F6', stopOpacity: 1 }} />
+          </linearGradient>
+          <filter id="shadow">
+            <feDropShadow dx="2" dy="4" stdDeviation="3" floodOpacity="0.3" />
+          </filter>
+        </defs>
 
-        {/* Expand Indicator */}
-        {!isExpanded && (
-          <p className="absolute bottom-6 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            {language === 'ar' ? '👆 اكتشف التخصصات' : '👆 Explore Specializations'}
-          </p>
+        {/* Mining - Top (Apex) */}
+        {miningSector && (
+          <g
+            className="cursor-pointer transition-all hover:opacity-90"
+            filter="url(#shadow)"
+          >
+            {/* Apex triangle */}
+            <polygon
+              points="200,50 280,180 120,180"
+              fill="url(#miningGradient)"
+              stroke="#E8860E"
+              strokeWidth="2"
+            />
+            {/* Inner image section */}
+            <rect
+              x="140"
+              y="80"
+              width="120"
+              height="80"
+              fill="url(#miningGradient)"
+              opacity="0.9"
+              rx="4"
+            />
+            {/* Text */}
+            <text
+              x="200"
+              y="135"
+              textAnchor="middle"
+              className="text-lg font-bold"
+              fill="white"
+              fontSize="18"
+              fontWeight="bold"
+            >
+              {language === 'ar' ? 'التعدين' : 'Mining'}
+            </text>
+          </g>
+        )}
+
+        {/* Agriculture - Bottom Right */}
+        {agricultureSector && (
+          <g className="cursor-pointer transition-all hover:opacity-90" filter="url(#shadow)">
+            {/* Bottom right trapezoid */}
+            <polygon
+              points="280,180 400,450 200,450"
+              fill="url(#agricultureGradient)"
+              stroke="#059669"
+              strokeWidth="2"
+            />
+            {/* Text */}
+            <text
+              x="310"
+              y="350"
+              textAnchor="middle"
+              fill="white"
+              fontSize="16"
+              fontWeight="bold"
+            >
+              {language === 'ar' ? 'الزراعة' : 'Agriculture'}
+            </text>
+          </g>
+        )}
+
+        {/* Infrastructure - Bottom Left */}
+        {infrastructureSector && (
+          <g className="cursor-pointer transition-all hover:opacity-90" filter="url(#shadow)">
+            {/* Bottom left trapezoid */}
+            <polygon
+              points="120,180 200,450 0,450"
+              fill="url(#infrastructureGradient)"
+              stroke="#1D4ED8"
+              strokeWidth="2"
+            />
+            {/* Text */}
+            <text
+              x="90"
+              y="350"
+              textAnchor="middle"
+              fill="white"
+              fontSize="16"
+              fontWeight="bold"
+            >
+              {language === 'ar' ? 'البنية التحتية' : 'Infrastructure'}
+            </text>
+          </g>
+        )}
+
+        {/* Base shadow for depth */}
+        <ellipse
+          cx="200"
+          cy="455"
+          rx="200"
+          ry="25"
+          fill="black"
+          opacity="0.15"
+        />
+      </svg>
+
+      {/* Icons positioned absolutely over pyramid */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        {miningSector && (
+          <div className="absolute top-12 text-6xl drop-shadow-lg">{miningSector.iconEmoji}</div>
+        )}
+        {agricultureSector && (
+          <div className="absolute bottom-24 right-8 text-5xl drop-shadow-lg">{agricultureSector.iconEmoji}</div>
+        )}
+        {infrastructureSector && (
+          <div className="absolute bottom-24 left-8 text-5xl drop-shadow-lg">{infrastructureSector.iconEmoji}</div>
         )}
       </div>
-
-      {/* Corner Accent */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-3xl"></div>
     </div>
   );
 }
@@ -186,7 +317,6 @@ function SubSectorsGrid({ sector, language }: SubSectorsGridProps) {
             className="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            {/* Background Image */}
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ backgroundImage: `url(${subsector.image})` }}
@@ -194,7 +324,6 @@ function SubSectorsGrid({ sector, language }: SubSectorsGridProps) {
               <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70"></div>
             </div>
 
-            {/* Content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 z-10">
               <div className="text-5xl mb-3 drop-shadow-lg group-hover:scale-110 transition-transform duration-500">
                 {subsector.iconEmoji}
@@ -208,9 +337,6 @@ function SubSectorsGrid({ sector, language }: SubSectorsGridProps) {
                   : subsector.descriptionEn}
               </p>
             </div>
-
-            {/* Corner Accent */}
-            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-2xl"></div>
           </div>
         ))}
       </div>
