@@ -9,12 +9,12 @@ export function HeroSection() {
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-black">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Main background image with strong overlay */}
+        {/* Main background image with strong overlay - Mining operation */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=2000&h=1200&fit=crop)",
+              "url(https://images.unsplash.com/photo-1581092162562-40038f56543a?w=2000&h=1200&fit=crop)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
