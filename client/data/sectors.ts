@@ -41,17 +41,47 @@ export const sectorsData: Sector[] = [
   {
     id: "mining",
     nameAr: "قطاع التعدين",
-    nameEn: "Mining",
+    nameEn: "Mining Sector",
     titleAr: "استكشاف واستخراج ثروات الأرض بمسؤولية",
-    titleEn: "Responsible Exploration and Extraction",
-    descriptionAr: "استخراج معادن بمعايير عالمية",
-    descriptionEn: "Mineral extraction with international standards",
+    titleEn: "Responsible Exploration and Extraction of Mineral Wealth",
+    descriptionAr: "ريادة قطاع التعدين من خلال خبرات متكاملة في الاستكشاف وفتح المناجم ومعالجة الخامات",
+    descriptionEn: "Leading mining sector through integrated expertise in exploration, mine development, and ore processing",
     iconEmoji: "⛏️",
     image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1581092162562-40038f56543a?w=600&h=400&fit=crop",
     color: "from-yellow-600 to-orange-700",
     fullContentAr: `تعتبر مجموعة أوركيد ركيزة أساسية في قطاع التعدين، حيث نقوم باستخراج وتجهيز الخامات المعدنية وفق أعلى المعايير العالمية. نعتمد على تكنولوجيا تنقيب حديثة وفرق عمل خبيرة لضمان الاستفادة القصوى من الموارد الطبيعية، مع الالتزام الصارم بمعايير الاستدامة البيئية والسلامة المهنية، لرفد الصناعات المحلية والعالمية بالمواد الخام الأساسية.`,
     fullContentEn: `Orchida Group is a cornerstone in the mining sector, extracting and processing mineral ores according to the highest international standards. We rely on modern exploration technology and expert teams to ensure maximum utilization of natural resources, while strictly adhering to environmental sustainability and occupational safety standards, supplying local and global industries with essential raw materials.`,
+    specializations: [
+      {
+        arName: "فتح المناجم (السطحي والجوفي)",
+        enName: "Surface & Underground Mining",
+        arDesc: "متخصصون في تخطيط وتنفيذ عمليات التعدين السطحي والجوفي لمختلف أنواع المعادن",
+        enDesc: "Specialists in surface and underground mining operations for various mineral types",
+        emoji: "⛏️",
+      },
+      {
+        arName: "معالجة الخامات",
+        enName: "Ore Processing",
+        arDesc: "حلول متقدمة لمعالجة وتنقية الخامات المعدنية",
+        enDesc: "Advanced solutions for processing and refining mineral ores",
+        emoji: "⚙️",
+      },
+      {
+        arName: "الاستشعار عن بعد و GIS",
+        enName: "Remote Sensing & GIS",
+        arDesc: "تحديد مواقع المعادن وتقييم الجدوى الاقتصادية",
+        enDesc: "Identifying mineral locations and assessing economic viability",
+        emoji: "🛰️",
+      },
+      {
+        arName: "إدارة مشاريع التعدين",
+        enName: "Project Management",
+        arDesc: "الإشراف الكامل على مشاريع التعدين من البداية للإغلاق",
+        enDesc: "Full oversight of mining projects from start to closure",
+        emoji: "📊",
+      },
+    ],
   },
   {
     id: "international-trade",
