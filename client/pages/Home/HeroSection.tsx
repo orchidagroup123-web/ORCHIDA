@@ -67,11 +67,11 @@ export function HeroSection() {
               <div className="text-xs text-gray-300">سنة خبرة</div>
             </div>
             <div className="px-4 py-3 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-orchida-green/50 transition-all">
-              <div className="text-2xl font-bold text-orchida-green">500+</div>
+              <div className="text-2xl font-bold text-orchida-green">180+</div>
               <div className="text-xs text-gray-300">موظف</div>
             </div>
             <div className="px-4 py-3 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-gray-300 transition-all">
-              <div className="text-2xl font-bold text-white">10+</div>
+              <div className="text-2xl font-bold text-white">2</div>
               <div className="text-xs text-gray-300">دول</div>
             </div>
           </div>
