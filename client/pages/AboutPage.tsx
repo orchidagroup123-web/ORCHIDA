@@ -242,6 +242,146 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Offices & Locations Section */}
+      <section className="relative py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-orchida-green rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-orchida-red rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
+              <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">
+                {language === "ar" ? "مقراتنا" : "Our Offices"}
+              </span>
+              <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+              {language === "ar" ? "المقرات والفروع" : "Offices & Locations"}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {language === "ar"
+                ? "نحن موجودون في السودان وفي طريقنا للتوسع في المملكة العربية السعودية"
+                : "We are present in Sudan and expanding to Saudi Arabia"}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Sudan - Active */}
+            <div className="group relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500">
+              {/* Background */}
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+                style={{
+                  backgroundImage: "url('https://images.unsplash.com/photo-1495576032313-52581002a659?w=600&h=400&fit=crop')",
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60"></div>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 p-8 md:p-12 h-96 flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 mb-4">
+                    <span className="text-green-400 text-2xl">✓</span>
+                    <span className="text-green-300 font-bold text-sm uppercase tracking-wider">
+                      {language === "ar" ? "مكتب نشط" : "Active Office"}
+                    </span>
+                  </div>
+                  <h3 className="text-4xl font-black text-white mb-3 drop-shadow-lg">
+                    {language === "ar" ? "السودان" : "Sudan"}
+                  </h3>
+                  <p className="text-white/90 text-sm mb-6">
+                    {language === "ar"
+                      ? "المقر الرئيسي ومركز العمليات"
+                      : "Head Office & Operations Center"}
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <p className="text-white/80 text-sm flex items-start gap-2">
+                    <span className="text-orchida-red font-bold mt-1">📍</span>
+                    <span>
+                      {language === "ar"
+                        ? "ولاية البحر الأحمر، بورتسودان"
+                        : "Red Sea State, Port Sudan"}
+                    </span>
+                  </p>
+                  <p className="text-white/80 text-sm flex items-start gap-2">
+                    <span className="text-orchida-green font-bold mt-1">👥</span>
+                    <span>{language === "ar" ? "حوالي 180 موظف" : "Approximately 180 employees"}</span>
+                  </p>
+                  <p className="text-white/80 text-sm flex items-start gap-2">
+                    <span className="text-orchida-red font-bold mt-1">📞</span>
+                    <span>+249 911 123 456</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Saudi Arabia - Under Construction */}
+            <div className="group relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 ring-2 ring-yellow-400/50">
+              {/* Background */}
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+                style={{
+                  backgroundImage: "url('https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=600&h=400&fit=crop')",
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70"></div>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 p-8 md:p-12 h-96 flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 mb-4">
+                    <span className="text-yellow-400 text-2xl">⚙️</span>
+                    <span className="text-yellow-300 font-bold text-sm uppercase tracking-wider">
+                      {language === "ar" ? "قيد الإنشاء" : "Under Construction"}
+                    </span>
+                  </div>
+                  <h3 className="text-4xl font-black text-white mb-3 drop-shadow-lg">
+                    {language === "ar" ? "المملكة العربية السعودية" : "Saudi Arabia"}
+                  </h3>
+                  <p className="text-white/90 text-sm mb-6">
+                    {language === "ar"
+                      ? "فرع إقليمي للتوسع في الخليج"
+                      : "Regional Branch for Gulf Expansion"}
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <p className="text-white/80 text-sm flex items-start gap-2">
+                    <span className="text-orchida-red font-bold mt-1">📍</span>
+                    <span>{language === "ar" ? "الرياض" : "Riyadh"}</span>
+                  </p>
+                  <p className="text-yellow-300 text-sm flex items-start gap-2">
+                    <span className="font-bold mt-1">🏗️</span>
+                    <span>
+                      {language === "ar"
+                        ? "يتوقع الانتهاء من الإنشاء في 2025"
+                        : "Expected launch in 2025"}
+                    </span>
+                  </p>
+                  <p className="text-white/80 text-sm flex items-start gap-2">
+                    <span className="font-bold mt-1">🤝</span>
+                    <span>
+                      {language === "ar"
+                        ? "شراكات استراتيجية قيد الحوار"
+                        : "Strategic partnerships in development"}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Vision, Mission, Values */}
       <section className="relative py-32 bg-white overflow-hidden">
         {/* Decorative Background Elements */}
