@@ -4,21 +4,16 @@ import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
 
 export function HierarchicalSectorsSection() {
   const { language } = useTranslation();
-  const [expandedSector, setExpandedSector] = useState<string | null>(null);
-
-  const primarySectors = hierarchicalSectors.filter((s) => s.level === 'primary');
 
   return (
-    <section id="sectors" className="relative py-32 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="sectors" className="py-32 bg-pink-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
-            {language === 'ar' ? 'الهيكل الهرمي للقطاعات' : 'Hierarchical Sector Structure'}
+          <h2 className="text-5xl font-bold text-black mb-6">
+            TEST PINK SECTION - Hierarchical Pyramid is Now Active!
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {language === 'ar'
-              ? 'ثلاثة قطاعات رئيسية مع عشرات التخصصات والمجالات'
-              : 'Three main sectors with dozens of specializations and fields'}
+          <p className="text-xl text-black">
+            Mining at Top, Agriculture Right, Infrastructure Left
           </p>
         </div>
 
