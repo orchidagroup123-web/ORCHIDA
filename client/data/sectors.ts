@@ -86,6 +86,7 @@ export const sectorsData: Sector[] = [
         arDesc: "متخصصون في تخطيط وتنفيذ عمليات التعدين السطحي والجوفي لمختلف أنواع المعادن",
         enDesc: "Specialists in surface and underground mining operations for various mineral types",
         emoji: "⛏️",
+        image: "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&h=600&fit=crop",
       },
       {
         arName: "معالجة الخامات",
@@ -93,6 +94,7 @@ export const sectorsData: Sector[] = [
         arDesc: "حلول متقدمة لمعالجة وتنقية الخامات المعدنية",
         enDesc: "Advanced solutions for processing and refining mineral ores",
         emoji: "⚙️",
+        image: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&h=600&fit=crop",
       },
       {
         arName: "الاستشعار عن بعد و GIS",
@@ -100,6 +102,7 @@ export const sectorsData: Sector[] = [
         arDesc: "تحديد مواقع المعادن وتقييم الجدوى الاقتصادية",
         enDesc: "Identifying mineral locations and assessing economic viability",
         emoji: "🛰️",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
       },
       {
         arName: "إدارة مشاريع التعدين",
@@ -107,6 +110,7 @@ export const sectorsData: Sector[] = [
         arDesc: "الإشراف الكامل على مشاريع التعدين من البداية للإغلاق",
         enDesc: "Full oversight of mining projects from start to closure",
         emoji: "📊",
+        image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&h=600&fit=crop",
       },
     ],
   },
