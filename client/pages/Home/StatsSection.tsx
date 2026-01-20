@@ -4,28 +4,48 @@ import { useEffect, useRef, useState } from "react";
 interface StatItem {
   value: number;
   suffix: string;
-  labelKey: string;
+  labelAr: string;
+  labelEn: string;
+  descriptionAr: string;
+  descriptionEn: string;
+  accent: string;
+  icon: string;
 }
 
 const stats: StatItem[] = [
   {
     value: 20,
     suffix: "+",
-    labelKey: "yearsOfExperience",
+    labelAr: "سنة خبرة",
+    labelEn: "Years of experience",
+    descriptionAr: "في إدارة المشاريع التعدينية والزراعية",
+    descriptionEn: "of delivering mining and agri programs",
+    accent: "from-[#facc15] to-[#f97316]",
+    icon: "⌛",
   },
   {
-    value: 500,
+    value: 180,
     suffix: "+",
-    labelKey: "employees",
+    labelAr: "موظف متخصص",
+    labelEn: "Specialist employees",
+    descriptionAr: "فِرَق متعددة التخصصات عبر السودان والسعودية",
+    descriptionEn: "Multidisciplinary teams in Sudan & Saudi",
+    accent: "from-[#4ade80] to-[#16a34a]",
+    icon: "👥",
   },
   {
-    value: 10,
-    suffix: "+",
-    labelKey: "countries",
+    value: 2,
+    suffix: "",
+    labelAr: "دول تشغيل",
+    labelEn: "Operating countries",
+    descriptionAr: "المقر في الخرطوم وفرع السعودية قيد الإنشاء",
+    descriptionEn: "Khartoum HQ & Saudi branch under construction",
+    accent: "from-[#38bdf8] to-[#0284c7]",
+    icon: "🌍",
   },
 ];
 
-function AnimatedCounter({ stat }: { stat: StatItem & { label: string } }) {
+function AnimatedCounter({ stat, language }: { stat: StatItem; language: string }) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -38,7 +58,7 @@ function AnimatedCounter({ stat }: { stat: StatItem & { label: string } }) {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.2 }
     );
 
     if (ref.current) {
@@ -54,8 +74,11 @@ function AnimatedCounter({ stat }: { stat: StatItem & { label: string } }) {
     let timer: NodeJS.Timeout;
     if (count < stat.value) {
       timer = setTimeout(() => {
-        setCount(Math.min(count + Math.ceil(stat.value / 20), stat.value));
-      }, 30);
+        setCount((prev) => {
+          const next = prev + Math.ceil(stat.value / 30);
+          return next > stat.value ? stat.value : next;
+        });
+      }, 20);
     }
 
     return () => clearTimeout(timer);
@@ -64,62 +87,61 @@ function AnimatedCounter({ stat }: { stat: StatItem & { label: string } }) {
   return (
     <div
       ref={ref}
-      className="text-center animate-count-up p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:border-orchida-red/50 transition-all duration-300"
+      className="rounded-3xl border border-white/40 bg-white/10 backdrop-blur-md p-6 text-center shadow-lg shadow-slate-900/10"
     >
-      <div className="text-5xl md:text-6xl font-bold text-orchida-red mb-4 font-mono">
-        {count}
-        <span className="text-4xl md:text-5xl ml-2">{stat.suffix}</span>
+      <div className="flex items-center justify-center gap-2 text-4xl font-black text-white mb-2">
+        <span>{stat.icon}</span>
+        <span>
+          {count}
+          <span className="text-3xl ml-1">{stat.suffix}</span>
+        </span>
       </div>
-      <p className="text-lg md:text-xl text-gray-200 font-semibold">
-        {stat.label}
+      <div className={`mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r ${stat.accent}`}></div>
+      <p className="text-lg font-semibold text-white">
+        {language === "ar" ? stat.labelAr : stat.labelEn}
+      </p>
+      <p className="text-sm text-white/80 mt-2">
+        {language === "ar" ? stat.descriptionAr : stat.descriptionEn}
       </p>
     </div>
   );
 }
 
 export function StatsSection() {
-  const { t } = useTranslation();
+  const { language } = useTranslation();
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-900 via-orchida-red/5 to-gray-900 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-orchida-red/10 rounded-full blur-3xl -z-0"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orchida-green/10 rounded-full blur-3xl -z-0"></div>
+    <section className="relative py-24 bg-gradient-to-b from-[#0b1a2b] via-[#0f172a] to-[#0b1a2b] text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute -top-10 left-0 w-72 h-72 bg-emerald-500/30 rounded-full blur-[160px]"></div>
+        <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-red-500/20 rounded-full blur-[180px]"></div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="flex justify-center mb-6">
-            <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full"></div>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/20 bg-white/5 text-xs font-semibold tracking-[0.4em] uppercase">
+            <span>{language === "ar" ? "أرقام مؤثرة" : "Impact"}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Our Impact by Numbers
+          <h2 className="mt-6 text-4xl md:text-5xl font-black">
+            {language === "ar" ? "أثرنا بالأرقام" : "Our Impact by Numbers"}
           </h2>
-          <p className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
-            {t("language") === "ar"
-              ? "شاهد مدى تأثيرنا العالمي والنمو المستمر"
-              : "Discover our global impact and continued growth"}
+          <p className="mt-4 text-lg text-white/75 max-w-3xl mx-auto">
+            {language === "ar"
+              ? "ركائزنا الثلاث تعمل بتناغم لتقديم نتائج ملموسة وشراكات طويلة الأمد عبر السودان والسعودية"
+              : "Our three pillars work in harmony to deliver tangible outcomes and long-term partnerships across Sudan and Saudi Arabia."}
           </p>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
-            <AnimatedCounter
-              key={index}
-              stat={{ ...stat, label: t(stat.labelKey as any) }}
-            />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {stats.map((stat) => (
+            <AnimatedCounter key={stat.labelEn} stat={stat} language={language} />
           ))}
         </div>
 
-        {/* Description */}
-        <div className="mt-16 text-center max-w-3xl mx-auto">
-          <p className="text-lg text-gray-700">
-            Orchida International Company has established itself as a leading
-            multi-sector conglomerate with a proven track record of excellence,
-            innovation, and sustainable growth across agriculture, mining,
-            international trade, livestock, fisheries, and infrastructure
-            development.
-          </p>
+        <div className="mt-16 rounded-3xl border border-white/15 bg-white/5 backdrop-blur p-6 md:p-10 text-center text-white/80 leading-relaxed">
+          {language === "ar"
+            ? "تلتزم أوركيدا بتوظيف التكنولوجيا والكوادر المحلية لرفع كفاءة الموارد الطبيعية وربطها بالأسواق العالمية عبر شراكات مسؤولة ومستدامة."
+            : "Orchida is committed to combining technology with local talent to elevate natural resources and connect them to global markets through responsible, sustainable partnerships."}
         </div>
       </div>
     </section>
