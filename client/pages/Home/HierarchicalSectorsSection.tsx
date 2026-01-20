@@ -4,23 +4,21 @@ import { hierarchicalSectors, MainSector } from '@/data/hierarchical-sectors';
 
 export function HierarchicalSectorsSection() {
   const { language } = useTranslation();
-  const [expandedSector, setExpandedSector] = useState<string | null>(null);
-  const primarySectors = hierarchicalSectors.filter((s) => s.level === 'primary');
+  const [expandedSector, setExpandedSector] = useState<string | null>('mining');
 
-  // Get sectors in order: Mining (apex), Infrastructure (left), Agriculture (right)
-  const miningSector = primarySectors.find(s => s.id === 'mining');
-  const agricultureSector = primarySectors.find(s => s.id === 'agriculture');
-  const infrastructureSector = primarySectors.find(s => s.id === 'infrastructure');
+  const miningSector = hierarchicalSectors.find(s => s.id === 'mining');
+  const agricultureSector = hierarchicalSectors.find(s => s.id === 'agriculture');
+  const infrastructureSector = hierarchicalSectors.find(s => s.id === 'infrastructure');
 
   return (
-    <section id="sectors-pyramid" className="relative py-20 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden">
+    <section id="sectors-pyramid" className="relative py-24 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Text Content */}
-          <div className="flex flex-col justify-center">
-            <div className="mb-8">
-              <span className="text-blue-600 font-bold text-sm uppercase tracking-wider">
-                {language === 'ar' ? 'قطاعاتنا الرئيسية' : 'Our Main Sectors'}
+          <div>
+            <div className="mb-6">
+              <span className="text-blue-500 font-bold text-sm uppercase tracking-widest">
+                {language === 'ar' ? 'ركائز الاقتصاد' : 'Economic Pillars'}
               </span>
             </div>
             
@@ -28,62 +26,55 @@ export function HierarchicalSectorsSection() {
               {language === 'ar' ? 'الهيكل الهرمي للقطاعات' : 'Hierarchical Sector Structure'}
             </h2>
             
-            <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
               {language === 'ar'
-                ? 'ثلاثة قطاعات رئيسية متكاملة تشكل أساس عملياتنا'
-                : 'Three integrated main sectors forming the foundation of our operations'}
+                ? 'تحرص على الخطوات الرئيسية لتحقيق النمو'
+                : 'We focus on key steps to achieve sustainable growth'}
             </p>
 
-            {/* Sector Details */}
-            <div className="space-y-6">
+            {/* Sector Details with Icons */}
+            <div className="space-y-5">
               {miningSector && (
-                <SectorDetail
+                <SectorDetailCard
                   sector={miningSector}
                   language={language}
-                  isExpanded={expandedSector === miningSector.id}
-                  onToggle={() =>
-                    setExpandedSector(expandedSector === miningSector.id ? null : miningSector.id)
-                  }
+                  isActive={expandedSector === miningSector.id}
+                  colorClass="border-orange-200 hover:bg-orange-50"
                 />
               )}
               {agricultureSector && (
-                <SectorDetail
+                <SectorDetailCard
                   sector={agricultureSector}
                   language={language}
-                  isExpanded={expandedSector === agricultureSector.id}
-                  onToggle={() =>
-                    setExpandedSector(expandedSector === agricultureSector.id ? null : agricultureSector.id)
-                  }
+                  isActive={expandedSector === agricultureSector.id}
+                  colorClass="border-green-200 hover:bg-green-50"
                 />
               )}
               {infrastructureSector && (
-                <SectorDetail
+                <SectorDetailCard
                   sector={infrastructureSector}
                   language={language}
-                  isExpanded={expandedSector === infrastructureSector.id}
-                  onToggle={() =>
-                    setExpandedSector(expandedSector === infrastructureSector.id ? null : infrastructureSector.id)
-                  }
+                  isActive={expandedSector === infrastructureSector.id}
+                  colorClass="border-blue-200 hover:bg-blue-50"
                 />
               )}
             </div>
           </div>
 
-          {/* Right Side - 3D Pyramid Visualization */}
-          <div className="flex justify-center items-center">
-            <PyramidVisualization
+          {/* Right Side - 3D Pyramid */}
+          <div className="flex justify-center">
+            <ProfessionalPyramid
               miningSector={miningSector}
               agricultureSector={agricultureSector}
               infrastructureSector={infrastructureSector}
               language={language}
-              expandedSector={expandedSector}
             />
           </div>
         </div>
 
-        {/* Expanded Subsectors Below */}
+        {/* Expanded Subsectors */}
         {expandedSector && (
-          <div className="mt-20 pt-20 border-t-2 border-gray-200 animate-fadeIn">
+          <div className="mt-24 pt-24 border-t-2 border-gray-200 animate-fadeIn">
             {miningSector && expandedSector === miningSector.id && (
               <SubSectorsGrid sector={miningSector} language={language} />
             )}
@@ -100,193 +91,171 @@ export function HierarchicalSectorsSection() {
   );
 }
 
-interface SectorDetailProps {
+interface SectorDetailCardProps {
   sector: MainSector;
   language: string;
-  isExpanded: boolean;
-  onToggle: () => void;
+  isActive: boolean;
+  colorClass: string;
 }
 
-function SectorDetail({ sector, language, isExpanded, onToggle }: SectorDetailProps) {
+function SectorDetailCard({ sector, language, isActive, colorClass }: SectorDetailCardProps) {
   return (
     <div
-      onClick={onToggle}
-      className="group p-6 rounded-xl border-2 border-gray-200 hover:border-blue-500 cursor-pointer transition-all duration-300 bg-white hover:bg-blue-50"
+      className={`p-4 rounded-lg border-2 transition-all duration-300 ${colorClass}`}
     >
-      <div className="flex items-start gap-4">
-        <div className="text-5xl flex-shrink-0">{sector.iconEmoji}</div>
-        <div className="flex-grow">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+      <div className="flex items-center gap-3">
+        <span className="text-4xl flex-shrink-0">{sector.iconEmoji}</span>
+        <div>
+          <h3 className="text-lg font-bold text-gray-900">
             {language === 'ar' ? sector.nameAr : sector.nameEn}
           </h3>
-          <p className="text-gray-600 mb-3">
-            {language === 'ar' ? sector.titleAr : sector.titleEn}
+          <p className="text-sm text-gray-600">
+            {language === 'ar' ? sector.descriptionAr : sector.descriptionEn}
           </p>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-blue-600 font-semibold">
-              {sector.subsectors.length} {language === 'ar' ? 'تخصص' : 'specializations'}
-            </span>
-            <span className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
-              ▼
-            </span>
-          </div>
         </div>
       </div>
     </div>
   );
 }
 
-interface PyramidVisualizationProps {
+interface PyramidProps {
   miningSector?: MainSector;
   agricultureSector?: MainSector;
   infrastructureSector?: MainSector;
   language: string;
-  expandedSector: string | null;
 }
 
-function PyramidVisualization({
+function ProfessionalPyramid({
   miningSector,
   agricultureSector,
   infrastructureSector,
   language,
-  expandedSector,
-}: PyramidVisualizationProps) {
+}: PyramidProps) {
   return (
-    <div className="relative w-full max-w-md h-96 flex items-center justify-center">
-      {/* SVG Pyramid Container */}
-      <svg
-        viewBox="0 0 400 500"
-        className="w-full h-full drop-shadow-2xl"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        {/* Define gradients */}
-        <defs>
-          <linearGradient id="miningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#FCD34D', stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: '#EA580C', stopOpacity: 1 }} />
-          </linearGradient>
-          <linearGradient id="agricultureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#86EFAC', stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: '#10B981', stopOpacity: 1 }} />
-          </linearGradient>
-          <linearGradient id="infrastructureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#93C5FD', stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: '#3B82F6', stopOpacity: 1 }} />
-          </linearGradient>
-          <filter id="shadow">
-            <feDropShadow dx="2" dy="4" stdDeviation="3" floodOpacity="0.3" />
-          </filter>
-        </defs>
-
-        {/* Mining - Top (Apex) */}
-        {miningSector && (
-          <g
-            className="cursor-pointer transition-all hover:opacity-90"
-            filter="url(#shadow)"
+    <div className="relative w-full max-w-md h-auto">
+      {/* Main Pyramid Container */}
+      <div className="relative" style={{ perspective: '1000px' }}>
+        
+        {/* Apex - Mining */}
+        <div className="relative mx-auto mb-0" style={{ width: '280px', height: '180px' }}>
+          <div
+            className="absolute inset-0 rounded-t-3xl overflow-hidden shadow-2xl"
+            style={{
+              background: 'linear-gradient(135deg, #FCD34D 0%, #EA580C 100%)',
+              clipPath: 'polygon(50% 0%, 100% 100%, 0% 100%)',
+            }}
           >
-            {/* Apex triangle */}
-            <polygon
-              points="200,50 280,180 120,180"
-              fill="url(#miningGradient)"
-              stroke="#E8860E"
-              strokeWidth="2"
-            />
-            {/* Inner image section */}
-            <rect
-              x="140"
-              y="80"
-              width="120"
-              height="80"
-              fill="url(#miningGradient)"
-              opacity="0.9"
-              rx="4"
-            />
-            {/* Text */}
-            <text
-              x="200"
-              y="135"
-              textAnchor="middle"
-              className="text-lg font-bold"
-              fill="white"
-              fontSize="18"
-              fontWeight="bold"
+            {/* Mining Image Background */}
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: miningSector ? `url(${miningSector.image})` : 'none',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                opacity: 0.4,
+              }}
+            ></div>
+
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-yellow-400/60 to-orange-600/70"></div>
+
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="text-6xl mb-2 drop-shadow-lg">{miningSector?.iconEmoji}</div>
+              <h3 className="text-white font-black text-xl drop-shadow-lg text-center">
+                {language === 'ar' ? miningSector?.nameAr : miningSector?.nameEn}
+              </h3>
+            </div>
+
+            {/* Shine Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+          </div>
+        </div>
+
+        {/* Middle Layer - Two Sectors */}
+        <div className="relative flex gap-0" style={{ marginTop: '-2px' }}>
+          {/* Infrastructure - Left */}
+          <div className="flex-1" style={{ height: '220px' }}>
+            <div
+              className="absolute inset-0 overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, #93C5FD 0%, #3B82F6 100%)',
+                clipPath: 'polygon(0% 0%, 100% 0%, 85% 100%, 0% 100%)',
+              }}
             >
-              {language === 'ar' ? 'التعدين' : 'Mining'}
-            </text>
-          </g>
-        )}
+              {/* Infrastructure Image Background */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: infrastructureSector ? `url(${infrastructureSector.image})` : 'none',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  opacity: 0.3,
+                }}
+              ></div>
 
-        {/* Agriculture - Bottom Right */}
-        {agricultureSector && (
-          <g className="cursor-pointer transition-all hover:opacity-90" filter="url(#shadow)">
-            {/* Bottom right trapezoid */}
-            <polygon
-              points="280,180 400,450 200,450"
-              fill="url(#agricultureGradient)"
-              stroke="#059669"
-              strokeWidth="2"
-            />
-            {/* Text */}
-            <text
-              x="310"
-              y="350"
-              textAnchor="middle"
-              fill="white"
-              fontSize="16"
-              fontWeight="bold"
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-300/60 to-blue-600/70"></div>
+
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="text-5xl mb-2 drop-shadow-lg">{infrastructureSector?.iconEmoji}</div>
+                <h3 className="text-white font-black text-base drop-shadow-lg text-center px-2">
+                  {language === 'ar' ? infrastructureSector?.nameAr : infrastructureSector?.nameEn}
+                </h3>
+              </div>
+
+              {/* Shine Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/15 to-transparent"></div>
+            </div>
+          </div>
+
+          {/* Agriculture - Right */}
+          <div className="flex-1" style={{ height: '220px' }}>
+            <div
+              className="absolute inset-0 overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, #86EFAC 0%, #10B981 100%)',
+                clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)',
+              }}
             >
-              {language === 'ar' ? 'الزراعة' : 'Agriculture'}
-            </text>
-          </g>
-        )}
+              {/* Agriculture Image Background */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: agricultureSector ? `url(${agricultureSector.image})` : 'none',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  opacity: 0.3,
+                }}
+              ></div>
 
-        {/* Infrastructure - Bottom Left */}
-        {infrastructureSector && (
-          <g className="cursor-pointer transition-all hover:opacity-90" filter="url(#shadow)">
-            {/* Bottom left trapezoid */}
-            <polygon
-              points="120,180 200,450 0,450"
-              fill="url(#infrastructureGradient)"
-              stroke="#1D4ED8"
-              strokeWidth="2"
-            />
-            {/* Text */}
-            <text
-              x="90"
-              y="350"
-              textAnchor="middle"
-              fill="white"
-              fontSize="16"
-              fontWeight="bold"
-            >
-              {language === 'ar' ? 'البنية التحتية' : 'Infrastructure'}
-            </text>
-          </g>
-        )}
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-300/60 to-green-600/70"></div>
 
-        {/* Base shadow for depth */}
-        <ellipse
-          cx="200"
-          cy="455"
-          rx="200"
-          ry="25"
-          fill="black"
-          opacity="0.15"
-        />
-      </svg>
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="text-5xl mb-2 drop-shadow-lg">{agricultureSector?.iconEmoji}</div>
+                <h3 className="text-white font-black text-base drop-shadow-lg text-center px-2">
+                  {language === 'ar' ? agricultureSector?.nameAr : agricultureSector?.nameEn}
+                </h3>
+              </div>
 
-      {/* Icons positioned absolutely over pyramid */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {miningSector && (
-          <div className="absolute top-12 text-6xl drop-shadow-lg">{miningSector.iconEmoji}</div>
-        )}
-        {agricultureSector && (
-          <div className="absolute bottom-24 right-8 text-5xl drop-shadow-lg">{agricultureSector.iconEmoji}</div>
-        )}
-        {infrastructureSector && (
-          <div className="absolute bottom-24 left-8 text-5xl drop-shadow-lg">{infrastructureSector.iconEmoji}</div>
-        )}
+              {/* Shine Effect */}
+              <div className="absolute inset-0 bg-gradient-to-bl from-white/15 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Base Shadow for Depth */}
+        <div className="relative h-12 bg-gradient-to-b from-gray-900/20 to-transparent rounded-b-2xl"></div>
       </div>
+
+      {/* Decorative 3D effect - Bottom right shadow */}
+      <div
+        className="absolute -bottom-4 -right-6 w-48 h-32 bg-black/10 rounded-full blur-3xl"
+        style={{ zIndex: -1 }}
+      ></div>
     </div>
   );
 }
@@ -305,7 +274,7 @@ function SubSectorsGrid({ sector, language }: SubSectorsGridProps) {
             ? `تخصصات قطاع ${sector.nameAr}`
             : `${sector.nameEn} Specializations`}
         </h3>
-        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+        <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
           {language === 'ar' ? sector.descriptionAr : sector.descriptionEn}
         </p>
       </div>
@@ -314,32 +283,45 @@ function SubSectorsGrid({ sector, language }: SubSectorsGridProps) {
         {sector.subsectors.map((subsector, index) => (
           <div
             key={subsector.id}
-            className="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-            style={{ animationDelay: `${index * 100}ms` }}
+            className="group relative h-72 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+            style={{
+              animation: `slideUp 0.6s ease-out ${index * 100}ms both`,
+            }}
           >
+            {/* Background Image */}
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ backgroundImage: `url(${subsector.image})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70"></div>
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
+              
+              {/* Accent gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 to-white/5"></div>
             </div>
 
+            {/* Content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 z-10">
-              <div className="text-5xl mb-3 drop-shadow-lg group-hover:scale-110 transition-transform duration-500">
+              <div className="text-6xl mb-4 drop-shadow-xl group-hover:scale-110 transition-transform duration-500">
                 {subsector.iconEmoji}
               </div>
-              <h4 className="text-lg font-bold text-white text-center drop-shadow-lg">
+              <h4 className="text-2xl font-bold text-white text-center drop-shadow-lg mb-2">
                 {language === 'ar' ? subsector.nameAr : subsector.nameEn}
               </h4>
-              <p className="text-white/80 text-sm text-center mt-3 drop-shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-2">
+              <p className="text-white/90 text-sm text-center drop-shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 {language === 'ar'
                   ? subsector.descriptionAr
                   : subsector.descriptionEn}
               </p>
             </div>
+
+            {/* Corner Accent - Top Right */}
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-white/20 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
+export default HierarchicalSectorsSection;
