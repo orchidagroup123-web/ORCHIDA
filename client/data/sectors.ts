@@ -4,6 +4,7 @@ export interface SubSpecialization {
   arDesc: string;
   enDesc: string;
   emoji: string;
+  image: string;
 }
 
 export interface Sector {
