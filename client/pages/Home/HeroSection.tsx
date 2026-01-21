@@ -90,16 +90,20 @@ export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#050816] via-[#0b1a2b] to-[#050816] text-white">
       {/* Atmospheric background */}
-      <div className="absolute inset-0 opacity-40">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(140deg, rgba(15,23,42,0.8) 0%, rgba(12,74,110,0.4) 45%, rgba(220,38,38,0.35) 100%), url(https://images.unsplash.com/photo-1581092981824-1e7b6b8e4253?w=2000&h=1200&fit=crop)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></div>
+      <div className="absolute inset-0">
+        {heroBackgrounds.map((image, index) => (
+          <div
+            key={image}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[1500ms] ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          ></div>
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#050816]/85 via-[#0b1a2b]/85 to-[#050816]/90"></div>
+      </div>
+
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
         <div className="absolute -top-20 -right-10 w-96 h-96 bg-red-500/30 rounded-full blur-[140px]"></div>
         <div className="absolute -bottom-24 -left-10 w-[28rem] h-[28rem] bg-emerald-500/25 rounded-full blur-[150px]"></div>
       </div>
