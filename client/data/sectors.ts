@@ -35,7 +35,7 @@ export const sectorsData: Sector[] = [
       "Sustainable solutions in agriculture, livestock, and fisheries",
     iconEmoji: "🌾",
     image:
-      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=400&fit=crop",
+      "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F387a0d9bcb4a4b91ad406910fb9f9dd4?format=webp&width=800&height=1200",
     color: "from-green-500 to-green-700",
     fullContentAr: `نحن في مجموعة أوركيد نؤمن بأن الأمن الغذائي يبدأ من حماية الأرض والمحصول. يتخصص قطاعنا في توفير أحدث التقنيات الوقائية، من مبيدات آمنة وأسمدة حيوية ومغذيات متطورة، مصممة لرفع كفاءة الإنتاج الزراعي مع الحفاظ على التوازن البيئي. نحن شريك المزارع والمربي والصياد في مواجهة التحديات وضمان منتجات عالية الجودة.`,
     fullContentEn: `We at Orchida Group believe that food security begins with protecting the land and crops. Our sector specializes in providing the latest preventive technologies, from safe pesticides to bio-fertilizers and advanced nutrients, designed to enhance agricultural production efficiency while preserving environmental balance. We are the farmer's, livestock breeder's, and fisherman's partner in facing challenges and ensuring high-quality products.`,
