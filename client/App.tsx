@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import Media from "./pages/Media";
 import SectorDetail from "./pages/SectorDetail";
 import Projects from "./pages/Projects";
+import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 
 declare global {
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/sectors" element={<Sectors />} />
             <Route path="/sector/:id" element={<SectorDetail />} />
             <Route path="/contact" element={<Contact />} />
