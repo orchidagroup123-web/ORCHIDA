@@ -1,5 +1,6 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface LayoutProps {
   children: React.ReactNode;
