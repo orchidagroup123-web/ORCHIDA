@@ -143,7 +143,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="space-y-8 text-center lg:text-left mb-12">
             <div>
-              <div className="inline-flex items-center gap-2 mb-4">
+              <div className="inline-flex items-center gap-2 mb-4 justify-center lg:justify-start">
                 <div className="h-1 w-8 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
                 <span className="text-orchida-red font-bold text-xs uppercase tracking-wider">
                   Message
@@ -159,7 +159,7 @@ export default function AboutPage() {
                   ? '"من الأرضِ نبدأ.. وإلى المستقبلِ نمضي"'
                   : '"From the Earth We Begin... To the Future We Proceed"'}
               </p>
-              <div className="w-16 h-1 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full mb-6"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full mb-6 mx-auto lg:mx-0"></div>
             </div>
           </div>
 
