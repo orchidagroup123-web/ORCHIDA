@@ -357,7 +357,7 @@ export default function AboutPage() {
                         : "Approximately 180 employees"}
                     </span>
                   </p>
-                  <p className="text-white/80 text-sm flex items-start gap-2">
+                  <p className="text-white/80 text-sm flex items-start gap-2" dir="ltr">
                     <span className="text-orchida-red font-bold mt-1">📞</span>
                     <span>+249 123 722 286</span>
                   </p>
