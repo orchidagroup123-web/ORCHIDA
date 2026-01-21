@@ -143,7 +143,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             {/* Image with Professional Styling */}
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl group">
+            <div className="relative h-[34rem] rounded-2xl overflow-hidden shadow-2xl group">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fedb6ebd0ce6a49c186ac7ed61b00a741?format=webp&width=800&height=1200"
                 alt={language === "ar" ? "رئيس مجلس الإدارة" : "Chairman"}
