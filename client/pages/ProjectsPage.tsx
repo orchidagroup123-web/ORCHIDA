@@ -6,7 +6,7 @@ const projects = [
   {
     id: "al-dar",
     image:
-      "https://images.unsplash.com/photo-1508387027323-2eea4c5c3d21?auto=format&fit=crop&w=1600&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fa5941e4aa7d14213bf08f4ddf1848e12?format=webp&width=1600&height=900",
     badge: {
       en: "Gold Mining",
       ar: "التعدين عن الذهب",
@@ -39,7 +39,7 @@ const projects = [
   {
     id: "great-river",
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Ff7d96f43c5564fb093eb7e3caa827123?format=webp&width=1600&height=900",
     badge: {
       en: "Agricultural Development",
       ar: "التنمية الزراعية",
