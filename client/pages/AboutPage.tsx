@@ -1,5 +1,25 @@
 import { Layout } from "@/components/Layout";
+import { ReactNode } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
+
+function GradientParagraph({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className="relative max-w-3xl mx-auto">
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orchida-red/20 via-slate-900/60 to-orchida-green/20 blur-3xl"></div>
+      <div className="relative p-6 md:p-8 rounded-3xl bg-gradient-to-br from-slate-900/85 via-slate-900/75 to-slate-800/75 border border-white/10 shadow-[0_20px_60px_rgba(15,23,42,0.35)] backdrop-blur-xl">
+        <p className={`text-white/90 leading-relaxed tracking-wide ${className}`}>
+          {children}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function AboutPage() {
   const { language } = useTranslation();
@@ -278,11 +298,11 @@ export default function AboutPage() {
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
               {language === "ar" ? "المقرات والفروع" : "Offices & Locations"}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <GradientParagraph className="text-xl text-center">
               {language === "ar"
                 ? "نحن موجودون في السودان وفي طريقنا للتوسع في المملكة العربية السعودية"
                 : "We are present in Sudan and expanding to Saudi Arabia"}
-            </p>
+            </GradientParagraph>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -430,11 +450,11 @@ export default function AboutPage() {
                 ? "الرؤية والرسالة والقيم"
                 : "Vision, Mission & Values"}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <GradientParagraph className="text-xl text-center">
               {language === "ar"
                 ? "الأساس الذي يرشد كل قراراتنا واستراتيجياتنا"
                 : "The foundation that guides every decision and strategy"}
-            </p>
+            </GradientParagraph>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -568,11 +588,11 @@ export default function AboutPage() {
                 ? "رحلة النمو والتطور"
                 : "Journey of Growth & Evolution"}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <GradientParagraph className="text-xl text-center">
               {language === "ar"
                 ? "عشرون سنة من الابتكار والتطور المستمر"
                 : "Twenty years of continuous innovation and development"}
-            </p>
+            </GradientParagraph>
           </div>
 
           <div className="relative">
