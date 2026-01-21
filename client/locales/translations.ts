@@ -49,6 +49,7 @@ export const translations = {
     comingSoon: "Coming Soon",
     pageInDevelopment:
       "This page is currently in development. Let us know what you'd like to see here!",
+    whatsappChat: "Chat on WhatsApp",
   },
   ar: {
     // Header & Navigation
