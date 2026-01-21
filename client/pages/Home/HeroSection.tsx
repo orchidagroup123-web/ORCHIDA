@@ -100,17 +100,17 @@ export function HeroSection() {
             style={{ backgroundImage: `url(${image})` }}
           ></div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#050816]/85 via-[#0b1a2b]/85 to-[#050816]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#050816]/65 via-[#0b1a2b]/60 to-[#050816]/70"></div>
       </div>
 
-      <div className="absolute inset-0 opacity-40 pointer-events-none">
-        <div className="absolute -top-20 -right-10 w-96 h-96 bg-red-500/30 rounded-full blur-[140px]"></div>
-        <div className="absolute -bottom-24 -left-10 w-[28rem] h-[28rem] bg-emerald-500/25 rounded-full blur-[150px]"></div>
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute -top-20 -right-10 w-96 h-96 bg-red-500/25 rounded-full blur-[140px]"></div>
+        <div className="absolute -bottom-24 -left-10 w-[28rem] h-[28rem] bg-emerald-500/20 rounded-full blur-[150px]"></div>
       </div>
 
       {/* Multi-Layer Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-orchida-red/10 to-orchida-green/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/45"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-orchida-red/8 to-orchida-green/8"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
