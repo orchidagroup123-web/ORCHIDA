@@ -101,6 +101,7 @@ export const translations = {
     comingSoon: "قريباً",
     pageInDevelopment:
       "هذه الصفحة قيد التطوير حالياً. أخبرنا بما تود رؤيته هنا!",
+    whatsappChat: "تواصل عبر واتساب",
   },
 };
 
