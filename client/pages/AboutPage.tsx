@@ -183,8 +183,12 @@ export default function AboutPage() {
           </div>
 
           {/* Full Message */}
-          <div className="bg-white/95 p-12 rounded-3xl border border-gray-200 shadow-[0_25px_70px_rgba(15,23,42,0.08)] backdrop-blur-md">
-            <div className="space-y-6 text-gray-800 leading-relaxed text-justify">
+          <div className="relative p-12 rounded-3xl border border-white/20 bg-gradient-to-br from-slate-900/80 via-slate-900/70 to-slate-800/70 shadow-[0_30px_80px_rgba(15,23,42,0.35)] backdrop-blur-xl overflow-hidden">
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-16 -right-10 w-56 h-56 bg-orchida-green/20 blur-3xl"></div>
+              <div className="absolute -bottom-20 -left-10 w-64 h-64 bg-orchida-red/15 blur-3xl"></div>
+            </div>
+            <div className="relative space-y-6 text-white leading-relaxed text-justify tracking-wide">
               {language === "ar" ? (
                 <>
                   <p>
