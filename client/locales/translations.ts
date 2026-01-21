@@ -4,6 +4,7 @@ export const translations = {
     home: "Home",
     about: "About Us",
     projects: "Projects",
+    gallery: "Gallery",
     sectors: "Our Sectors",
     media: "Media Center",
     contact: "Contact Us",
