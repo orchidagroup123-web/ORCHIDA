@@ -19,7 +19,7 @@ export default function ContactPage() {
     {
       icon: "📞",
       title: "الهاتف",
-      details: ["+249 911 123 456", "متاح 9 ص - 6 م"],
+      details: ["+249 123 722 286", "متاح 9 ص - 6 م"],
     },
     {
       icon: "✉️",
@@ -42,7 +42,7 @@ export default function ContactPage() {
     {
       icon: "📞",
       title: "Phone",
-      details: ["+249 911 123 456", "Available 9 AM - 6 PM"],
+      details: ["+249 123 722 286", "Available 9 AM - 6 PM"],
     },
     {
       icon: "✉️",
