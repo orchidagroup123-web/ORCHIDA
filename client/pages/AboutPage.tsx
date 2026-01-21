@@ -83,12 +83,21 @@ export default function AboutPage() {
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Decorative Top Line */}
-          <div className="flex justify-center items-center gap-4 mb-8">
+          <div className="flex justify-center items-center gap-4 mb-6">
             <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
             <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">
               Orchida Group
             </span>
             <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
+          </div>
+
+          <div className="flex justify-center mb-8">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F8ca10e52cdff4c50bad7cedbe0b8a2d2?format=webp&width=800&height=1200"
+              alt={language === "ar" ? "شعار مجموعة أوركيدا" : "Orchida Group logo"}
+              className="h-24 w-auto drop-shadow-2xl"
+              loading="lazy"
+            />
           </div>
 
           <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl leading-tight">
