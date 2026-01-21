@@ -96,41 +96,42 @@ function ProjectCard({
   ];
 
   return (
-    <article className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 via-slate-900/70 to-slate-800/70 shadow-[0_30px_80px_rgba(5,8,22,0.55)]">
-      <div
-        className="absolute inset-0 opacity-70 transition-transform duration-700 group-hover:scale-105"
-        style={{
-          backgroundImage: `linear-gradient(180deg, rgba(5,8,22,0.4) 0%, rgba(5,8,22,0.95) 80%), url(${project.image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
-      <div className="relative z-10 p-8 space-y-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-xs tracking-[0.3em] uppercase">
-          <span>{content.badge}</span>
+    <article className="group overflow-hidden rounded-[32px] border border-white/10 bg-white shadow-[0_35px_90px_rgba(5,8,22,0.25)]">
+      <div className="flex flex-col lg:grid lg:grid-cols-2">
+        <div className="relative min-h-[320px]">
+          <img
+            src={project.image}
+            alt={content.title}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent"></div>
+          <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-center justify-between gap-3">
+            <span className="px-5 py-2 rounded-full bg-white/15 text-xs font-semibold tracking-[0.35em] uppercase text-white">
+              {content.badge}
+            </span>
+            <p className="text-white/80 text-sm">{content.highlight}</p>
+          </div>
         </div>
-        <div>
-          <p className="text-sm text-white/70 mb-2">{content.highlight}</p>
-          <h3 className="text-4xl font-black text-white leading-tight">
-            {content.title}
-          </h3>
+        <div className="p-8 lg:p-10 space-y-6 bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-slate-800/80 text-white">
+          <div>
+            <h3 className="text-4xl font-black leading-tight mb-3">{content.title}</h3>
+            <p className="text-white/75 text-base leading-relaxed">{content.overview}</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {info.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-white/10 bg-white/5 p-4 text-white/90"
+              >
+                <p className="text-[11px] uppercase tracking-[0.35em] text-orchida-red mb-2">
+                  {item.label}
+                </p>
+                <p className="text-sm leading-relaxed">{item.value}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {info.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-2xl bg-white/5 border border-white/10 p-4 text-white/80"
-            >
-              <p className="text-xs uppercase tracking-[0.3em] text-orchida-red mb-2">
-                {item.label}
-              </p>
-              <p className="text-sm leading-relaxed">{item.value}</p>
-            </div>
-          ))}
-        </div>
-        <p className="text-white/85 leading-relaxed text-base">
-          {content.overview}
-        </p>
       </div>
     </article>
   );
