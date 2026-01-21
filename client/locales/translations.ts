@@ -57,6 +57,7 @@ export const translations = {
     home: "الرئيسية",
     about: "عن المجموعة",
     projects: "المشروعات",
+    gallery: "معرض الصور",
     sectors: "قطاعات الأعمال",
     media: "المركز الإعلامي",
     contact: "اتصل بنا",
