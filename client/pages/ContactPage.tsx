@@ -148,6 +148,7 @@ export default function ContactPage() {
                       <p
                         key={i}
                         className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors"
+                        dir={detail.startsWith("+") ? "ltr" : undefined}
                       >
                         {detail}
                       </p>
