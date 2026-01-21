@@ -145,9 +145,9 @@ export default function AboutPage() {
             {/* Image with Professional Styling */}
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl group">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F6cfe08e98ddd4d4891330c547285c83b?format=webp&width=800&height=1200"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F5d0639f540784775b65f89561ab139ad?format=webp&width=800&height=1200"
                 alt={language === "ar" ? "رئيس مجلس الإدارة" : "Chairman"}
-                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-orchida-red/25 to-orchida-green/25 group-hover:from-orchida-red/35 group-hover:to-orchida-green/35 transition-all duration-500 z-10"></div>
