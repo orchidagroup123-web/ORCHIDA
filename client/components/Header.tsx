@@ -25,7 +25,7 @@ export function Header() {
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fcd87277187a34a1a87ce0c3acf2379a5?format=webp&width=800&height=1200"
-              alt="Orchida Group"
+              alt="ORCHIDA Group"
               className="h-24 w-auto drop-shadow-[0_8px_25px_rgba(0,0,0,0.45)]"
               loading="lazy"
             />
