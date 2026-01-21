@@ -95,7 +95,7 @@ export const sectorsData: Sector[] = [
           "Specialists in surface and underground mining operations for various mineral types",
         emoji: "⛏️",
         image:
-          "https://images.unsplash.com/photo-1503431760782-5b2a697b16ee?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fe2a45f0e208241259045fa13f2fac261?format=webp&width=800&height=1200",
       },
       {
         arName: "معالجة الخامات",
@@ -104,7 +104,7 @@ export const sectorsData: Sector[] = [
         enDesc: "Advanced solutions for processing and refining mineral ores",
         emoji: "⚙️",
         image:
-          "https://images.unsplash.com/photo-1581093806997-124ffc0c95d0?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fbeb933cb108e426987c5d3755fc00bb8?format=webp&width=800&height=1200",
       },
       {
         arName: "الاستشعار عن بعد و GIS",
@@ -114,7 +114,7 @@ export const sectorsData: Sector[] = [
           "Identifying mineral locations and assessing economic viability",
         emoji: "🛰️",
         image:
-          "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Ff924ad21ae31466a80707664b04ed109?format=webp&width=800&height=1200",
       },
       {
         arName: "إدارة مشاريع التعدين",
@@ -123,7 +123,7 @@ export const sectorsData: Sector[] = [
         enDesc: "Full oversight of mining projects from start to closure",
         emoji: "📊",
         image:
-          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F96be6901fb834da7beb88d346db753d1?format=webp&width=800&height=1200",
       },
     ],
   },
