@@ -117,7 +117,7 @@ export function Footer() {
           <p>
             &copy; {new Date().getFullYear()}{" "}
             <span className="text-white font-semibold">
-              Orchida International Company
+              ORCHIDA International Company
             </span>
             . {t("allRightsReserved")}
           </p>
