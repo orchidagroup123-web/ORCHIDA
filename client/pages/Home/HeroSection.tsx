@@ -108,7 +108,11 @@ export function HeroSection() {
         <div className="absolute -bottom-24 -left-10 w-[28rem] h-[28rem] bg-emerald-500/25 rounded-full blur-[150px]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      {/* Multi-Layer Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-orchida-red/10 to-orchida-green/10"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg(px-8) py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           {/* Text column */}
           <div className="space-y-10">
