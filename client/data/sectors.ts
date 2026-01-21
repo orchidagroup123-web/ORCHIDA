@@ -47,7 +47,7 @@ export const sectorsData: Sector[] = [
         enDesc: "Development and management of livestock production projects",
         emoji: "🐂",
         image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fc93b0b923173442dbf8e31eecc3e75db?format=webp&width=800&height=1200",
       },
       {
         arName: "الثروة السمكية",
@@ -56,7 +56,7 @@ export const sectorsData: Sector[] = [
         enDesc: "Sustainable fish farming in fresh and salt waters",
         emoji: "🐟",
         image:
-          "https://images.unsplash.com/photo-1506617420156-8e4536971650?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F01de6cb797854d5b8f1a19a0c0c8ff97?format=webp&width=800&height=1200",
       },
       {
         arName: "الثروة الغابية والمحاصيل",
