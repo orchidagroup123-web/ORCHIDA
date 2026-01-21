@@ -21,7 +21,7 @@ export function Footer() {
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Orchida International Company - Multi-sector conglomerate shaping
+              ORCHIDA International Company - Multi-sector conglomerate shaping
               the future across six major industries.
             </p>
           </div>
