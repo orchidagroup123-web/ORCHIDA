@@ -81,7 +81,7 @@ export const sectorsData: Sector[] = [
       "Leading mining sector through integrated expertise in exploration, mine development, and ore processing",
     iconEmoji: "⛏️",
     image:
-      "https://images.unsplash.com/photo-1581092162562-40038f56543a?w=600&h=400&fit=crop",
+      "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F170dd3fe8a8c423d82274bbe4c523e86?format=webp&width=800&height=1200",
     color: "from-yellow-600 to-orange-700",
     fullContentAr: `تعتبر مجموعة أوركيد ركيزة أساسية في قطاع التعدين، حيث نقوم باستخراج وتجهيز الخامات المعدنية وفق أعلى المعايير العالمية. نعتمد على تكنولوجيا تنقيب حديثة وفرق عمل خبيرة لضمان الاستفادة القصوى من الموارد الطبيعية، مع الالتزام الصارم بمعايير الاستدامة البيئية والسلامة المهنية، لرفد الصناعات المحلية والعالمية بالمواد الخام الأساسية.`,
     fullContentEn: `Orchida Group is a cornerstone in the mining sector, extracting and processing mineral ores according to the highest international standards. We rely on modern exploration technology and expert teams to ensure maximum utilization of natural resources, while strictly adhering to environmental sustainability and occupational safety standards, supplying local and global industries with essential raw materials.`,
