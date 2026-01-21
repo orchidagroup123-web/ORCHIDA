@@ -272,7 +272,7 @@ export function HeroSection() {
               <div className="space-y-5 text-white/90 leading-relaxed tracking-wide">
                 <p>
                   {language === "ar"
-                    ? "مجموعة أوركيدا الدولية كيان سوداني يقود ثلاث ركائز اقتصادية: التعدين، الزراعة، والبنية التحتية، مع توسّع جديد في المملكة العربية السعودية."
+                    ? "مجموعة اوركيدا الدولية كيان سوداني يقود ثلاث ركائز اقتصادية: التعدين، الزراعة، والبنية التحتية، مع توسّع جديد في المملكة العربية السعودية."
                     : "Orchida International Company is a Sudanese-led powerhouse across three economic pillars—mining, agriculture, and infrastructure—with an upcoming expansion in Saudi Arabia."}
                 </p>
                 <p>
