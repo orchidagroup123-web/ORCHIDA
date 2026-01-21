@@ -91,7 +91,10 @@ function ProjectCard({
 
   const info = [
     { label: isArabic ? "العميل" : "Client", value: content.client },
-    { label: isArabic ? "زمن التنفيذ" : "Project Timeline", value: content.date },
+    {
+      label: isArabic ? "زمن التنفيذ" : "Project Timeline",
+      value: content.date,
+    },
     { label: isArabic ? "دورنا" : "Our Role", value: content.role },
   ];
 
@@ -115,8 +118,12 @@ function ProjectCard({
         </div>
         <div className="p-8 lg:p-10 space-y-6 bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-slate-800/80 text-white">
           <div>
-            <h3 className="text-4xl font-black leading-tight mb-3">{content.title}</h3>
-            <p className="text-white/75 text-base leading-relaxed">{content.overview}</p>
+            <h3 className="text-4xl font-black leading-tight mb-3">
+              {content.title}
+            </h3>
+            <p className="text-white/75 text-base leading-relaxed">
+              {content.overview}
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {info.map((item) => (
@@ -152,10 +159,12 @@ export default function ProjectsPage() {
   };
 
   const sustainability = {
-    title: isArabic ? "اكتشف التزامنا بالاستدامة" : "Discover Our Commitment to Sustainability",
+    title: isArabic
+      ? "اكتشف التزامنا بالاستدامة"
+      : "Discover Our Commitment to Sustainability",
     description: isArabic
       ? "في شركة اوركيدا الدولية، نقود التنمية المستدامة عبر كل مشاريعنا المتنوعة. تعرّف على كيفية مساهمة منهجياتنا المبتكرة في التعدين والزراعة والبنية التحتية في تشكيل مستقبل أفضل للمجتمعات والبيئة. انضموا إلى رحلتنا نحو غدٍ أكثر استدامة."
-      : "At ORCHIDA International Company we pioneer sustainable development across every discipline. See how our innovative approaches in mining, agriculture, and infrastructure shape a better future for communities and the environment. Join us on the journey toward a sustainable tomorrow."
+      : "At ORCHIDA International Company we pioneer sustainable development across every discipline. See how our innovative approaches in mining, agriculture, and infrastructure shape a better future for communities and the environment. Join us on the journey toward a sustainable tomorrow.",
   };
 
   return (
@@ -181,14 +190,21 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section id="projects" className="relative py-24 bg-gradient-to-b from-white to-gray-50">
+      <section
+        id="projects"
+        className="relative py-24 bg-gradient-to-b from-white to-gray-50"
+      >
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-orchida-green/40 blur-[160px]"></div>
           <div className="absolute bottom-0 right-10 w-[30rem] h-[30rem] bg-orchida-red/20 blur-[200px]"></div>
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} language={language} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              language={language}
+            />
           ))}
         </div>
       </section>

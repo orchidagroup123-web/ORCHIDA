@@ -13,7 +13,9 @@ function GradientParagraph({
     <div className="relative max-w-3xl mx-auto">
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orchida-red/20 via-slate-900/60 to-orchida-green/20 blur-3xl"></div>
       <div className="relative p-6 md:p-8 rounded-3xl bg-gradient-to-br from-slate-900/85 via-slate-900/75 to-slate-800/75 border border-white/10 shadow-[0_20px_60px_rgba(15,23,42,0.35)] backdrop-blur-xl">
-        <p className={`text-white/90 leading-relaxed tracking-wide ${className}`}>
+        <p
+          className={`text-white/90 leading-relaxed tracking-wide ${className}`}
+        >
           {children}
         </p>
       </div>
@@ -114,7 +116,9 @@ export default function AboutPage() {
           <div className="flex justify-center mb-8">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fcd87277187a34a1a87ce0c3acf2379a5?format=webp&width=800&height=1200"
-              alt={language === "ar" ? "شعار مجموعة اوركيدا" : "ORCHIDA Group logo"}
+              alt={
+                language === "ar" ? "شعار مجموعة اوركيدا" : "ORCHIDA Group logo"
+              }
               className="h-24 w-auto drop-shadow-2xl"
               loading="lazy"
             />
@@ -357,7 +361,10 @@ export default function AboutPage() {
                         : "Approximately 180 employees"}
                     </span>
                   </p>
-                  <p className="text-white/80 text-sm flex items-start gap-2" dir="ltr">
+                  <p
+                    className="text-white/80 text-sm flex items-start gap-2"
+                    dir="ltr"
+                  >
                     <span className="text-orchida-red font-bold mt-1">📞</span>
                     <span>+249 123 722 286</span>
                   </p>
