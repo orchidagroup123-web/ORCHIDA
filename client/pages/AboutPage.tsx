@@ -161,6 +161,16 @@ export default function AboutPage() {
               </p>
               <div className="w-16 h-1 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full mb-6 mx-auto lg:mx-0"></div>
             </div>
+
+            <div className="relative h-[28rem] max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F29c8726da1494945ac04082f0db04c4b?format=webp&width=800&height=1200"
+                alt={language === "ar" ? "رئيس مجلس الإدارة" : "Chairman"}
+                className="absolute inset-0 w-full h-full object-cover object-top"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-orchida-red/15 to-orchida-green/15"></div>
+            </div>
           </div>
 
           {/* Full Message */}
