@@ -143,14 +143,13 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             {/* Image with Professional Styling */}
-            <div className="relative h-[34rem] bg-white rounded-3xl overflow-hidden shadow-2xl group flex items-center justify-center p-6">
+            <div className="relative h-[34rem] rounded-3xl overflow-hidden shadow-2xl group">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F33303d7af3354f67b8a7e6aad3c1044c?format=webp&width=800&height=1200"
                 alt={language === "ar" ? "رئيس مجلس الإدارة" : "Chairman"}
-                className="max-h-full max-w-full object-contain rounded-2xl transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 rounded-3xl border-2 border-orchida-red/40 group-hover:border-orchida-green/40 transition-all duration-500 pointer-events-none"></div>
             </div>
 
             {/* Content */}
