@@ -47,7 +47,12 @@ export default function ContactPage() {
     {
       icon: "📞",
       title: "Phone",
-      details: ["+249 123 722 286", "Available 9 AM - 6 PM"],
+      details: [
+        "+249 123 722 286",
+        "+249 129 655 594",
+        "+249 999 900 048",
+        "Available 9 AM - 6 PM",
+      ],
     },
     {
       icon: "✉️",
