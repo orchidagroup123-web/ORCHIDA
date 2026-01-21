@@ -3,6 +3,7 @@ export const translations = {
     // Header & Navigation
     home: "Home",
     about: "About Us",
+    projects: "Projects",
     sectors: "Our Sectors",
     media: "Media Center",
     contact: "Contact Us",
