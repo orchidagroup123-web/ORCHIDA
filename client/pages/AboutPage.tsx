@@ -143,15 +143,14 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             {/* Image with Professional Styling */}
-            <div className="relative h-[34rem] bg-white rounded-2xl overflow-hidden shadow-2xl group flex items-center justify-center">
+            <div className="relative h-[34rem] bg-white rounded-3xl overflow-hidden shadow-2xl group flex items-center justify-center p-6">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fd0d20dc747444e2e8343f79aa7b7d733?format=webp&width=800&height=1200"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F33303d7af3354f67b8a7e6aad3c1044c?format=webp&width=800&height=1200"
                 alt={language === "ar" ? "رئيس مجلس الإدارة" : "Chairman"}
-                className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                className="max-h-full max-w-full object-contain rounded-2xl transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-orchida-red/25 to-orchida-green/25 group-hover:from-orchida-red/35 group-hover:to-orchida-green/35 transition-all duration-500 z-10 pointer-events-none"></div>
-              <div className="absolute inset-0 border-4 border-white/20 group-hover:border-orchida-red/50 transition-all duration-500 rounded-2xl pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-3xl border-2 border-orchida-red/40 group-hover:border-orchida-green/40 transition-all duration-500 pointer-events-none"></div>
             </div>
 
             {/* Content */}
