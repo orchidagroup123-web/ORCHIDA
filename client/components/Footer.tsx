@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export function Footer() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white relative">
