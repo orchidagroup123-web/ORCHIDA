@@ -54,6 +54,7 @@ export const translations = {
     // Header & Navigation
     home: "الرئيسية",
     about: "عن المجموعة",
+    projects: "المشروعات",
     sectors: "قطاعات الأعمال",
     media: "المركز الإعلامي",
     contact: "اتصل بنا",
