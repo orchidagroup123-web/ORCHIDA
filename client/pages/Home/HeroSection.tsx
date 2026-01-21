@@ -77,6 +77,15 @@ const heroBackgrounds = [
 export function HeroSection() {
   const { t, language } = useTranslation();
   const [showWhoWeAre, setShowWhoWeAre] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroBackgrounds.length);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#050816] via-[#0b1a2b] to-[#050816] text-white">
