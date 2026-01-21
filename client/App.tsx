@@ -65,6 +65,11 @@ if (!container) {
   throw new Error("Root container #root not found");
 }
 
-const root = window.__ORCHIDA_APP_ROOT__ ?? createRoot(container);
-window.__ORCHIDA_APP_ROOT__ = root;
+let root = window.__ORCHIDA_APP_ROOT__;
+
+if (!root) {
+  root = createRoot(container);
+  window.__ORCHIDA_APP_ROOT__ = root;
+}
+
 root.render(<App />);
