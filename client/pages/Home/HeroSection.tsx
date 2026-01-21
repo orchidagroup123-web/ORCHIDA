@@ -67,6 +67,13 @@ const sectorCards = [
   },
 ];
 
+const heroBackgrounds = [
+  "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F89ccd0b8f4e34ea393083b07ade2effb?format=webp&width=2000&height=1200",
+  "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fc480cd476ba44dbfb2a1c4e8627a18fd?format=webp&width=2000&height=1200",
+  "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Ff52cd861c2fa4bdc97736785926977e7?format=webp&width=2000&height=1200",
+  "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F55e9e51a21314642ba2f732ee229e361?format=webp&width=2000&height=1200",
+] as const;
+
 export function HeroSection() {
   const { t, language } = useTranslation();
   const [showWhoWeAre, setShowWhoWeAre] = useState(false);
