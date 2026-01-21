@@ -1,5 +1,5 @@
 import { useTranslation } from "@/hooks/useTranslation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const heroHighlights = [
   {
