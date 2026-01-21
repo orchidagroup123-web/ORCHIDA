@@ -144,10 +144,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             {/* Image with Professional Styling */}
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl group">
-              <div className="absolute inset-0 bg-gradient-to-br from-orchida-red/20 to-orchida-green/20 group-hover:from-orchida-red/30 group-hover:to-orchida-green/30 transition-all duration-500 z-10"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                <div className="text-9xl">👔</div>
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F6cfe08e98ddd4d4891330c547285c83b?format=webp&width=800&height=1200"
+                alt={language === "ar" ? "رئيس مجلس الإدارة" : "Chairman"}
+                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-orchida-red/25 to-orchida-green/25 group-hover:from-orchida-red/35 group-hover:to-orchida-green/35 transition-all duration-500 z-10"></div>
               <div className="absolute inset-0 border-4 border-white/20 group-hover:border-orchida-red/50 transition-all duration-500 rounded-2xl"></div>
             </div>
 
