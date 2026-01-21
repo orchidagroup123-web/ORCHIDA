@@ -57,10 +57,13 @@ export default function SectorDetail() {
         </h2>
 
         {/* Description */}
-        <div className="prose prose-lg max-w-none mb-12">
-          <p className="text-lg text-gray-700 leading-relaxed text-justify">
-            {language === "ar" ? sector.fullContentAr : sector.fullContentEn}
-          </p>
+        <div className="relative mb-12">
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orchida-red/15 via-slate-900/60 to-orchida-green/15 blur-3xl"></div>
+          <div className="relative p-8 md:p-10 rounded-3xl bg-gradient-to-br from-slate-900/85 via-slate-900/75 to-slate-800/75 border border-white/10 shadow-[0_30px_80px_rgba(15,23,42,0.4)] backdrop-blur-xl">
+            <p className="text-lg leading-relaxed text-white/90 text-justify tracking-wide">
+              {language === "ar" ? sector.fullContentAr : sector.fullContentEn}
+            </p>
+          </div>
         </div>
 
         {sector.specializations && sector.specializations.length > 0 && (
