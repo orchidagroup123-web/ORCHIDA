@@ -13,9 +13,7 @@ function GradientParagraph({
     <div className="relative max-w-3xl mx-auto">
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orchida-red/20 via-slate-900/60 to-orchida-green/20 blur-3xl"></div>
       <div className="relative p-6 md:p-8 rounded-3xl bg-gradient-to-br from-slate-900/85 via-slate-900/75 to-slate-800/75 border border-white/10 shadow-[0_20px_60px_rgba(15,23,42,0.35)] backdrop-blur-xl">
-        <p
-          className={`text-white/90 leading-relaxed tracking-wide ${className}`}
-        >
+        <p className={`text-white/90 leading-relaxed tracking-wide ${className}`}>
           {children}
         </p>
       </div>
@@ -30,7 +28,7 @@ export default function AboutPage() {
     {
       year: "2004",
       title: "التأسيس",
-      description: "انطلاق رحلة أوركيد الدولية",
+      description: "انطلاق رحلة اوركيدا الدولية",
     },
     { year: "2008", title: "التوسع", description: "دخول قطاع التعدين" },
     {
@@ -116,16 +114,14 @@ export default function AboutPage() {
           <div className="flex justify-center mb-8">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fcd87277187a34a1a87ce0c3acf2379a5?format=webp&width=800&height=1200"
-              alt={
-                language === "ar" ? "شعار مجموعة أوركيدا" : "Orchida Group logo"
-              }
+              alt={language === "ar" ? "شعار مجموعة اوركيداا" : "Orchida Group logo"}
               className="h-24 w-auto drop-shadow-2xl"
               loading="lazy"
             />
           </div>
 
           <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl leading-tight">
-            {language === "ar" ? "عن مجموعة أوركيد" : "About Orchida Group"}
+            {language === "ar" ? "عن مجموعة اوركيدا" : "About Orchida Group"}
           </h1>
           <p className="text-2xl text-white/95 drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
             {language === "ar"
@@ -216,7 +212,7 @@ export default function AboutPage() {
               {language === "ar" ? (
                 <>
                   <p>
-                    منذ التأسيس، وضعت مجموعة أوركيد نصب عينيها هدفاً واضحاً: أن
+                    منذ التأسيس، وضعت مجموعة اوركيدا نصب عينيها هدفاً واضحاً: أن
                     تكون شريكاً فاعلاً في مسيرة التنمية الاقتصادية الشاملة. نحن
                     لا ننظر إلى نشاطاتنا في الزراعة والتعدين والبنية التحتية
                     والتجارة كمجرد قطاعات استثمارية، بل نراها ركائز أساسية لبناء
@@ -233,11 +229,11 @@ export default function AboutPage() {
                     إن فخرنا الحقيقي لا يكمن فقط في حجم مشاريعنا أو انتشارنا
                     الجغرافي، بل في الثقة التي يوليها لنا شركاؤنا، وفي الأثر
                     الإيجابي الذي نتركه في البيئة والمجتمعات التي نعمل بها. نحن
-                    في أوركيد نؤمن بأن النجاح رحلة مستمرة، وبأن التزامنا
+                    في اوركيدا نؤمن بأن النجاح رحلة مستمرة، وبأن التزامنا
                     بالنزاهة والجودة هو البوصلة التي تقودنا دائماً نحو القمة.
                   </p>
                   <p>
-                    نرحب بكم في عالم أوركيد، وندعوكم لتكونوا جزءاً من طموحنا
+                    نرحب بكم في عالم اوركيدا، وندعوكم لتكونوا جزءاً من طموحنا
                     الذي لا يحده سقف.
                   </p>
                 </>
@@ -361,10 +357,7 @@ export default function AboutPage() {
                         : "Approximately 180 employees"}
                     </span>
                   </p>
-                  <p
-                    className="text-white/80 text-sm flex items-start gap-2"
-                    dir="ltr"
-                  >
+                  <p className="text-white/80 text-sm flex items-start gap-2" dir="ltr">
                     <span className="text-orchida-red font-bold mt-1">📞</span>
                     <span>+249 123 722 286</span>
                   </p>
