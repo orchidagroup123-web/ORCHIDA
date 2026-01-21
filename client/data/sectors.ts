@@ -185,7 +185,7 @@ export const sectorsData: Sector[] = [
       "Designing and executing infrastructure projects that support economic and social growth",
     iconEmoji: "🏗️",
     image:
-      "https://images.unsplash.com/photo-1581092162562-40038f56543a?w=600&h=400&fit=crop",
+      "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fe5d8a02b263e4abab3a0860157150471?format=webp&width=800&height=1200",
     color: "from-gray-700 to-slate-900",
     fullContentAr: `نحن في أوركيد نبني الأساس الذي تقوم عليه التنمية الاقتصادية. يختص قطاع البنية التحتية لدينا بتنفيذ المشاريع الاستراتيجية الكبرى، من شبكات الطرق والجسور إلى مرافق الطاقة والمياه. نجمع بين الهندسة المبتكرة والإدارة الاحترافية للمشاريع لتحويل الرؤى العمرانية إلى واقع ملموس يدعم النمو الحضري والصناعي.`,
     fullContentEn: `We at Orchida build the foundation upon which economic development stands. Our Infrastructure sector specializes in executing major strategic projects, from road and bridge networks to energy and water facilities. We combine innovative engineering and professional project management to transform urban visions into tangible reality supporting urban and industrial growth.`,
@@ -198,7 +198,7 @@ export const sectorsData: Sector[] = [
           "Creating and developing road and bridge networks connecting cities",
         emoji: "🛣️",
         image:
-          "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fb112579078784a89bd8a027b275339d8?format=webp&width=800&height=1200",
       },
       {
         arName: "المباني والمجمعات",
@@ -208,7 +208,7 @@ export const sectorsData: Sector[] = [
           "Executing integrated construction projects for buildings and residential compounds",
         emoji: "🏢",
         image:
-          "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fa22bb89f01b2499ba6174ab10703511f?format=webp&width=800&height=1200",
       },
       {
         arName: "الطاقة الكهرومائية والمحاجر",
@@ -217,7 +217,7 @@ export const sectorsData: Sector[] = [
         enDesc: "Hydroelectric power generation and quarry management",
         emoji: "⚡",
         image:
-          "https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F3f64921dee2c46b8a74b643ee6797ff4?format=webp&width=800&height=1200",
       },
       {
         arName: "التجارة الدولية والخدمات اللوجستية",
@@ -227,7 +227,7 @@ export const sectorsData: Sector[] = [
           "Supplying essential materials and offering integrated logistics solutions",
         emoji: "🌐",
         image:
-          "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
+          "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F1bb104e7e171426fa8d162e887dd815e?format=webp&width=800&height=1200",
       },
     ],
   },
