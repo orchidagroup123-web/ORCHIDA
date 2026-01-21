@@ -114,7 +114,7 @@ export default function AboutPage() {
           <div className="flex justify-center mb-8">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fcd87277187a34a1a87ce0c3acf2379a5?format=webp&width=800&height=1200"
-              alt={language === "ar" ? "شعار مجموعة اوركيداا" : "Orchida Group logo"}
+              alt={language === "ar" ? "شعار مجموعة اوركيدا" : "Orchida Group logo"}
               className="h-24 w-auto drop-shadow-2xl"
               loading="lazy"
             />
