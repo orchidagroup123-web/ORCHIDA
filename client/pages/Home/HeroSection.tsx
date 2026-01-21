@@ -246,61 +246,68 @@ export function HeroSection() {
       {/* Who We Are Modal */}
       {showWhoWeAre && (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl max-w-2xl w-full p-10 relative shadow-2xl overflow-y-auto max-h-[90vh]">
-            <button
-              onClick={() => setShowWhoWeAre(false)}
-              className="absolute top-6 right-6 text-gray-400 hover:text-gray-700 transition-colors"
-              aria-label="Close"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          <div className="relative max-w-2xl w-full p-10 rounded-3xl border border-white/15 bg-gradient-to-br from-slate-950/95 via-slate-900/85 to-slate-800/85 shadow-[0_35px_90px_rgba(5,8,22,0.8)] overflow-y-auto max-h-[90vh] backdrop-blur-xl">
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-12 -right-10 w-60 h-60 bg-orchida-green/20 blur-[120px]"></div>
+              <div className="absolute -bottom-16 -left-12 w-72 h-72 bg-orchida-red/25 blur-[130px]"></div>
+            </div>
+
+            <div className="relative z-10">
+              <button
+                onClick={() => setShowWhoWeAre(false)}
+                className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors"
+                aria-label="Close"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
 
-            <div className="mb-6">
-              <p className="text-sm font-semibold text-orchida-red uppercase tracking-[0.3em] mb-3">
-                ORCHIDA GROUP
-              </p>
-              <h2 className="text-4xl font-black text-gray-900 mb-4">
-                {t("whoWeAre")}
-              </h2>
-              <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full"></div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-orchida-red uppercase tracking-[0.3em] mb-3">
+                  ORCHIDA GROUP
+                </p>
+                <h2 className="text-4xl font-black text-white mb-4">
+                  {t("whoWeAre")}
+                </h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-orchida-red to-orchida-green rounded-full"></div>
+              </div>
+
+              <div className="space-y-5 text-white/90 leading-relaxed tracking-wide">
+                <p>
+                  {language === "ar"
+                    ? "مجموعة أوركيدا الدولية كيان سوداني يقود ثلاث ركائز اقتصادية: التعدين، الزراعة، والبنية التحتية، مع توسّع جديد في المملكة العربية السعودية."
+                    : "Orchida International Company is a Sudanese-led powerhouse across three economic pillars—mining, agriculture, and infrastructure—with an upcoming expansion in Saudi Arabia."}
+                </p>
+                <p>
+                  {language === "ar"
+                    ? "نمتلك أكثر من 20 سنة خبرة و180 متخصصاً يعملون من المقرّ الرئيسي في الخرطوم وفرع السعودية قيد الإنشاء لدعم الاستثمارات الإقليمية."
+                    : "With over 20 years of experience and 180 specialists, we operate from our Khartoum HQ while building the Saudi branch to power regional investments."}
+                </p>
+                <p>
+                  {language === "ar"
+                    ? "ترتكز رؤيتنا على تقديم حلول مسؤولة ومستدامة تبني اقتصادات resilient وتربط الموارد الطبيعية بالأسواق العالمية."
+                    : "Our vision is to deliver responsible, sustainable solutions that build resilient economies and connect natural resources to global markets."}
+                </p>
+              </div>
+
+              <button
+                onClick={() => setShowWhoWeAre(false)}
+                className="mt-8 px-8 py-3 bg-gradient-to-r from-orchida-red to-red-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
+                {language === "ar" ? "إغلاق" : "Close"}
+              </button>
             </div>
-
-            <div className="space-y-5 text-gray-700 leading-relaxed">
-              <p>
-                {language === "ar"
-                  ? "مجموعة أوركيدا الدولية كيان سوداني يقود ثلاث ركائز اقتصادية: التعدين، الزراعة، والبنية التحتية، مع توسّع جديد في المملكة العربية السعودية."
-                  : "Orchida International Company is a Sudanese-led powerhouse across three economic pillars—mining, agriculture, and infrastructure—with an upcoming expansion in Saudi Arabia."}
-              </p>
-              <p>
-                {language === "ar"
-                  ? "نمتلك أكثر من 20 سنة خبرة و180 متخصصاً يعملون من المقرّ الرئيسي في الخرطوم وفرع السعودية قيد الإنشاء لدعم الاستثمارات الإقليمية."
-                  : "With over 20 years of experience and 180 specialists, we operate from our Khartoum HQ while building the Saudi branch to power regional investments."}
-              </p>
-              <p>
-                {language === "ar"
-                  ? "ترتكز رؤيتنا على تقديم حلول مسؤولة ومستدامة تبني اقتصادات resilient وتربط الموارد الطبيعية بالأسواق العالمية."
-                  : "Our vision is to deliver responsible, sustainable solutions that build resilient economies and connect natural resources to global markets."}
-              </p>
-            </div>
-
-            <button
-              onClick={() => setShowWhoWeAre(false)}
-              className="mt-8 px-8 py-3 bg-gradient-to-r from-orchida-red to-red-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
-            >
-              {language === "ar" ? "إغلاق" : "Close"}
-            </button>
           </div>
         </div>
       )}
