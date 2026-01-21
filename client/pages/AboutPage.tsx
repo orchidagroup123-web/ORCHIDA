@@ -183,8 +183,8 @@ export default function AboutPage() {
           </div>
 
           {/* Full Message */}
-          <div className="bg-gradient-to-br from-gray-50 to-white p-12 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-500">
-            <div className="space-y-6 text-gray-700 leading-relaxed text-justify">
+          <div className="bg-white/95 p-12 rounded-3xl border border-gray-200 shadow-[0_25px_70px_rgba(15,23,42,0.08)] backdrop-blur-md">
+            <div className="space-y-6 text-gray-800 leading-relaxed text-justify">
               {language === "ar" ? (
                 <>
                   <p>
