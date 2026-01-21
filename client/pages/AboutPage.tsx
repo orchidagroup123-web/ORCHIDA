@@ -45,7 +45,7 @@ export default function AboutPage() {
     {
       year: "2004",
       title: "Establishment",
-      description: "Launch of Orchida International",
+      description: "Launch of ORCHIDA International",
     },
     {
       year: "2008",
@@ -106,7 +106,7 @@ export default function AboutPage() {
           <div className="flex justify-center items-center gap-4 mb-6">
             <div className="h-1 w-12 bg-gradient-to-r from-orchida-red to-transparent rounded-full"></div>
             <span className="text-orchida-red font-bold text-sm uppercase tracking-widest">
-              Orchida Group
+              ORCHIDA Group
             </span>
             <div className="h-1 w-12 bg-gradient-to-l from-orchida-green to-transparent rounded-full"></div>
           </div>
@@ -114,14 +114,14 @@ export default function AboutPage() {
           <div className="flex justify-center mb-8">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fcd87277187a34a1a87ce0c3acf2379a5?format=webp&width=800&height=1200"
-              alt={language === "ar" ? "شعار مجموعة اوركيدا" : "Orchida Group logo"}
+              alt={language === "ar" ? "شعار مجموعة اوركيدا" : "ORCHIDA Group logo"}
               className="h-24 w-auto drop-shadow-2xl"
               loading="lazy"
             />
           </div>
 
           <h1 className="text-6xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl leading-tight">
-            {language === "ar" ? "عن مجموعة اوركيدا" : "About Orchida Group"}
+            {language === "ar" ? "عن مجموعة اوركيدا" : "About ORCHIDA Group"}
           </h1>
           <p className="text-2xl text-white/95 drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
             {language === "ar"
@@ -240,7 +240,7 @@ export default function AboutPage() {
               ) : (
                 <>
                   <p>
-                    Since its establishment, Orchida Group has set a clear
+                    Since its establishment, ORCHIDA Group has set a clear
                     objective: to be an active partner in comprehensive economic
                     development. We do not view our activities in agriculture,
                     mining, infrastructure, and trade as mere investment
@@ -261,13 +261,13 @@ export default function AboutPage() {
                     Our true pride lies not only in the scale of our projects or
                     our geographic presence, but in the trust our partners place
                     in us and the positive impact we leave on the environment
-                    and communities where we operate. At Orchida, we believe
+                    and communities where we operate. At ORCHIDA, we believe
                     success is a continuous journey, and our commitment to
                     integrity and quality is the compass that always guides us
                     toward the top.
                   </p>
                   <p>
-                    We welcome you to the world of Orchida and invite you to
+                    We welcome you to the world of ORCHIDA and invite you to
                     become part of our boundless ambition.
                   </p>
                 </>
