@@ -180,7 +180,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="relative py-24 bg-gradient-to-b from-white to-gray-50">
+      <section id="projects" className="relative py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-orchida-green/40 blur-[160px]"></div>
           <div className="absolute bottom-0 right-10 w-[30rem] h-[30rem] bg-orchida-red/20 blur-[200px]"></div>
