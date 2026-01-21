@@ -93,12 +93,17 @@ export function Footer() {
                   {t("phone")}:
                 </span>
                 {["+249 123 722 286", "+249 129 655 594", "+249 999 900 048"].map((number) => (
-                  <span key={number} className="block text-xs" dir="ltr" lang="en">
+                  <span
+                    key={number}
+                    className={`block text-xs ${language === "ar" ? "text-right" : "text-left"}`}
+                    dir="ltr"
+                    lang="en"
+                  >
                     {number}
                   </span>
                 ))}
               </li>
-              <li className="text-gray-400">
+              <li className={`text-gray-400 ${language === "ar" ? "text-right" : "text-left"}`}>
                 <span className="font-semibold text-gray-300">
                   {t("email")}:
                 </span>
