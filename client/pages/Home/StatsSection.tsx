@@ -152,7 +152,7 @@ export function StatsSection() {
 
         <div className="mt-16 rounded-3xl border border-white/15 bg-white/5 backdrop-blur p-6 md:p-10 text-center text-white/80 leading-relaxed">
           {language === "ar"
-            ? "تلتزم أوركيدا بتوظيف التكنولوجيا والكوادر المحلية لرفع كفاءة الموارد الطبيعية وربطها بالأسواق العالمية عبر شراكات مسؤولة ومستدامة."
+            ? "تلتزم اوركيدا بتوظيف التكنولوجيا والكوادر المحلية لرفع كفاءة الموارد الطبيعية وربطها بالأسواق العالمية عبر شراكات مسؤولة ومستدامة."
             : "Orchida is committed to combining technology with local talent to elevate natural resources and connect them to global markets through responsible, sustainable partnerships."}
         </div>
       </div>
