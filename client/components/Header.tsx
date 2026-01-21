@@ -24,7 +24,7 @@ export function Header() {
             className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity"
           >
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F8ca10e52cdff4c50bad7cedbe0b8a2d2?format=webp&width=800&height=1200"
+              src="https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fcd87277187a34a1a87ce0c3acf2379a5?format=webp&width=800&height=1200"
               alt="Orchida Group"
               className="h-16 w-auto drop-shadow"
               loading="lazy"
