@@ -73,7 +73,9 @@ export function Footer() {
             <h3 className="text-sm font-bold mb-6 text-white uppercase tracking-wider">
               Contact
             </h3>
-            <ul className="space-y-4 text-sm">
+            <ul
+              className={`space-y-4 text-sm ${language === "ar" ? "text-right" : "text-left"}`}
+            >
               <li className="text-gray-400">
                 <span className="font-semibold text-gray-300 block mb-1">
                   {t("headOffice")}
