@@ -37,7 +37,7 @@ export const sectorsData: Sector[] = [
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F387a0d9bcb4a4b91ad406910fb9f9dd4?format=webp&width=800&height=1200",
     color: "from-green-500 to-green-700",
-    fullContentAr: `نحن في مجموعة أوركيد نؤمن بأن الأمن الغذائي يبدأ من حماية الأرض والمحصول. يتخصص قطاعنا في توفير أحدث التقنيات الوقائية، من مبيدات آمنة وأسمدة حيوية ومغذيات متطورة، مصممة لرفع كفاءة الإنتاج الزراعي مع الحفاظ على التوازن البيئي. نحن شريك المزارع والمربي والصياد في مواجهة التحديات وضمان منتجات عالية الجودة.`,
+    fullContentAr: `نحن في مجموعة اوركيدا نؤمن بأن الأمن الغذائي يبدأ من حماية الأرض والمحصول. يتخصص قطاعنا في توفير أحدث التقنيات الوقائية، من مبيدات آمنة وأسمدة حيوية ومغذيات متطورة، مصممة لرفع كفاءة الإنتاج الزراعي مع الحفاظ على التوازن البيئي. نحن شريك المزارع والمربي والصياد في مواجهة التحديات وضمان منتجات عالية الجودة.`,
     fullContentEn: `We at Orchida Group believe that food security begins with protecting the land and crops. Our sector specializes in providing the latest preventive technologies, from safe pesticides to bio-fertilizers and advanced nutrients, designed to enhance agricultural production efficiency while preserving environmental balance. We are the farmer's, livestock breeder's, and fisherman's partner in facing challenges and ensuring high-quality products.`,
     specializations: [
       {
@@ -83,7 +83,7 @@ export const sectorsData: Sector[] = [
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2F170dd3fe8a8c423d82274bbe4c523e86?format=webp&width=800&height=1200",
     color: "from-yellow-600 to-orange-700",
-    fullContentAr: `تعتبر مجموعة أوركيد ركيزة أساسية في قطاع التعدين، حيث نقوم باستخراج وتجهيز الخامات المعدنية وفق أعلى المعايير العالمية. نعتمد على تكنولوجيا تنقيب حديثة وفرق عمل خبيرة لضمان الاستفادة القصوى من الموارد الطبيعية، مع الالتزام الصارم بمعايير الاستدامة البيئية والسلامة المهنية، لرفد الصناعات المحلية والعالمية بالمواد الخام الأساسية.`,
+    fullContentAr: `تعتبر مجموعة اوركيدا ركيزة أساسية في قطاع التعدين، حيث نقوم باستخراج وتجهيز الخامات المعدنية وفق أعلى المعايير العالمية. نعتمد على تكنولوجيا تنقيب حديثة وفرق عمل خبيرة لضمان الاستفادة القصوى من الموارد الطبيعية، مع الالتزام الصارم بمعايير الاستدامة البيئية والسلامة المهنية، لرفد الصناعات المحلية والعالمية بالمواد الخام الأساسية.`,
     fullContentEn: `Orchida Group is a cornerstone in the mining sector, extracting and processing mineral ores according to the highest international standards. We rely on modern exploration technology and expert teams to ensure maximum utilization of natural resources, while strictly adhering to environmental sustainability and occupational safety standards, supplying local and global industries with essential raw materials.`,
     specializations: [
       {
@@ -139,7 +139,7 @@ export const sectorsData: Sector[] = [
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
     color: "from-blue-600 to-blue-800",
-    fullContentAr: `بشبكة علاقات تمتد عبر القارات، تقود مجموعة أوركيد عمليات التجارة الدولية والخدمات اللوجستية بكفاءة متناهية. نحن نتخصص في سلاسل التوريد المتكاملة، وتسهيل حركة البضائع بين المنتجين والمستهلكين في مختلف أنحاء العالم، مع التركيز على الجودة، السرعة، والشفافية في التعاملات التجارية العابرة للحدود.`,
+    fullContentAr: `بشبكة علاقات تمتد عبر القارات، تقود مجموعة اوركيدا عمليات التجارة الدولية والخدمات اللوجستية بكفاءة متناهية. نحن نتخصص في سلاسل التوريد المتكاملة، وتسهيل حركة البضائع بين المنتجين والمستهلكين في مختلف أنحاء العالم، مع التركيز على الجودة، السرعة، والشفافية في التعاملات التجارية العابرة للحدود.`,
     fullContentEn: `With a network of relationships spanning continents, Orchida Group leads international trade operations and logistics services with exceptional efficiency. We specialize in integrated supply chains, facilitating the movement of goods between producers and consumers worldwide, focusing on quality, speed, and transparency in cross-border commercial transactions.`,
   },
   {
@@ -169,7 +169,7 @@ export const sectorsData: Sector[] = [
     image:
       "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&h=400&fit=crop",
     color: "from-cyan-600 to-blue-700",
-    fullContentAr: `تستثمر مجموعة أوركيد في مستقبل البروتين البحري من خلال مشاريع الاستزراع السمكي المتطورة وإدارة المصايد الطبيعية. نستخدم أنظمة مراقبة وتقنيات تدوير مياه ذكية لضمان إنتاج سمكي مستدام وعالي القيمة الغذائية، مع الحفاظ على النظم البيئية المائية وحمايتها للأجيال القادمة.`,
+    fullContentAr: `تستثمر مجموعة اوركيدا في مستقبل البروتين البحري من خلال مشاريع الاستزراع السمكي المتطورة وإدارة المصايد الطبيعية. نستخدم أنظمة مراقبة وتقنيات تدوير مياه ذكية لضمان إنتاج سمكي مستدام وعالي القيمة الغذائية، مع الحفاظ على النظم البيئية المائية وحمايتها للأجيال القادمة.`,
     fullContentEn: `Orchida Group invests in the future of marine protein through advanced aquaculture projects and natural fisheries management. We use monitoring systems and smart water recycling technologies to ensure sustainable and highly nutritious fish production, while preserving and protecting aquatic ecosystems for future generations.`,
   },
   {
@@ -187,7 +187,7 @@ export const sectorsData: Sector[] = [
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fce04605038104603b965d31c7c18e8db%2Fe5d8a02b263e4abab3a0860157150471?format=webp&width=800&height=1200",
     color: "from-gray-700 to-slate-900",
-    fullContentAr: `نحن في أوركيد نبني الأساس الذي تقوم عليه التنمية الاقتصادية. يختص قطاع البنية التحتية لدينا بتنفيذ المشاريع الاستراتيجية الكبرى، من شبكات الطرق والجسور إلى مرافق الطاقة والمياه. نجمع بين الهندسة المبتكرة والإدارة الاحترافية للمشاريع لتحويل الرؤى العمرانية إلى واقع ملموس يدعم النمو الحضري والصناعي.`,
+    fullContentAr: `نحن في اوركيدا نبني الأساس الذي تقوم عليه التنمية الاقتصادية. يختص قطاع البنية التحتية لدينا بتنفيذ المشاريع الاستراتيجية الكبرى، من شبكات الطرق والجسور إلى مرافق الطاقة والمياه. نجمع بين الهندسة المبتكرة والإدارة الاحترافية للمشاريع لتحويل الرؤى العمرانية إلى واقع ملموس يدعم النمو الحضري والصناعي.`,
     fullContentEn: `We at Orchida build the foundation upon which economic development stands. Our Infrastructure sector specializes in executing major strategic projects, from road and bridge networks to energy and water facilities. We combine innovative engineering and professional project management to transform urban visions into tangible reality supporting urban and industrial growth.`,
     specializations: [
       {
